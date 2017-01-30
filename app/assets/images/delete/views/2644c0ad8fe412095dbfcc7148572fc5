@@ -1,0 +1,157 @@
+<div class="container">
+  <center>
+   <div class='row'>
+     <div class='col-xs-12 bottomSlider'>
+       <div class="carousel slide media-carousel" id="media">
+         <div class="carousel-inner">
+           <div class="item  active">
+             <div class="row">
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="<?php echo e(url('/promotions/gift-cards')); ?>"><img alt=" Give A Gift" src="<?php echo e(asset('/img/givegift.jpg')); ?>">
+                 <div class="big">
+                   Give a Gift
+                 </div>
+                 <div class="small">
+                   of Time
+                 </div>
+                 </a>
+               </div>
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="<?php echo e(url('about-us/contact-us')); ?>"><img alt="Request A Quote" src="<?php echo e(asset('/img/requestquote.jpg')); ?>">
+                   <div class="small">
+                     Request a
+                   </div>
+                   <div class="big">
+                     Quote
+                   </div>
+                 </a>
+               </div>
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="<?php echo e(url('/promotions/coupons')); ?>"><img alt="Save Now" src="<?php echo e(asset('/img/savenow.jpg')); ?>">
+                   <div class="big">
+                     Save Now
+                   </div>
+                   <div class="small">
+                     Find out more
+                   </div>
+                 </a>
+               </div>
+             </div>
+           </div>
+           <div class="item">
+             <div class="row">
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="<?php echo e(url('/cleaning-tips')); ?>"><img alt="Tips for More Sparkle & Shine" src="<?php echo e(asset('/img/sprakleshine.jpg')); ?>">
+                   <div class="small">
+                     Tips for more
+                   </div>
+                   <div class="big">
+                     Sparkle & Shine
+                   </div></a>
+               </div>
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="<?php echo e(url('/cleaning-tips')); ?>"><img alt="The Cleaning Details" src="<?php echo e(asset('/img/cleandetails.jpg')); ?>">
+                   <div class="small">
+                     The Clean is in the
+                   </div>
+                   <div class="big">
+                     The Details
+                   </div></a>
+               </div>
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="<?php echo e(url('/trusted-help/trusted-help')); ?>"><img alt="Experienced and Reliable Staff" src="<?php echo e(asset('/img/ourpeople.jpg')); ?>">
+                   <div class="small">
+                     Experienced. Reliable.
+                   </div>
+                   <div class="big">
+                     Our People
+                   </div></a>
+               </div>
+             </div>
+           </div>
+           <?php /* <div class="item">
+             <div class="row">
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+               </div>
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+               </div>
+               <div class="col-sm-4">
+                 <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+               </div>
+             </div>
+           </div> */ ?>
+         </div>
+         <a data-slide="prev" href="#media" class="left carousel-control"><em class="fa fa-caret-left"></em></a>
+         <a data-slide="next" href="#media" class="right carousel-control"><em class="fa fa-caret-right"></em></a>
+       </div>
+     </div>
+   </div>
+  </center>
+</div>
+<footer>
+  <div class="container">
+    <div class="row topPadding">
+      <div class="greenLine">
+        <img src="<?php echo e(asset('/img/merrymaidsrelax.png')); ?>" class="pull-right" alt="Merry Maids relax. it's done">
+        <div class="clear"></div>
+      </div>
+      <div class="row footerLinks hidden-sm hidden-xs">
+        <?php foreach($footers as $footer): ?>
+          <?php if($footer->parent == 0): ?>
+            <div class="col-sm-15">
+              <ul>
+                <li><a href="<?php echo e(asset($footer->link)); ?>"><?php echo e($footer->name); ?></a></li>
+                <?php foreach($footers as $foot): ?>
+                  <?php if($footer->id == $foot->parent): ?>
+                    <li><a href="<?php echo e(asset($foot->link)); ?>"><?php echo e($foot->name); ?></a></li>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              </ul>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <div class="footerSocialButtons">
+      <a target="_blank" href="#"><em class="fa fa-twitter"></em></a>
+      <a target="_blank" href="#"><em class="fa fa-facebook"></em></a>
+      <a target="_blank" href="#"><em class="fa fa-linkedin"></em></a>
+      <a target="_blank" href="#"><em class="fa fa-google-plus"></em></a>
+      <a target="_blank" href="#"><em class="fa fa-youtube"></em></a>
+      <a target="_blank" href="#"><em class="fa fa-yelp"></em></a>
+    </div>
+    <div class="clear"></div>
+<div class="topMore">
+    <div class="col-md-3">
+      <img src="<?php echo e(asset('/img/cfa.jpg')); ?>" alt="CFA awards pf excellence">
+      <img src="<?php echo e(asset('/img/35years.jpg')); ?>" alt="Celebrating 35 years">
+    </div>
+    <div class="col-md-9">
+      <div class="col-xs-12 noPadding">
+      <div class="col-md-3 col-sm-3 col-xs-6 footerCompany">
+        <img src="<?php echo e(asset('/img/servicemaster.jpg')); ?>" alt="Service Master">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6 footerCompany">
+        <img src="<?php echo e(asset('/img/merrymaids_dark.jpg')); ?>" alt="merry maids relax its done">
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <span class="green">Hours of Operation:</span> Monday - Friday - 9:00am - 5:00pm<br/>
+Saturday, Sunday - Closed
+      </div>
+    </div>
+      <div class="col-md-3 cards">
+        <em class="fa fa-cc-mastercard"></em>
+        <em class="fa fa-cc-visa"></em>
+        <em class="fa fa-cc-amex"></em>
+      </div>
+      <div class="col-md-9 footerExtra">
+        *Value varies based on the size of the home. Not valid with other offers. Services provided by independently owned and operated franchises. Employment hiring and screening practices may vary. Please contact your local Merry Maids office for more details. © Copyright 2013 Merry Maids Canada and ServiceMaster Canada. All rights reserved.
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</footer>

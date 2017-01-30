@@ -1,0 +1,64 @@
+#blog{
+    margin-top: 100px;
+  .got-question{
+    right:0px;
+    left:0;
+    margin: 30px auto;
+    position: relative;
+    button{
+      color:$red;
+      font-size: 14px;
+      width: 250px;
+      height: 38px;
+      line-height: 20px;
+      svg{
+        rect{
+          stroke:$red;
+          width: 250px;
+          height: 38px;
+        }
+      }
+      i{
+        margin-left: 20px;
+        font-size: 22px;
+      }
+      &:hover{
+        svg rect{
+          stroke-dasharray: 229, 316;
+        }
+      }
+    }
+  }
+  .banner-title{
+    font-size: 37px;
+    .v-letter{
+      font-size: 45px;
+      line-height: normal;
+    }
+  }
+  @media (min-width: 400px) {
+    .banner-title{
+      font-size: 50px;
+      .v-letter{
+        font-size: 60px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .banner-title{
+      font-size: 90px;
+      .v-letter{
+        font-size: 110px;
+      }
+    }
+  } 
+  @media (min-width: 992px) {
+    .banner-title{
+      font-size: 120px;
+      .v-letter{
+        font-size: 140px;
+      }
+    }
+  }
+}

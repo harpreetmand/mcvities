@@ -1,0 +1,109 @@
+<div class="footerBg">
+	<div class="container">
+		<div class="footer">
+			<?php /*<div class="row">
+                <div class="col-sm-3">
+                      <ul>
+                        <li><strong>LED Lighting</strong></li>
+                        <li>Advantages of LED Lighting </li>
+                        <li>Retrofitting Exisiting Buildings </li>
+                        <li>New Construction</li>
+                        <li>Financing Options</li>
+                     </ul>
+                      <ul>
+                        <li><strong>Energy Efficiency</strong></li>
+                        <li>Energy Efficiency Solutions </li>
+                        <li>Window Insulation</li>
+                      </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul>
+                        <li><strong>Electricity & Natural Gas</strong></li>
+                        <li>Custom Power & Natural Gas Electricity</li>
+                        <li>Natural Gas</li>
+                        <li>Environmentally Friendly Green Energy</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Commercial Solar</strong></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                       <ul>
+                        <li><strong>Case Studies </strong></li>
+                      </ul>
+                      <ul>
+                        <li><strong>Investors</strong></li>
+                        <li>Financial Information </li>
+                        <li>Events & Presentations </li>
+                        <li>Stock Information </li>
+                        <li>Investor Resources</li>
+                      </ul>
+                </div>
+                <div class="col-sm-3">
+                      <ul>
+                        <li><strong>Contact Us</strong></li>
+                        <li>Our Location </li>
+                        <li>Inquiries </li>
+                        <li>Careers</li>
+                      </ul>
+                      <ul>
+                        <li>Legal</li>
+                        <li>Privacy Policy </li>
+                        <li>SiteMap</li>
+                      </ul>
+                </div>
+              </div> */ ?>
+
+			<div class="footer-nav">
+				<ul class="">
+					<?php
+					$i=0;
+					?>
+					<?php foreach($footerNav as $mainNav): ?>
+
+						<? if($i===0 || $i===1 || $i===4 || $i===5){?><div class="col-sm-3"> <?}?>
+							<?php if($mainNav->dropdown === 0): ?>
+								<li class="parent"><a href="<?php echo e(url($mainNav->url)); ?>"><?php echo $mainNav->name; ?></a></li>
+							<?php elseif($mainNav->dropdown === 1): ?>
+								<ul class="children-ul">
+									<? $childreNumber = 1; ?>
+
+									<?php foreach($subNav as $suNav): ?>
+										<?php if($suNav->parent == $mainNav->id): ?>
+											<li class="children <?php echo e($suNav->url); ?>"><a href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?></a></li>
+											<?php if($suNav->indent == 1): ?>
+												<?php /* <ul class="indent"> */ ?>
+												<?php foreach($indentNavs as $indentNav): ?>
+													<?php if($suNav->id == $indentNav->parent): ?>
+														<li class="indent grand-children"><a href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+													<?php endif; ?>
+												<?php endforeach; ?>
+												<?php /* </ul> */ ?>
+											<?php endif; ?>
+										<?php endif; ?>
+										<? $childreNumber++;?>
+									<?php endforeach; ?>
+								</ul>
+							<?php endif; ?>
+							<? if($i===0 || $i===3 || $i===4 || $i===8){?>   </div><?}?>
+						<? $i++;?>
+
+					<?php endforeach; ?>
+				</ul>
+				<div class="clear"></div>
+			</div><!-- /.navbar-collapse -->
+			<div class="social">
+				<center>
+					<div class="socialButtons">
+						<a target="_blank" href="https://www.facebook.com/gosunwave/"><i class="fa fa-facebook"></i></a>
+						<a target="_blank" href="https://twitter.com/gosunwave/"><i class="fa fa-twitter"></i></a>
+						<a target="_blank" href="https://plus.google.com/u/0/b/112502426549453927202/112502426549453927202/about?hl=en"><i class="fa fa-google-plus"></i></a>
+						<a target="_blank" href="https://www.linkedin.com/company/sunwave-gas-and-power-inc-?trk=biz-companies-cym"><i class="fa fa-linkedin"></i></a>
+						<a target="_blank" href="https://www.youtube.com/channel/UCZIOAr2akJ1iggCD4FDBOqQ"><i class="fa fa-youtube"></i></a>
+					</div>
+					© Copyright 2015. All Rights Reserved. ONEnergy Inc.<br/> Designed and developed by Lime Advertising Inc.
+				</center>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+<div id="blog">
+    <div class="banner-container">
+        <div class="banner"></div>
+        <div class="anim-text">
+            <h1 class="banner-title white" ng-bind-html="homeContent.blog.title | unsafe"></h1>
+        </div>
+    </div>
+    <div class="container-fluid container pad50">
+        <p class="red" ng-bind-html="homeContent.blog.heading"></p>
+
+        <div class="blog-list-container padT60">
+            <div class="col-md-5 leftSide">
+
+                <div ng-repeat="blogs in homeContent.blog.allBlogs | limitTo:showTotal" class="col-xs-12 blogListPadding animated fadeIn pad0">
+                    
+                    <!--<div class="">-->
+
+                    <a href="{{homeContent.lang}}/blog/{{blogs.slug}}">
+                        <img ng-src="app/assets/images/blog/big/{{blogs.image}}" alt="" class="img-responsive col-xs-4" />
+
+                    </a>
+
+                    <div class="col-xs-8 blogList">
+                        <a href="{{homeContent.lang}}/blog/{{blogs.slug}}"><div class="title secondary-font red blogTitle" ng-bind-html="blogs.title | unsafe"></div></a>
+                        <p class="grey">
+                            {{ blogs.date | date:"MM/dd/yyyy"}}
+                            <p/>
+                    </div>
+                    <!-- <div ng-repeat="recipe in recipes.allRecipes" class="newElement recipes-nav category-{{recipe.category}}"> -->
+
+                </div>
+                <a href="" ng-click="showMore(showTotal)" ng-hide="showTotal >= homeContent.blog.allBlogs.length" class="grey">{{homeContent.blog.olderPost}}</a>
+
+                <div class="cf"></div>
+            </div>
+
+            <!--<div class="col-md-1">
+                    <div class="vr">
+                        </div> 
+                </div>-->
+            <div class="col-md-7">
+                <div ng-repeat="blogs in homeContent.blog.allBlogs | filter : {feature: 1}" class="col-md-12 pad0 ">
+                <a href="{{homeContent.lang}}/blog/{{blogs.slug}}"><img src="app/assets/images/blog/big/{{blogs.image}}" class="img-responsive col-md-6 padLR10"></a>
+                <div class="col-md-6 alignLeft">
+                        <a href="{{homeContent.lang}}/blog/{{blogs.slug}}"><div class="title secondary-font red" ng-bind-html="blogs.title | unsafe"></div></a>
+                  
+                     <p class="grey">
+                            {{ blogs.date | date:"MM/dd/yyyy"}}
+                            <p/>
+                    <p ng-bind-html="blogs.paragraph[0]"></p>
+                <a href="{{homeContent.lang}}/blog/{{blogs.slug}}" class="grey">{{homeContent.blog.readMore}}</a>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

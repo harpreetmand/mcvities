@@ -1,0 +1,237 @@
+#products {
+  max-height: 620px;
+  height: auto;
+  overflow: hidden;
+  background-color: $white;
+  position: relative;
+  @include transition(all, 0.5s, ease-in-out);
+  &.active {
+    max-height: 5000px !important;
+    .products-show {
+      position: relative !important;
+      bottom: 0 !important;
+    }
+  }
+  .product-nav {
+    padding: 0;
+    background-color: $red;
+    .container {
+      padding: 0;
+    }
+    ul {
+      text-align: justify;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0;
+      li {
+        color: $white;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        margin: auto;
+        font-size: 30px;
+        padding: 8px 70px;
+        border-bottom: 1px solid $white;
+        @include transition(all, .5s, ease-in-out);
+        font-family: $secondary-font;
+        &:last-child {
+          border: none;
+        }
+        &:after {
+          content: url(../images/hover-cookie.png);
+          width: 40px;
+          height: 41px;
+          position: absolute;
+          left: 25px;
+          top: 8px;
+          opacity: 0;
+          @include transition(all, .5s, ease-in-out);
+        }
+        &:hover,
+        &.active {
+          &:after {
+            opacity: 1;
+            left: 10px;
+          }
+        }
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+  .products-section {
+    .product {
+      .product-logo {
+        margin-bottom: 15px;
+        img {
+          margin-bottom: 10px;
+        }
+      }
+      .products-container {
+        .each-product-section {
+          padding-bottom: 20px;
+          position: relative;
+          .products-lists {
+            cursor: pointer;
+            margin-bottom: 100px;
+          }
+          .product-info-container {
+            position: relative;
+            height: 0;
+            padding-bottom: 0;
+            @include transition(all, .1s, ease-in-out);
+          }
+          .product-info {
+            position: relative;
+            background-color: $white;
+            width: 100%;
+            top: 0;
+            max-height: 0;
+            height: auto;
+            overflow: hidden;
+            &.active {
+              max-height: 1000px;
+            }
+          }
+          .right-side {
+            button {
+              color: $red;
+              svg rect {
+                stroke: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+    .products-show {
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+.nutrition-modal{
+  .btn-default{
+    position: absolute;
+    background-color: $red;
+    color: $white;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    z-index: 999999999;
+    border: 0;
+  }
+}
+.nutrition-btn{
+  outline: 0px !important;
+}
+@media (max-width: 526px) {
+  #products {
+    max-height: 659px;
+  }
+}
+@media (max-width: 461px) {
+  #products {
+    max-height: 730px;
+  }
+}
+@media (max-width: 341px) {
+  #products {
+    max-height: 790px;
+  }
+}
+
+@media (min-width: 768px) {
+  #products {
+    .product-nav {
+      padding: 20px 0;
+      .container {
+        padding: 0 15px;
+      }
+      ul {
+        padding: 0 25px;
+        li {
+          padding: 0;
+          left: 5px;
+          display: inline-block;
+          border: none;
+          &:after {
+            top: -1px;
+            left: -33px;
+          }
+          &:hover,
+          &.active {
+            &:after {
+              left: -48px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  #products {
+    max-height: 600px;
+    .product-nav ul li {
+      left: 0;
+      &:after {
+        left: -40px;
+      }
+      &:hover,
+      &.active {
+        &:after {
+          left: -55px;
+        }
+      }
+    }
+    .products-section {
+      .product {
+        .product-logo {
+          margin-bottom: 25px;
+        }
+        .products-container {
+          .each-product-section {
+            padding-bottom: 120px;
+            .products-lists {
+              margin-bottom: 0;
+            }
+            .product-info-container {
+              &.active {
+                height: 250px;
+                top:50px;
+              }
+            }
+            .product-info {
+              position: absolute;
+              &.active {
+                height: 250px;
+                border-bottom: 1px solid rgba($black, .1);
+              }
+              .left-side,
+              .right-side {
+                @include center-vertical();
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+      .products-show{
+        bottom:50px;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  #products {
+    max-height: 600px;
+  }
+}

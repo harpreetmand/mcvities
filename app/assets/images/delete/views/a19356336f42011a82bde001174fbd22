@@ -1,0 +1,294 @@
+<?php $__env->startSection('title'); ?> | <?php echo e($page->metaTitle); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?><?php echo e($page->metaDesc); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('includes/topImage', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="allPageUnderImage animation">
+        <div class="h1Bg">
+            <div class="container no-padding">
+                <center>
+                    <h1><?php echo $page->underImage; ?></h1>
+                </center>
+            </div>
+        </div>
+        <div class="container">
+            <?php echo $__env->make('includes/sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php /*<div class="col-xs-3 hidden-xs side-menu">*/ ?>
+                <?php /* <p class="big orange"><strong><?php echo $page->text; ?></strong></p> */ ?>
+                <?php /*<ul class="topUl">*/ ?>
+                    <?php /*<?php foreach($subNav as $suNav): ?>*/ ?>
+                        <?php /*<?php if($suNav->parent == $sub): ?>*/ ?>
+
+                            <?php /*<li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($link)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?></a></li>*/ ?>
+
+                            <?php /*<?php if($suNav->indent == 1): ?>*/ ?>
+                                <?php /* <ul class="indent"> */ ?>
+                                <?php /*<?php foreach($indentNavs as $indentNav): ?>*/ ?>
+                                    <?php /*<?php if($suNav->id == $indentNav->parent): ?>*/ ?>
+                                        <?php /*<li class="indentTop nav-<?php echo e($indentNav->url); ?>"><a href="<?php echo e(url()); ?>/<?php echo e($link); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>*/ ?>
+                                    <?php /*<?php endif; ?>*/ ?>
+                                <?php /*<?php endforeach; ?>*/ ?>
+                                <?php /* </ul> */ ?>
+                            <?php /*<?php endif; ?>*/ ?>
+                        <?php /*<?php endif; ?>*/ ?>
+
+                    <?php /*<?php endforeach; ?>*/ ?>
+                <?php /*</ul>*/ ?>
+            <?php /*</div>*/ ?>
+            <div class="col-md-9 col-sm-8 col-xs-12 leftBorder content">
+
+                <?php /*<div class="col-md-9 col-sm-12 col-xs-12 leftBorder content">*/ ?>
+                <p class="big orange">ONEnergy Stock Trading Chart<p>
+
+            <div style="height: 400px">
+                <!-- TradingView Widget BEGIN -->
+                <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                  "autosize": true,
+                  "symbol": "TSXV:OEG",
+                  "interval": "D",
+                  "timezone": "Etc/UTC",
+                  "theme": "Grey",
+                  "style": "3",
+                  "locale": "en",
+                  "toolbar_bg": "rgba(255, 80, 0, 1)",
+                  "save_image": false,
+                  "details": true,
+                  "news": [
+                    "headlines"
+                  ],
+                  "hideideas": true
+                });
+                </script>
+
+                <!-- TradingView Widget END -->
+
+            </div>
+            <div style="height: 400px">
+                <!-- TradingView Widget BEGIN -->
+                <!-- TradingView Widget BEGIN -->
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "autosize": true,
+  "symbol": "TSXV:OEG",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "Grey",
+  "style": "0",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "allow_symbol_change": true,
+  "details": true,
+  "news": [
+    "headlines"
+  ],
+  "hideideas": true,
+  "show_popup_button": false,
+
+});
+</script>
+<!-- TradingView Widget END -->
+
+
+            </div>
+            <div style="height: 600px">
+                <!-- TradingView Widget BEGIN -->
+                <!-- TradingView Widget BEGIN -->
+                <!-- TradingView Widget BEGIN -->
+                <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                  "autosize": true,
+                  "symbol": "TSXV:OEG",
+                  "interval": "D",
+                  "timezone": "Etc/UTC",
+                  "theme": "Grey",
+                  "style": "8",
+                  "locale": "en",
+                  "toolbar_bg": "rgba(255, 152, 0, 1)",
+                  "hide_top_toolbar": true,
+                  "save_image": false,
+                  "details": true,
+                  "news": [
+                    "headlines"
+                  ],
+                  "hideideas": true,
+  "show_popup_button": false,
+                });
+                </script>
+                <!-- TradingView Widget END -->
+
+<!-- TradingView Widget END -->
+
+
+            </div>
+            <br />
+            <br />
+            <div id="summary">
+                <p class="big">Quote Summaries (OEG)</p>
+            </div>
+            <div id="stockIndicator2"><img src="images/retrieving.gif" width="110" height="10" /></div>
+            <p>
+                <strong>Transfer Agent</strong><br/>
+Computershare Investor Services Inc<br/>
+100 University Ave, 8th Floor <br/>
+Toronto, Ontario M5J 2Y1<br/>
+Phone: +1 (416) 885-9858
+            </p>
+
+
+
+
+
+
+
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-3 no-right-padding content hidden">
+                    <div id="rightside">
+                        <div id="stockIndicator2"><img src="images/retrieving.gif" width="110" height="10" /></div>
+                        <div id="stockContainer">
+                            <div id="stockTitle">Stock Summary<br /></div>
+                            <div class="stockBody">
+                                <div id="stockClaim">Data delayed by 15 minutes<br /></div>
+                                <div id="stockInfo">
+                                    <div class="stockRow">
+                                        <div class="stockName orange">OEG<br /></div>
+                                        <div class="stockData">
+                                            <div class="fr grey">Latest</div><br />
+                                            <div class="fr grey">Change</div><br />
+                                            <div class="fr grey">Change %</div><br />
+                                            <div class="fr grey">Volume</div>
+                                        </div>
+                                        <br class="clear" />
+                                    </div>
+                                </div>
+                                <div id="stockIndicator"><img src="images/retrieving.gif" width="110" height="10" /></div>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <script src="<?php echo e(asset('/js/mootools-1.3.js')); ?>"></script>
+        <script src="<?php echo e(asset('/js/Request.JSONP.1.3.js')); ?>"></script>
+        <script src="<?php echo e(asset('/js/Request.Stocks.js')); ?>"></script>
+
+        <script>
+            window.addEvent("domready",function() {
+                var summary = document.id("summary");
+                var container = document.id("stockInfo");
+                var indicator = document.id("stockIndicator");
+                var indicator2 = document.id("stockIndicator2");
+                var request = new Request.Stocks({
+                    stocks: ['OEG.V'],
+                    onComplete: function(result) {
+                        if(!result || !result.query || !result.query.results || !result.query.results.quote) return;
+                        indicator.fade(0);
+                        indicator2.fade(0);
+                        var template = ' \
+					<div class="stockRow"> \
+						<div class="stockName">OEG<br /></div>\
+						<div class="stockData"> \
+							<div class="fl">{PreviousClose}</div> <div class="fr grey">Last</div> \
+							<div class="clear"></div> \
+						<div class="stockData"> \
+						</div> \
+							<div class="fl">{Change}</div> <div class="fr grey">Change</div><br /> \
+							<div class="clear"></div> \
+						<div class="stockData"> \
+						</div> \
+							<div class="fl">{ChangeinPercent}</div> <div class="fr grey">Change %</div><br /> \
+							<div class="clear"></div> \
+						<div class="stockData"> \
+						</div> \
+							<div class="fl">0</div> <div class="fr grey">Volume</div> \
+							<div class="clear"></div> \
+						</div> \
+						<br class="clear" /> \
+					</div> \
+				';//{Name}
+                        var html ="";
+                        Array.from(result.query.results.quote).each(function(quote) {
+                            var change = Number.from(quote.Change);
+                            quote.UpDown =  change == 0 ? "Same" : change > 0 ? "Up" : "Down";
+                            html += template.substitute(quote);
+                        });
+                        container.set("html",html);
+                        var content = ' \
+				<p class="big">Quote Summary (OEG)</p> \
+                    <table id="table1" width="500"> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Prev Close:</th> \
+                        <td class="yfnc_tabledata1">{PreviousClose}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Open:</th> \
+                        <td class="yfnc_tabledata1">{Open}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Bid:</th> \
+                        <td class="yfnc_tabledata1">{Bid}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Ask:</th> \
+                        <td class="yfnc_tabledata1">{Ask}</td> \
+                      </tr> \
+                      <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Change:</th> \
+                        <td class="yfnc_tabledata1">{Change}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Change In Percent:</th> \
+                        <td class="yfnc_tabledata1">{ChangeinPercent}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Day\'s Range:</th> \
+                        <td class="yfnc_tabledata1">{DaysRange}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;52wk Range:</th> \
+                        <td class="yfnc_tabledata1">{YearRange}</td> \
+                      </tr> \
+                        <tr> \
+                        <th scope="row" width="48%">&nbsp;&nbsp;&nbsp;&nbsp;Volume:</th> \
+                        <td class="yfnc_tabledata1">0</td> \
+                      </tr> \
+                    </table><br /><br /> \
+				';
+                        var html2 ="";
+                        Array.from(result.query.results.quote).each(function(quote) {
+                            var change = Number.from(quote.Change);
+                            quote.UpDown =  change == 0 ? "Same" : change > 0 ? "Up" : "Down";
+                            html2 += content.substitute(quote);
+                        });
+                        summary.set("html",html2);
+                    },
+                    onRequest: function () {
+                        indicator.fade(1);
+                        indicator2.fade(1);
+                    }
+                });
+                (function() {
+                    request.send();
+                }).periodical(20 * 1000);
+                request.send();
+            });
+        </script>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

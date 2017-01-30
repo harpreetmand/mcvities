@@ -1,0 +1,22 @@
+<div class="container">
+ <a href="/{{homeContent.lang}}" ng-click="gotoElement('home')" class="logo top-menu">
+   <img src="app/assets/images/blank.png" lazy-img="app/assets/images/mcvities-canada.png" alt="McVities Canada" />
+ </a>
+ <div class="hamburger" ng-class="{'open': isActive}" ng-click="mobileNav()">
+ <div class="hamburger-inner"></div>
+ </div>
+ <nav class="navigation" ng-class="{'open': isActive}">
+    <ul du-scroll-container="container">
+      <li><a href="/{{homeContent.lang}}" class="top-menu products" ng-click="gotoElement('products'); closeMobileNav()">{{homeContent.navigation.navArr[0]}}</a></li>
+      <li><a href="/{{homeContent.lang}}/contest" class="top-menu" ng-click="closeMobileNav()">{{homeContent.navigation.navArr[1]}}</a></li>
+        <li><a href="/{{homeContent.lang}}" ng-click="gotoElement('ourstory'); closeMobileNav()" class="top-menu ourstory">{{homeContent.navigation.navArr[2]}}</a></li>
+      <li><a href="/{{homeContent.lang}}" ng-click="gotoElement('wheretobuy') ;closeMobileNav()" class="top-menu wheretobuy">{{homeContent.navigation.navArr[3]}}</a></li>
+        <li><a href="/{{homeContent.lang}}" ng-click="gotoElement('recipes'); closeMobileNav()" class="top-menu recipes">{{homeContent.navigation.navArr[4]}}</a></li>
+      <li><a href="/{{homeContent.lang}}/faq" class="top-menu faqs" ng-click="closeMobileNav()">{{homeContent.navigation.navArr[5]}}</a></li>
+      <li><a href="/{{homeContent.lang}}" class="top-menu contactus'" ng-click="gotoElement('contactus'); closeMobileNav()">{{homeContent.navigation.navArr[6]}}</a></li>
+      <!-- <li><a href="/" class="top-menu contactus'" ng-click="gotoElement('contactus'); closeMobileNav()">EN | FR</a></li> -->
+    </ul>
+ </nav>
+  <div class="language-nav"><a href="/en" ng-click="changeLang('en')" ng-class="{active : homeContent.lang === 'en' }">EN</a> | <a href="/fr" ng-click="changeLang('fr')" ng-class="{active :homeContent.lang === 'fr'}">FR</a></div>
+  <div class="cf"></div>
+</div>

@@ -1,0 +1,60 @@
+# Set the default handler
+# DirectoryIndex index.php index.html index.htm
+# angularjs pushstate (history) support:
+# See http://www.josscrowcroft.com/2012/code/htaccess-for-html5-history-pushstate-url-routing/
+# <IfModule mod_headers.c>
+# RequestHeader set X-Prerender-Token "Q5sjUkjxnmmmzL8dRzqn"
+# </IfModule>
+
+
+
+
+<IfModule mod_headers.c>
+    RequestHeader set X-Prerender-Token "Q5sjUkjxnmmmzL8dRzqn"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    <IfModule mod_proxy_http.c>
+        RewriteCond %{HTTP_USER_AGENT} baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC,OR]
+        RewriteCond %{QUERY_STRING} _escaped_fragment_
+
+        # Only proxy the request to Prerender if it's a request for HTML
+        RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff))(.*) http://service.prerender.io/http://mcvitiescanada.com/$2 [P,L]
+    </IfModule>
+</IfModule>
+
+
+
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !index
+    RewriteCond %{REQUEST_URI} !.*\.(css¦js|html|png|map|min.js)
+    RewriteRule (.*) index.html [L]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# <IfModule mod_proxy_http.c>
+#      RewriteCond %{HTTP_USER_AGENT} baiduspider|facebookexternalhit|Facebot|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC,OR]
+#      RewriteCond %{QUERY_STRING} _escaped_fragment_
+#
+      # Only proxy the request to Prerender if it's a request for HTML
+#      RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff))(.*) http://service.prerender.io/http://example.com/$2 [P,L]
+#  </IfModule>
+
+
+
+
+
+# allow social media crawlers to work by redirecting them to a server-rendered static version on the page
+# RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|Pinterest|Google.*snippet)
+# RewriteRule album/(\d*)$ http://mcvitiescanada.com/app/assets/php/bots.php?id=$1 [P]
+
+
+
+
+
+</ifModule>

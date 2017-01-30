@@ -1,0 +1,51 @@
+<?php $__env->startSection('title'); ?><?php echo e($body->text); ?> |<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?><?php echo e($body->meta); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+
+<div class="container noPadding topImageText">
+  <img src="<?php echo e(asset('/img/topimage/'.$body->topImage)); ?>" alt="<?php echo e($body->text); ?>" class="img-responsive">
+  <span class="textOverImage">
+    <h1><?php echo e($body->text); ?></h1> 
+  </span>
+</div>
+<div class="container topPadding extraPadding">
+  <div class="col-md-9 noLeftPadding">
+    <div class="breadcrums">
+      <a href="/">Home</a> > <?php echo $bread; ?>
+
+    </div>
+
+
+
+    <?php if($body->rightImage != ''): ?>
+      <img src="<?php echo e(asset('/img/'.$body->rightImage)); ?>" alt="<?php echo e($body->rightImageAlt); ?>" class="pull-right smallPicMargin"/>
+    <?php endif; ?>
+    <h2><?php echo e($body->text); ?></h2>
+    <?php echo $body->body; ?>
+
+    <?php if($body->bottomPicture != ''): ?>
+      <img src="<?php echo e(asset('/img/'.$body->bottomPicture)); ?>" alt="<?php echo e($body->bottomPictureAlt); ?>" class="img-responsive"/>
+    <?php endif; ?>
+
+  </div>
+  <div class="clear visible-sm visibile-xs">
+  </div>
+  <?php echo $__env->make('layout.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+<div class="container borderTop">
+  <div class="col-sm-12 testimonials noPadding">
+    <div class="col-sm-3">
+
+        <img src="<?php echo e(asset('/img/testimonials/'.$testimonials->image)); ?>" class="img-responsive">
+
+    </div>
+    <div class="col-sm-9">
+      <i class="fa fa-quote-left"></i><p><?php echo e($testimonials->body); ?><i class="fa fa-quote-right"></i></p>
+      <span class="pull-right">-<?php echo e($testimonials->location); ?></span>
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,9 @@
+#recipes {
+  background: $red;
+}
+@media (min-width: 768px) {
+  #recipes {
+    background: url(../images/recipes-back.jpg) no-repeat center;
+      background-size: cover;
+  }
+}

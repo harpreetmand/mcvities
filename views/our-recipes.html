@@ -1,0 +1,38 @@
+<div class="our-recipes">
+  <div class="wrapper">
+    <div id="our-recipes">
+      <div class="banner-container">
+        <div class="banner"></div>
+        <div class="anim-text">
+          <h1 class="banner-title white">{{ homeContent.recipes.ourRecipes | unsafe}}</h1>
+        </div>
+      </div>
+      <div class="recipes-container container pad50 hTagsInDiv">
+        <h2 class="red">{{ homeContent.recipes.body }}</h2>
+        <div class="recipes-inner-container padT30">
+          <p class="red secondary-font">{{ homeContent.recipes.sortBy }}</p>
+
+            <div class="controls padT30">
+              <ul>
+                <li class="filter" ng-repeat="category in homeContent.recipes.categories" ng-class="{active: activeRecipe===category}"><span ng-click="filterThisCate(category); recipesFilter(category)">{{category}}</span></li>
+              </ul>
+            </div>
+            <div class="recipes-list-container padT60">
+              <div id="recipes-list">
+                <div ng-repeat="recipe in homeContent.recipes.allRecipes | filter:{category:showThisCate}" class="newElement recipes-nav category-{{recipe.category}}">
+                <!-- <div ng-repeat="recipe in recipes.allRecipes" class="newElement recipes-nav category-{{recipe.category}}"> -->
+                  <a href="/{{homeContent.lang}}/recipe/{{recipe.slug}}">
+                    <img ng-src="app/assets/images/recipes/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+                    <div class="overlay">
+                      <p class="title" ng-bind-html="recipe.title | unsafe"></p>
+                    </div>
+                  </a>
+                </div>
+                <div class="cf"></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

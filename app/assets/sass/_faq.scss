@@ -1,0 +1,87 @@
+#faq{
+  margin-top: 100px;
+  .faqs-section{
+    text-align: left;
+    position: relative;
+    .got-question{
+      right:0px;
+      margin-bottom: 30px;
+      button{
+        color:$red;
+        font-size: 14px;
+        width: 250px;
+        height: 38px;
+        line-height: 20px;
+        svg{
+          rect{
+            stroke:$red;
+            width: 250px;
+            height: 38px;
+          }
+        }
+        i{
+          margin-left: 20px;
+          font-size: 22px;
+        }
+        &:hover{
+          svg rect{
+            stroke-dasharray: 229, 316;
+          }
+        }
+      }
+    }
+    .questions{
+      ol{
+        li{
+          font-family: $primary-font-bold;
+          cursor: pointer;
+          margin-bottom: 5px;
+          &.active{
+            color:$red;
+          }
+        }
+      }
+    }
+    .que-answers{
+      .que-answers-inner{
+        &.active{
+          color:$red;
+          .answer{
+            ul{
+              color:$red;
+              li{
+                  color:$red;
+              }
+            }
+
+          }
+        }
+      }
+      .que{
+        p{
+          font-family: $primary-font-bold;
+        }
+      }
+      .answer{
+        ul{
+            margin: 20px 0px;
+          li{
+            font-size: 16px;
+            line-height: 27px;
+            font-family: $primary-font;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  #faq{
+    .faqs-section{
+      .got-question{
+        position: absolute;
+        right:15px;
+      }
+    }
+  }
+}

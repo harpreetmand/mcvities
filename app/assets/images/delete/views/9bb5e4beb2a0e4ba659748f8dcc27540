@@ -1,0 +1,95 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="allPageImg">
+        <img src="<?php echo e(asset('/images/')); ?>/<?php echo e($page->image); ?>" alt="main image" class="img-responsive">
+        <h1 class="animation"><?php echo $page->text; ?></h1>
+    </div>
+    <div class="allPageUnderImage animation">
+        <div class="h1Bg">
+            <div class="container no-padding">
+                <center>
+                    <h1><?php echo $page->underImage; ?></h1>
+                </center>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="col-xs-3 hidden-xs side-menu">
+                <?php /* <p class="big orange"><strong><?php echo $page->text; ?></strong></p> */ ?>
+                <ul class="topUl">
+                    <?php foreach($subNav as $suNav): ?>
+                        <?php if($suNav->parent == $sub): ?>
+
+                            <li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($link)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?></a></li>
+
+                            <?php if($suNav->indent == 1): ?>
+                                <?php /* <ul class="indent"> */ ?>
+                                <?php foreach($indentNavs as $indentNav): ?>
+                                    <?php if($suNav->id == $indentNav->parent): ?>
+                                        <li class="indentTop nav-<?php echo e($indentNav->url); ?>"><a href="<?php echo e(url()); ?>/<?php echo e($link); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                <?php /* </ul> */ ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-xs-12 leftBorder content">
+                <div class="contact-container">
+                    <div class="inquiries">
+                        <div class="col-xs-9">
+                            <p class="big orange">Inquiries</p>
+
+                            <p class="contact-tagline">Contact us today and see how ONEnergy can benefit your business.</p>
+                        </div>
+                        <div class="col-xs-3">
+                            <img class="black-envelope" src="/public/images/envelope-black.png" alt="">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <?php echo Form::open(array('route' => 'contactUsEmail', 'class' => 'form')); ?>
+
+
+
+                        <div class="form-top">
+                            <input type="text" name="name" placeholder="Name" required class="col-lg-11"><span class="col-lg-1">*</span>
+                            <input type="text" name="email" placeholder="Email" required class="col-lg-11"><span
+                                    class="col-lg-1">*</span>
+                        </div>
+                        <div class="form-bottom">
+                            <textarea placeholder="Message" name="message"></textarea>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                    <div class="contact-info">
+                        <p><strong>ONEnergy Inc.</strong></p>
+
+                        <p>155 Gordon Baker Road</p>
+
+                        <p>Suite 301</p>
+
+                        <p>Toronto, ON M2H 3N5</p>
+
+                        <div class="tel">
+                            <p class="orange">Phone: <span>1-855-478-6928</span></p>
+
+                            <p class="orange">Fax: <span>+1 (647) 253-2525</span></p>
+                            <p>Investor and media relations: <a href="mailto:irinfo@onenergyinc.com">irinfo@onenergyinc.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,42 @@
+<div class="contactus-main-content container contactus-section1 pad100">
+  <p class="heading red" ng-bind-html="homeContent.contactUs.title | unsafe"></p>
+  <img src="app/assets/images/blank.png" lazy-img="app/assets/images/cookie-red.png" class="cookie" alt="Cookie"/>
+  <p class="content red">
+   {{ homeContent.contactUs.body }}
+    <br/>
+   <br/>
+   {{homeContent.contactUs.companyName}}<br/>
+   6030 Freemont Blvd, Mississauga, Ontario L5R 3X4<br/>
+   {{ homeContent.contactUs.phone }}: 905-507-6161<br/>
+   {{ homeContent.contactUs.toll}}: 800-263-7054<br/>
+   <a href="mailto:Canada.Sales@treeoflife.com" class="red">Canada.Sales@treeoflife.com</a>
+  </p>
+  <div class="social padt20">
+   <a href="https://www.facebook.com/McVities-Canada-1488975834458639/" target="_blank"><i class="fa fa-facebook"></i></a>
+   <a href="https://www.pinterest.com/mcvitiescanada/" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+ </div>
+</div>
+<!-- <div class="contactus-section2 newsletter pad100" ng-controller="newsletterCtrl">
+  <div class="container">
+    <p class="heading white">{{ homeContent.newsletter.title }}</p>
+    <img src="app/assets/images/blank.png" lazy-img="app/assets/images/cookie.png" class="cookie" alt="Cookie"/>
+    <p class="content white">
+     {{ homeContent.newsletter.body }}
+    </p>
+    <div class="" ng-show="thankYou">
+                 {{homeContent.messages.newsletter}}
+    </div>
+    <form ng-submit="newsletterSignUp()" ng-hide="thankYou">
+        <input type="email" required name="email" id="email" placeholder="{{ homeContent.newsletter.email }}" ng-model="newsletterForm.email">
+        <p for="receiveOffer" class="white padT20 max425" ng-bind-html="homeContent.newsletter.consent | unsafe"></p>
+        <div class="cf padT30"></div>
+        <button class="transparent-btn white">
+          <svg>
+            <rect x="0" y="0" fill="none" width="180" height="55" />
+          </svg>
+          <span>{{ homeContent.newsletter.signUp }}</span>
+        </button>
+    </form>
+  </div>
+</div> -->
+<div id="brands" ng-if="homeClass === 'homepage'" ng-include="'includes/brands.html'" ng-class="{active : activeBrand === true}" ng-controller="brandsController"></div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="myApp" ng-controller="mainApp" lang="{{ homeContent.lang }}-ca">
+
+<head>
+    <base href="/">
+    <title ng-bind-html="meta.title">Mcvitie's Canada</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{meta.desc}}">
+    <meta name="fragment" content="!">
+     <meta property="fb:app_id" content="490546817815939" />
+    <meta property="og:description" content="{{meta.desc}}" />
+    <meta property="og:type"   content="website" /> 
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:image:url" content="{{meta.ogImage}}" />
+    <meta property="og:url"    content="{{meta.ogUrl}}" /> 
+    <link rel="stylesheet" href="/app/assets/css/style.min.css" type="text/css" />
+
+
+</head>
+
+<body scroll class="{{ homeContent.lang }}" ng-cloak>
+    <div class="wrapper">
+        <header ng-include="'includes/header.html'"></header>
+        <div ng-view class="view my-element {{homeClass}}" onload="removeActive(homeClass)"></div>
+        <div id="contactus" class="section" ng-include="'includes/contactus.html'"></div>
+        <footer ng-class="{footerHome : homeClass === 'homepage'}" ng-include="'includes/footer.html'"></footer>
+    </div>
+
+    <script src="/app/assets/js/js/jquery.js"></script>
+    <script src="/app/assets/js/js/tweenmax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <script src="/app/assets/js/js/angular-lazy-img.min.js"></script>
+    <script src="app/assets/js/js/ui-bootstrap-tpls-1.3.1.min.js"></script>
+    <script src="app/assets/js/appJQ.js"></script>
+    <script src="app/assets/js/js/angular-sanitize.min.js"></script>
+    <script src="app/assets/js/js/angular-timeline.js"></script>
+    <script src="app/assets/js/js/angular-scroll.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="app/assets/js/myApp.js"></script>
+    <script src="app/assets/js/services.js"></script>
+    <script src="app/assets/js/myCtrl.js"></script>
+    <script src="app/assets/js/recipes.js"></script>
+    <script src="app/assets/js/timeline.js"></script>
+    <script src="app/assets/js/filters.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-78620589-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

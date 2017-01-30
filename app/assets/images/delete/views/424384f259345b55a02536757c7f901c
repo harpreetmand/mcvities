@@ -1,0 +1,62 @@
+<?php $__env->startSection('title'); ?>FAQ's |<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>We know you have home cleaning questions - and we've got answers. See the most frequently asked questions here or just contact us today.<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+
+<div class="container noPadding topImageText">
+  <img src="<?php echo e(asset('/img/topimage/MM_Top_Services.jpg')); ?>" alt="Faqs" class="img-responsive">
+  <span class="textOverImage">
+    <h1>FAQ's</h1> 
+  </span>
+</div>
+<div class="container topPadding extraPadding">
+  <div class="col-md-9 noLeftPadding">
+    <div class="breadcrums">
+      <a href="/">Home</a> > <a href="/about-us">About Us</a> > FAQ's
+    </div>
+
+
+    <div class="">
+        <h2>Questions? We have answers.</h2>
+        <p>Below are the most frequently asked about our services, pricing and office management. Want to know more? For questions about service or employment, please contact your <a href="/merry-maids-locator">local office</a>. For more information, <a href="/about-us/contact-us">contact us</a>.</p>
+
+        <?php foreach($faqs as $faq): ?>
+          <strong class="green"><?php echo $faq->question; ?></strong><br/>
+          <?php echo $faq->answer; ?>
+
+          <hr/>
+      <?php endforeach; ?>
+
+    </div>
+
+
+
+
+
+  </div>
+  <div class="clear visible-sm visibile-xs">
+  </div>
+  <?php echo $__env->make('layout.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+<div class="container borderTop">
+  <div class="col-sm-12 testimonials noPadding">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-3">
+
+        <img src="<?php echo e(asset('/img/testimonials/'.$testimonials->image)); ?>" class="img-responsive">
+
+    </div>
+    <div class="col-sm-7">
+      <i class="fa fa-quote-left"></i><p><?php echo e($testimonials->body); ?><i class="fa fa-quote-right"></i></p>
+      <span class="pull-right">-<?php echo e($testimonials->location); ?></span>
+    </div>
+    <div class="col-sm-1">
+    </div>
+  </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,86 @@
+<div class="product-logo hTagsInDiv">
+    <img ng-src="app/assets/images/mcvities-canada-big.png" alt="McVities Canada" class="img-responsive center-block" />
+    <div class="brand-info" ng-bind-html="homeContent.productsMcvities.brandInfo | unsafe">
+
+    </div>
+</div>
+<div class="products-container" ng-repeat="data in homeContent.productsMcvities" ng-if="$index > 0" ng-init="$f = $index">
+    <div class="each-product-section">
+        <div ng-repeat="(key, value) in data" class="col-md-4 products-lists {{key}}" ng-class="{active : activePro === key}" ng-click="showProduct(key, $f)">
+            <img ng-src="app/assets/images/mcvities/{{homeContent.lang}}/thumbs/{{value.image}}" alt="Mcvities {{ value.name }} sm" class="img-responsive center-block" />
+            <!-- {{ value.image }} -->
+            <div class="product-info hidden-md hidden-lg {{key}}" ng-class="{active : activePro === key}">
+                <div class="right-side col-xs-12">
+                    <p ng-bind-html="value.info | unsafe">
+                        {{ value.info }}
+                    </p>
+                     <a href="#" class="nutrition-btn" data-toggle="modal" data-target="#nutrition-modal" ng-click="thisProduct(value.image,value.name)">
+                        <button class="transparent-btn white">
+                            <svg>
+                                <rect x="0" y="0" fill="none" width="180" height="55" />
+                            </svg>
+                            {{ homeContent.nutrition }}
+                        </button>
+                    </a>
+                </div>
+                <div class="cf"></div>
+            </div>
+        </div>
+        <div class="cf"></div>
+        <div class="product-info-container product{{$index}}" ng-class="{active : section === 'section'+$index}">
+            <div ng-repeat="(key, value) in data" class="product-info hidden-sm hidden-xs {{key}}" ng-class="{active : activePro === key}" ng-init="$f = productInfo">
+                <div class="left-side col-md-5">
+                    <img ng-src="app/assets/images/mcvities/{{homeContent.lang}}/{{value.image}}" alt="Mcvities {{ value.name }}" class="img-responsive center-block" />
+                </div>
+                <div class="right-side col-md-7">
+                    <p ng-bind-html="value.info | unsafe">
+                        {{ value.info }}
+
+                    </p>
+                    <a href="/{{ homeContent.lang }}" ng-click="gotoElement('wheretobuy') ;closeMobileNav()">
+                        <button class="transparent-btn white">
+                            <svg>
+                                <rect x="0" y="0" fill="none" width="180" height="55" />
+                            </svg>
+                            {{ homeContent.whereToBuy.title }}
+                        </button>
+                    </a>
+                    <a href="#" class="nutrition-btn" style="margin-left:10px;" ng-click="thisProduct(value.image,value.name)" data-toggle="modal" data-target="#nutrition-modal">
+                        <button class="transparent-btn white">
+                            <svg>
+                                <rect x="0" y="0" fill="none" width="180" height="55" />
+                            </svg>
+                            {{ homeContent.nutrition }}
+                        </button>
+                    </a>
+                </div>
+
+                <div class="cf"></div>
+
+            </div>
+        </div>
+        <div class="cf"></div>
+    </div>
+</div>
+<div class="products-show">
+    <button class="red-btn white" ng-class="{active : activeProduct === true}" ng-click="showMore()">
+        <svg>
+            <rect x="0" y="0" fill="none" width="180" height="55" />
+        </svg>
+        <span ng-if="activeProduct === true">{{ homeContent.showLess }}</span>
+        <span ng-if="activeProduct === false">{{ homeContent.showMore }}</span>
+    </button>
+</div>
+
+<div id="nutrition-modal" class="nutrition-modal modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+        <img src="app/assets/images/nutrition/mcvities/{{productImage}}" alt="{{productName}} Nutirition" class="img-responsive center-block">
+        </div>
+      </div>
+      <span class="btn btn-default" data-dismiss="modal">X</span>
+    </div>
+  </div>
+</div> <!--- contest end -->

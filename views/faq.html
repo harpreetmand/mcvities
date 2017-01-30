@@ -1,0 +1,35 @@
+<div id="faq">
+    <div class="banner-container">
+        <div class="banner"></div>
+        <div class="anim-text">
+            <h1 class="banner-title white padT4830">{{ homeContent.faqHome.title }}</h1>
+        </div>
+    </div>
+    <div class="faqs-section container pad50">
+        <div class="got-question">
+            <a href="mailto:Canada.Sales@treeoflife.com">
+                <button class="transparent-btn red">
+                    <svg>
+                        <rect x="0" y="0" fill="none" width="250" height="38" />
+                    </svg>
+                    {{ homeContent.faqHome.email }}<i class="fa fa-envelope" aria-hidden="true"></i>
+                </button>
+            </a>
+            <!-- <p class="red"></p> -->
+        </div>
+        <div class="questions">
+            <ol type="1">
+                <li class="strong" ng-repeat="(key, value) in homeContent.faqs" ng-click="activeQuestion(key); gotoElement(key)" ng-class="{active : isActiveQuestion === key}">{{$index+1}}. <span ng-bind-html="value.question | unsafe"></span>
+                </li>
+            </ol>
+        </div>
+        <div class="que-answers padT20">
+            <div id="{{key}}" class="strong padT20 que-answers-inner" ng-repeat="(key, value) in homeContent.faqs" ng-class="{active : isActiveQuestion === key}">
+                <div class="que">
+                    <p>{{$index+1}}. <span ng-bind-html="value.question | unsafe"></span></p>
+                </div>
+                <div class="answer padT15" ng-bind-html="value.answer | unsafe"> </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div id="store-locator" ng-controller="storeLocatorCtrl as vm">
+  <div class="banner-container">
+    <div class="banner"></div>
+    <div class="anim-text">
+      <h1 class="banner-title white padT4830" ng-bind-html="homeContent.storelocator.title | unsafe"></h1>
+    </div>
+  </div>
+  <div class="container pad100">
+    <form>
+      <input type="text" ng-model="newAddress" placeholder="{{ homeContent.storelocator.placeholder}}">
+       <div class="cf padT30"></div>
+      <button class="red-btn white center-block" ng-click="newAddressBtn()">
+        <svg>
+          <rect x="0" y="0" fill="none" width="230" height="55" />
+        </svg>
+        <span>{{ homeContent.storelocator.button }}</span>
+      </button>
+    </form>
+  </div>
+  <!-- -->
+  <div class="hidden-xs hidden-sm">
+     <ng-map default-style="true" center="{{lat}},{{lng}}" zoom="8" scrollwheel='false' class="aatt" styles="[{stylers:[{saturation:'-60'},{lightness:'0'},{visibility:'simplified'}]},{featureType:'road', elementType:'geometry',stylers:[{visibility:'on'},{ lightness:'100'}]}] ">
+       <marker position="{{lat}},{{lng}}" title="Hello World!"
+        optimized="false"
+        icon="{
+          url:'/app/assets/images/logopin.png'
+        }"></marker>
+       <marker id='{{shop.id}}' position="{{shop.lat}},{{shop.lng}}"
+         ng-repeat="shop in vm.shops"
+         on-click="vm.showDetail(shop)" icon="{
+          url:'/app/assets/images/marker.png'
+        }">
+       </marker>
+
+       <info-window id="foo-iw">
+         <div ng-non-bindable="">
+          <strong>Store Name:</strong> {{vm.shop.storeName}}<br/>
+          <strong>Address: </strong> <a href="https://www.google.ca/maps/search/{{vm.shop.storeAddress}}" target="_blank">{{vm.shop.storeAddress}}</a><br/>
+          <strong>Distance:</strong> {{vm.shop.distance | m2km}}
+         </div>
+       </info-window>
+     </ng-map>
+  </div>
+
+     <div class="hidden-md hidden-lg container mobile-map-address" ng-repeat="shop in vm.shops">
+      <a href="https://www.google.ca/maps/search/{{shop.storeAddress}}" target="_blank"><span class="store-name">{{shop.storeName}}</span>
+      {{shop.storeAddress}} <br/><span class="distance">{{shop.distance | m2km}}</span></a>
+     </div>
+ </div>
+<style>
+  map, div[map] {display:block; width:600px; height:1000px;}
+  .aatt{
+    height:600px !important;
+  }
+</style>

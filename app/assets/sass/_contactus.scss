@@ -1,0 +1,58 @@
+#contactus {
+  background: $white;
+  .social i {
+    display: inline-block;
+    position: relative;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 19px;
+    border-radius: 50%;
+    margin-right: 3px;
+    @include transition(all, 0.4s, ease-in-out);
+    &.fa-facebook{background-color:#36609f;}
+    &.fa-pinterest-p{background-color:#ca2027;}
+    &:hover{
+      background-color: transparent;
+      color:$red;
+      &:after{
+        opacity: 1;
+        @include transform(scale(0.9));
+      }
+    }
+    &:after{
+      content:'';
+      top: 0px;
+      left: 0px;
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 0 0 3px rgba($red,1);
+      @include transform(scale(1.3));
+      @include transition(all, 0.4s, ease-in-out);
+      opacity: 0;
+    }
+  }
+  .contactus-section2{
+    background: $red;
+    form{
+      input {
+        width: 40%;
+        max-width: 456px;
+        min-width: 280px;
+        height: 35px;
+        text-align: center;
+        color: $red;
+        font-family: $primary-font;
+        border: 1px solid $red;
+        outline: none;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="allPageImg">
+	<img src="<?php echo e(asset('/images/')); ?>/<?php echo e($page->image); ?>" alt="main image" class="img-responsive">
+	<h1 class="animation"><?php echo $page->text; ?></h1>
+</div>
+<div class="allPageUnderImage animation">
+<div class="h1Bg">
+	<div class="container">
+    	<center>
+        	<h1><?php echo $page->underImage; ?></h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+
+	<div class="col-xs-3 hidden-xs">
+		<?php /* <p class="big orange"><strong><?php echo $page->text; ?></strong></p> */ ?>
+		<ul class="topUl">
+		<?php foreach($subNav as $suNav): ?>
+			<?php if($suNav->parent == $sub): ?>
+<?php /*				<li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($subNav['0']->url)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?> </a></li>*/ ?>
+					<li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($link)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?> </a></li>
+
+				<?php if($suNav->indent == 1): ?>
+                              <?php /* <ul class="indent"> */ ?>
+                                <?php foreach($indentNavs as $indentNav): ?>
+                                  <?php if($suNav->id == $indentNav->parent): ?>
+                                    <li class="indentTop nav-<?php echo e($indentNav->url); ?>"><a href="<?php echo e(url($subNav['0']->url)); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php /* </ul> */ ?>
+                            <?php endif; ?>
+			<?php endif; ?>
+
+		<?php endforeach; ?>
+		</ul>
+	</div>
+	<div class="col-sm-9 col-xs-12 leftBorder bod-container-form wrapper">
+	<?php echo $page->body; ?>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

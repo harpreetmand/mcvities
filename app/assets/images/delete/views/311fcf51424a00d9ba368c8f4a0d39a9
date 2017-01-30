@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $__env->yieldContent('title'); ?> Merry Maids</title>
+	<meta name="description" content="<?php echo $__env->yieldContent('description'); ?>">
+	<link href="<?php echo e(asset('/css/mm.css')); ?>" rel="stylesheet">
+
+
+
+	<!-- Fonts -->
+
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<!--[if lte IE 8]>
+		<div class="warning-old-ie" style="width:100%; position:relative; z-index: 9999; text-align: center; margin-top: 10px;">Your browser appears to be out of date and is not compatible with this website. <br/>Please update to view this website correctly.<br/><br/>
+			<div>
+				<a href="https://www.google.com/chrome/browser/desktop/" target="_blank"><img src="<?php echo e(asset('/img/icon_chrome.png')); ?>" alt="google chrome"/></a>
+				<a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src="<?php echo e(asset('/img/icon_firefox.png')); ?>" alt="firefox"/></a>
+				<a href="http://windows.microsoft.com/en-ca/internet-explorer/download-ie" target="_blank"><img src="<?php echo e(asset('/img/icon_ie.png')); ?>" alt="internet explorer"/></a>
+			</div>
+		</div>
+		<style>
+			.navbar.navbar-fixed-top{
+				margin-top: 140px;
+			}
+			</style>
+		<![endif]-->
+
+</head>
+
+<body>
+	<!-- <div class="winterWonderland">
+		<img src="http://www.merrymaidsoakville.ca/img/oakvillecleaningmaid-bg-copy-Winter.png">
+	</div> -->
+	<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<div class="mainContainer">
+		<?php echo $__env->yieldContent('content'); ?>
+
+        <?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	</div>
+
+	<script src="<?php echo e(asset('/js/jquery.js')); ?>"></script>
+	<script src="<?php echo e(asset('/js/responsive-slider.js')); ?>"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="<?php echo e(asset('/js/jquery.themepunch.tools.min.js')); ?>"></script>
+<script src="<?php echo e(asset('/js/jquery.themepunch.revolution.min.js')); ?>"></script>
+<?php if(!isset($dontShow)): ?>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+
+
+var smallLat = "43.632650";
+var smallLng = "-79.647006";
+
+if(document.getElementById('smallLat')){
+	smallLat = document.getElementById('smallLat').value;
+	smallLng = document.getElementById('smallLng').value;
+}
+
+var myCenter=new google.maps.LatLng(smallLat, smallLng);
+var marker;
+
+function initialize()
+{
+var mapProp = {
+	center:myCenter,
+	zoom:10,
+	mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+	position:myCenter,
+	animation:google.maps.Animation.DROP
+	});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+<?php endif; ?>
+
+<script>
+
+// var smallLat = "43.632650";
+// var smallLng = "-79.647006";
+//
+// if(document.getElementById('smallLat')){
+// 	smallLat = document.getElementById('smallLat').value;
+// 	smallLng = document.getElementById('smallLng').value;
+// }
+//
+// var myCenter=new google.maps.LatLng(smallLat, smallLng);
+// var marker;
+//
+// function initialize()
+// {
+// var mapProp = {
+// 	center:myCenter,
+// 	zoom:10,
+// 	mapTypeId:google.maps.MapTypeId.ROADMAP
+// 	};
+//
+// var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+//
+// var marker=new google.maps.Marker({
+// 	position:myCenter,
+// 	animation:google.maps.Animation.DROP
+// 	});
+//
+// marker.setMap(map);
+// }
+//
+// google.maps.event.addDomListener(window, 'load', initialize);
+
+		jQuery(document).ready(function() {
+			jQuery("#slider1").revolution({
+				sliderType: "standard",
+				sliderLayout: "auto",
+				delay: 14000,
+				navigation: {
+					// arrows: {
+					// 	enable: true
+					// },
+
+				bullets: {
+										enable: true,
+										hide_onmobile: false,
+										style: "sliderBullets",
+										hide_onleave: false,
+										direction: "horizontal",
+										h_align: "right",
+										v_align: "top",
+										h_offset: 20,
+										v_offset: 30,
+										space: 5,
+										tmp: ''
+								}
+								},
+				gridwidth: 900,
+				gridheight: 300,
+				lazyType: "single"
+			});
+		});
+
+	</script>
+	<!--
+	Career Page upload button
+	---------------------------------------->
+	 <script>
+	jQuery(function($) {
+	  $('.modal-close').on('click',function(){
+	      $('.modalDialog').fadeOut(100);
+	         $('.modalDialog .modal-container').css({'top':'-1000px'});
+	  });
+	   $('.modal-open').on('click',function(){
+	    var thisModal = $(this).data('modal');
+	      $('#'+thisModal).fadeIn(100);
+	      $('#'+thisModal+' .modal-container').css({'top':'0px'});
+	  });
+	   $(window).load(formHeight);
+	   $(window).resize(formHeight)
+	      $('.modal-open').on('click', formHeight);
+	    function formHeight(){
+	        var data = $(this).data('modal');
+	        // console.log($("#"+data+" .modal-container").height());
+	        // console.log($("#"+data+" .modal-container"));
+	            var modal = (($(window).height()) - $("#"+data+" .modal-container").height()-50) / 2;
+	        $(".modal-container").css("margin-top",modal + "px");
+	    }
+	    // var $video = $('#video'), $playBtn = $('.play-video'), $closeBtn = $('.modal-close');
+	    // $playBtn.on('click', function(){
+	    //     $video.get(0).currentTime = 0;
+	    //     $video.get(0).play();
+	    // });
+	    // $closeBtn.on('click', function(){
+	    //     $video.get(0).pause();
+	    // });
+	});
+
+	</script>
+
+	<script>
+$('document').ready(function(){
+  setTimeout(function(){
+     $('.cognito #c-1-15').attr({placeholder:'First Name*', 'data-placeholder':'First Name*'});
+     $('.cognito #c-2-14').attr({placeholder:'Last Name*','data-placeholder':'Last Name*'});
+     $('.cognito #c-3-13').attr({placeholder:'Phone number*','data-placeholder':'Phone number*'});
+     $('.cognito #c-4-12').attr({placeholder:'Email Address*','data-placeholder':'Email Address*'});
+     $('.cognito #c-5-11').attr({placeholder:'Street Address','data-placeholder':'Street Address'});
+     $('.cognito #c-6-10').attr({placeholder:'City*','data-placeholder':'City*'});
+     $('.cognito #c-7-9').attr({placeholder:'Province*','data-placeholder':'Province*'});
+     $('.cognito #c-8-8').attr({placeholder:'Postal Code*','data-placeholder':'Postal Code*'});
+     $('.cognito #c-9-5').attr({placeholder:'How did you hear about Merry Maids?','data-placeholder':'How did you hear about Merry Maids?'});
+     $('.cognito #c-12-2').attr({placeholder:'Additional information/comments:','data-placeholder':'Additional information/comments:'});
+     if ( !("placeholder" in document.createElement("input")) ) {
+       $(".cognito input[data-placeholder], .cognito textarea[data-placeholder]").each(function() {
+              var val = $(this).data("placeholder");
+              if(this.value==''){
+                this.value = val;
+              }
+              $(this).focus(function() {
+                if ( this.value == val ) {
+                    this.value = "";
+                }
+            }).blur(function() {
+                if ( $.trim(this.value) == "" ) {
+                  this.value = val;
+                }
+            })
+       });
+     }
+  }, 1000)
+});
+</script>
+</body>
+
+</html>

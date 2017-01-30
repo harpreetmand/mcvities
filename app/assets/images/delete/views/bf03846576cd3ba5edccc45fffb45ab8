@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ONEnergy <?php echo $__env->yieldContent('title'); ?></title>
+	<meta name="description" content="<?php echo $__env->yieldContent('description'); ?>">
+	<link href="<?php echo e(asset('/css/mm.css')); ?>" rel="stylesheet">
+
+
+
+	<!-- Fonts -->
+
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<!--[if lte IE 8]>
+		<div class="warning-old-ie" style="width:100%; position:relative; z-index: 9999; text-align: center; margin-top: 10px;">Your browser appears to be out of date and is not compatible with this website. <br/>Please update to view this website correctly.<br/><br/>
+			<div>
+				<a href="https://www.google.com/chrome/browser/desktop/" target="_blank"><img src="<?php echo e(asset('/img/icon_chrome.png')); ?>" alt="google chrome"/></a>
+				<a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src="<?php echo e(asset('/img/icon_firefox.png')); ?>" alt="firefox"/></a>
+				<a href="http://windows.microsoft.com/en-ca/internet-explorer/download-ie" target="_blank"><img src="<?php echo e(asset('/img/icon_ie.png')); ?>" alt="internet explorer"/></a>
+			</div>
+		</div>
+		<style>
+			.navbar.navbar-fixed-top{
+				margin-top: 140px;
+			}
+			</style>
+		<![endif]-->
+
+</head>
+
+<body>
+	<div class="winterWonderland">
+		<img src="http://www.merrymaidsoakville.ca/img/oakvillecleaningmaid-bg-copy-Winter.png">
+	</div>
+	<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<div class="mainContainer">
+		<?php echo $__env->yieldContent('content'); ?>
+		<?php /* <?php if(!isset($sidebar)): ?>
+			$sidebar = "sidebar";
+		<?php endif; ?> */ ?>
+		<?php /* <?php echo $__env->make('layout.'.$sidebar, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> */ ?>
+        <?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	</div>
+
+	<script src="<?php echo e(asset('/js/jquery.js')); ?>"></script>
+	<script src="<?php echo e(asset('/js/responsive-slider.js')); ?>"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="<?php echo e(asset('/js/jquery.themepunch.tools.min.js')); ?>"></script>
+<script src="<?php echo e(asset('/js/jquery.themepunch.revolution.min.js')); ?>"></script>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+var smallLat = "43.632650";
+var smallLng = "-79.647006";
+
+if(document.getElementById('smallLat')){
+	smallLat = document.getElementById('smallLat').value;
+	smallLng = document.getElementById('smallLng').value;
+}
+
+var myCenter=new google.maps.LatLng(smallLat, smallLng);
+var marker;
+
+function initialize()
+{
+var mapProp = {
+	center:myCenter,
+	zoom:10,
+	mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+	position:myCenter,
+	animation:google.maps.Animation.DROP
+	});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+	<script>
+		// var url = window.location.href;
+		//
+		// var lastSegment = url.split('/').pop();
+		// //$(".nav-"+lastSegment).css("color a", "#00FFFF");
+		// $(".nav-" + lastSegment).addClass('activeLinkColor');
+		// $(".subNav-" + lastSegment).addClass('activeLinkColorNav');
+		//
+		// var secondLastSegment = url.replace("/" + lastSegment, "");
+		// secondLastSegment = secondLastSegment.split('/').pop();
+		// $(".mainNav-" + secondLastSegment).addClass('activeLinkColor');
+
+		jQuery(document).ready(function() {
+			jQuery("#slider1").revolution({
+				sliderType: "standard",
+				sliderLayout: "auto",
+				delay: 14000,
+				navigation: {
+					// arrows: {
+					// 	enable: true
+					// },
+
+				bullets: {
+										enable: true,
+										hide_onmobile: false,
+										style: "sliderBullets",
+										hide_onleave: false,
+										direction: "horizontal",
+										h_align: "right",
+										v_align: "top",
+										h_offset: 20,
+										v_offset: 30,
+										space: 5,
+										tmp: ''
+								}
+								},
+				gridwidth: 900,
+				gridheight: 300,
+				lazyType: "single"
+			});
+		});
+		// if (lastSegment != 'financial-reports') {
+		// 	$(function() {
+		// 		$('a[href*=#]:not([href=#])').click(function() {
+		// 			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+		// 				var target = $(this.hash);
+		// 				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		// 				if (target.length) {
+		// 					$('html,body').animate({
+		// 						scrollTop: target.offset().top - 140
+		// 					}, 1000);
+		// 					return false;
+		// 				}
+		// 			}
+		// 		});
+		// 	});
+		// }
+		// //	$( document ).ready( function() {
+		// //		$('.responsive-slider').responsiveSlider({
+		// //			onSlideChange: function() {
+		// //
+		// //
+		// //				$(".sliderQuestion").css("display","block");
+		// //				setTimeout(function() {
+		// //					$(".sliderQuestion").css("display","none");
+		// //
+		// //					console.log(this)
+		// //				}, 2000);
+		// //
+		// //
+		// //
+		// //				 },
+		// //
+		// //			autoplay: false,
+		// //			interval: 3000,
+		// //			transitionTime: 300
+		// //		});
+		// //	});
+		// //
+		// //
+		//
+		// $('.navbar-toggle').click(function() {
+		// 	if ($("#openClose").hasClass("in")) {
+		//
+		// 		$("#line1").removeClass('line1');
+		// 		$("#line2").removeClass('line2');
+		// 		$("#line3").removeClass('line3');
+		// 	} else {
+		// 		//		$("#line1").css("transform", "rotate(45deg)");
+		// 		//		$("#line2").css("transform", "rotate(45deg)");
+		// 		//		$("#line3").css("transform", "rotate(-45deg)");
+		// 		$("#line1").addClass('line1');
+		// 		$("#line2").addClass('line2');
+		// 		$("#line3").addClass('line3');
+		// 	}
+		// });
+		//
+		//
+		//
+		//
+		//
+		//
+		// //var opc = $('.tteesstt').css("opacity");
+		// //console.log(opc);
+		// //
+		// //
+		// //
+		// //// $('.dropdown').on('mouseenter mouseleave click tap', function() {
+		// ////   $(this).toggleClass("open");
+		// //// });
+		// //
+		// //
+		// //
+		// //
+		// //
+		// //
+		// //
+		// //
+		// if (matchMedia) {
+		// 	var mq = window.matchMedia("(min-width: 200px)");
+		// 	mq.addListener(WidthChange);
+		// 	WidthChange(mq);
+		//
+		//
+		// }
+		// $affixTop = "";
+		// $(window).resize(nav);
+		// $(window).load(nav);
+		//
+		// function nav() {
+		// 	$nav = $(".allPageImg").height();
+		// 	$underNav = $(".h1Bg").height();
+		// 	$affixTop = $nav + $underNav - 5;
+		// 	console.log($affixTop);
+		// }
+		// // media query change
+		// function WidthChange(mq) {
+		//
+		//
+		// 	if (mq.matches) {
+		//
+		// 		$(window).scroll(function() {
+		// 			var height = $(window).scrollTop();
+		//
+		// 			//was 400
+		// 			if (window.matchMedia("(min-width: 992px)").matches) {
+		//
+		// 				if (height > $affixTop) {
+		//
+		//
+		//
+		// 					$('#addAffix').addClass("affix");
+		//
+		// 					$('#addAffix').css("top", "200px");
+		// 					// $('.navBack').css("margin-bottom","0px");
+		// 					// //$('.navbar-fixed-top').css("background-color","#3C3B37");
+		// 					// $('.navbar-fixed-top').addClass( 'navbarBackground' );
+		// 					// //$('.navbar-fixed-top').css("top","-84px");background-color: #3C3B37;
+		//
+		//
+		// 					//$('.rightSideBar').css("position","fixed");
+		// 					//$('.rightSideBar').css("top","90px");
+		// 					// do something
+		// 				} else {
+		// 					$('#addAffix').removeClass("affix");
+		//
+		// 					//    	$('.allPageUnderImage').css("top",-tttt);
+		// 					// $('.allPageImg h1').css("right",tttt);
+		// 					//$('.allPageImg').css("margin-bottom",-tttt);
+		// 					// $('.footerBg').css("margin-top",-tttt);
+		// 					// $('.footer').css("top",-tttt);
+		// 					// $('.footer').css("margin-bottom",-tttt);
+		// 					//    	  console.log(tttt);
+		// 					// $('.navbar').css("position","relative");
+		// 					// $('.navBack').css("height","0px");
+		// 					// $('.navBack').css("margin-bottom","0px");
+		// 					// $('.navbar-fixed-top').removeClass( 'navbarBackground' );
+		//
+		// 					//$('.navbar').css("top","0px");
+		//
+		// 					//$('.rightSideBar').css("position","absolute");
+		// 					//$('.rightSideBar').css("top","40px");
+		// 				}
+		//
+		//
+		//
+		// 			} else {
+		//
+		//
+		//
+		// 				//
+		// 				//      if(height > 125) {
+		// 				//
+		// 				//       // $('.navbar-fixed-top').css("position","fixed");
+		// 				//       // $('.navBack').css("height","50px");
+		// 				//       // $('.navBack').css("margin-bottom","20px");
+		// 				//       //$('.navbar-fixed-top').css("top","-84px");
+		// 				//
+		// 				//
+		// 				//       //$('.rightSideBar').css("position","fixed");
+		// 				//       //$('.rightSideBar').css("top","90px");
+		// 				//        // do something
+		// 				//    }else{
+		// 				//       // $('.navbar').css("position","relative");
+		// 				//       // $('.navBack').css("height","0px");
+		// 				//       // $('.navBack').css("margin-bottom","0px");
+		// 				//
+		// 				//       //$('.navbar').css("top","0px");
+		// 				//
+		// 				//       //$('.rightSideBar').css("position","absolute");
+		// 				//       //$('.rightSideBar').css("top","40px");
+		// 				//    }
+		//
+		//
+		//
+		//
+		//
+		// 			}
+		//
+		//
+		//
+		//
+		// 		});
+		//
+		//
+		// 		//$('.navbar-fixed-top').css("position","absolute");
+		// 		// window width is at least 500px
+		// 	} else {
+		// 		//$('.navbar-fixed-top').css("position","fixed");
+		// 		// window width is less than 500px
+		// 	}
+		//
+		// }
+	</script>
+</body>
+
+</html>

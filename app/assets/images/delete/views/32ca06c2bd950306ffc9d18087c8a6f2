@@ -1,0 +1,63 @@
+<?php $__env->startSection('title'); ?>
+  | Site Map
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('includes/topImage', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="allPageUnderImage animation">
+<div class="h1Bg">
+	<div class="container no-padding">
+    	<center>
+        	<h1><?php echo $page->underImage; ?></h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+
+	<div class="sitemap content">
+	<p class="big orange">ONEnergy sitemap</p>
+	 <div class="">
+              <ul class="">
+                <?php foreach($footerNav as $mainNav): ?>
+                  <?php if($mainNav->dropdown == 1): ?>
+                    <li class="parent">
+                      <a href="#"><?php echo $mainNav->name; ?></a>
+                      <ul>
+                        <?php foreach($subNav as $suNav): ?>
+                          <?php if($suNav->parent == $mainNav->id): ?>
+                            <li class="children"><a href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?></a></li>
+                            <?php if($suNav->indent == 1): ?>
+                              <?php /* <ul class="indent"> */ ?>
+                                <?php foreach($indentNavs as $indentNav): ?>
+                                  <?php if($suNav->id == $indentNav->parent): ?>
+                                    <li class="indent grand-children"><a href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php /* </ul> */ ?>
+                            <?php endif; ?>
+                          <?php endif; ?>
+                        <?php endforeach; ?>
+                      </ul>
+                    </li>
+                  <?php elseif($mainNav->dropdown == 0): ?>
+                <li class="parent"><a href="<?php echo e(url($mainNav->url)); ?>"><?php echo $mainNav->name; ?></a></li>
+                  <?php endif; ?>
+
+                <?php endforeach; ?>
+              </ul>
+          </div><!-- /.navbar-collapse -->
+
+
+
+
+    </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,272 @@
+#contest {
+  margin-top: 100px;
+  .banner {
+    @include transition(all, .2s, ease-in-out);
+    height: 250px;
+    background: url(../images/contest-banner.jpg) no-repeat center;
+    background-size: cover;
+    background-position: right;
+  }
+  h1,
+  h2 {
+    font-family: $secondary-font;
+    float: left;
+    text-shadow: 2px 3px 5px rgba($black, 1);
+  }
+  .banner-container {
+    .anim-text {
+      width: 300px;
+      height: 140px;
+      left: 20px;
+      p{
+        text-align:left;
+        font-size: 22px;
+        line-height: 20px;
+        margin: 0px;
+        text-shadow: 2px 3px 5px rgba($black, 1);
+        top:14px;
+        position: relative;
+      }
+      h1 {
+        font-size: 100px;
+        line-height: 77px;
+      }
+      h2 {
+        font-size: 23px;
+        text-align: left;
+      }
+    }
+  }
+  form {
+    width: 300px;
+    margin: auto;
+    input[type="text"],
+    input[type="email"] {
+      width: 300px;
+      display: block;
+      margin: auto;
+      height: 35px;
+      text-align: center;
+      color: $red;
+      font-family: $primary-font;
+      border: 1px solid $red;
+      outline: none;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    input[type="checkbox"] {
+      float: left;
+    }
+    .hiddenEmail{
+      display: none !important;
+    }
+
+    label {
+      float: left;
+      text-align: left;
+      width: 90%;
+      margin-left: 10px;
+      font-family: $primary-font;
+    }
+  }
+  .contest-nav{
+    background-color: $red;
+  }
+  .contest-nav-bar {
+    ul {
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0;
+      li {
+        color: $white;
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        margin: auto;
+        font-size: 30px;
+        padding: 8px 70px;
+        @include transition(all, .5s, ease-in-out);
+        font-family: $secondary-font;
+        &:last-child {
+          border: none;
+        }
+        &:after {
+          background-image: url(../images/hover-cookie.png);
+          background-size: cover;
+          content: '';
+          width: 40px;
+          height: 41px;
+          position: absolute;
+          left: 25px;
+          top: 8px;
+          opacity: 0;
+          @include transition(all, .5s, ease-in-out);
+        }
+        &:hover,
+        &.active {
+          &:after {
+            opacity: 1;
+            left: 10px;
+          }
+        }
+        a{
+          text-decoration: none;
+          color:$white;
+          outline:none !important;
+          &:hover{
+            colore:$white;
+          }
+        }
+      }
+    }
+  }
+  .modal{
+    height:90%;
+    top:5%;
+    .modal-dialog{
+      width: 95%;
+      height:100%;
+      .modal-content{
+        @include remove-center-vertical();
+      }
+      .btn-default{
+        position: absolute;
+        background-color: $red;
+        color:$white;
+        right:0px;
+        top:0px;
+        border-radius: 0px;
+        z-index: 999999999;
+        border: 0px;
+      }
+    }
+    ul{
+      list-style: disc;
+      margin-left: 20px;
+    }
+  }
+
+}
+@media (min-width: 400px) {
+  #contest {
+    .banner-container {
+      .anim-text {
+        width: 320px;
+        height: 170px;
+        p{
+        font-size: 27px;
+        line-height: 23px;
+      }
+        h1 {
+          font-size: 120px;
+          line-height: 92px;
+        }
+        h2 {
+          font-size: 27px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  #contest {
+    .banner {
+      height: 600px;
+    }
+    .banner-container {
+      .anim-text {
+        padding-left: 10px;
+        width: 768px;
+        height: 296px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        p{
+          font-size: 56px;
+          line-height: 47px;
+          top:0px;
+        }
+        h1 {
+          font-size: 250px;
+          line-height: 188px;
+        }
+        h2 {
+          font-size: 59px;
+        }
+      }
+    }
+    .contest-nav-bar{
+      ul {
+        padding: 0 25px;
+        li {
+          padding: 0;
+          margin: 0 25px;
+          display: inline-block;
+          border: none;
+          font-size: 18px;
+          &:after {
+            top: 0.5px;
+            left: 0px;
+            width:20px;
+            height:21px;
+          }
+          &:hover,
+          &.active {
+            &:after {
+              left: -22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  #contest {
+    .contest-nav-bar {
+      ul {
+        li {
+          margin: 0 30px;
+          font-size: 25px;
+          &:after {
+            width: 40px;
+            height: 41px;
+            left: -25px;
+            top: -2px;
+          }
+          &:hover,
+          &.active {
+            &:after {
+              left: -43px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  #contest {
+    .banner-container {
+      .anim-text {
+        width: 900px;
+        height: 350px;
+        left: 90px;
+        right: inherit;
+          p{
+            font-size: 67px;
+            line-height: 56px;
+          }
+        h1 {
+          font-size: 300px;
+          line-height: 233px;
+        }
+        h2 {
+          font-size: 70px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+
+  <div class="clear visible-sm visibile-xs">
+  </div>
+  <div class="col-md-3 noPadding">
+    <div class="joinTeam">
+      <center>
+        <a href="<?php echo e(asset('about-us/careers')); ?>"><img src="<?php echo e(asset('/img/merry-maids-jobs.jpg')); ?>" alt="Work for Merry Maids"></a>
+      </center>
+    </div>
+    <div class="addressBox">
+    <p>
+      <span>Merry Maids Canada</span><br/>
+      5462 Timberlea Boulevard<br/>
+      Mississauga, Ontario<br/>
+      CANADA<br/>
+      L4W 2T7
+    </p>
+
+    <p>
+      <span>Phone:</span> 1 (877) 782-9201<br/>
+      <span>Local:</span> (905) 670-0000<br/>
+      <span>Fax:</span> (905) 670-0077
+    </p>
+
+    <p>
+      <span>Email:</span> info@merrymaids.ca
+    </p>
+</div>
+
+
+<div id="googleMap"></div>
+
+<div class="sidebarLocator">
+  <img src="<?php echo e(asset('/img/canada.png')); ?>" alt="canada leaf"> <span>Find a local Merry Maids</span><br/>
+  <span class="green">Enter your Location</span><br/>
+  <a href="<?php echo e(asset('merry-maids-locator')); ?>" class="btn btn-success">BEGIN HERE</a>
+</div>
+<center>
+<img src="<?php echo e(asset('/img/cleanbasket.jpg')); ?>" alt="clean basket" class="marginTopBottom">
+</center>
+  </div>

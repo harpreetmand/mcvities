@@ -1,0 +1,22 @@
+<div class="col-xs-3 hidden-sm hidden-xs side-menu">
+    <?php /* <p class="big orange"><strong><?php echo $page->text; ?></strong></p> */ ?>
+    <ul class="topUl" id="addAffix">
+        <?php foreach($subNav as $suNav): ?>
+            <?php if($suNav->parent == $sub): ?>
+
+                <li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($link)); ?>/<?php echo e($suNav->url); ?>"><?php echo $suNav->name; ?></a></li>
+
+                <?php if($suNav->indent == 1): ?>
+                    <?php /* <ul class="indent"> */ ?>
+                    <?php foreach($indentNavs as $indentNav): ?>
+                        <?php if($suNav->id == $indentNav->parent): ?>
+                            <li class="indentTop nav-<?php echo e($indentNav->url); ?>"><a href="<?php echo e(url()); ?>/<?php echo e($link); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <?php /* </ul> */ ?>
+                <?php endif; ?>
+            <?php endif; ?>
+
+        <?php endforeach; ?>
+    </ul>
+</div>

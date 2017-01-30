@@ -1,0 +1,171 @@
+/* ---------------------------------- */
+/* --------->>> Font css <<<--------- */
+/* ---------------------------------- */
+@font-face {
+  font-family: 'master';
+  src: url(../fonts/master.eot);
+  src: url(../fonts/master.eot?#iefix) format('embedded-opentype'), url(../fonts/master.woff) format('woff'), url(../fonts/master.ttf) format('truetype'), url(../fonts/master.svg#master) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bebas';
+  src: url(../fonts/bebas.eot);
+  src: url(../fonts/bebas.eot?#iefix) format('embedded-opentype'), url(../fonts/bebas.woff) format('woff'), url(../fonts/bebas.ttf) format('truetype'), url(../fonts/bebas.svg#bebas) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helv-light';
+  src: url(../fonts/helv-light.eot);
+  src: url(../fonts/helv-light.eot?#iefix) format('embedded-opentype'), url(../fonts/helv-light.woff) format('woff'), url(../fonts/helv-light.ttf) format('truetype'), url(../fonts/helv-light.svg#helv-light) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helv-bold';
+  src: url(../fonts/helv-bold.eot);
+  src: url(../fonts/helv-bold.eot?#iefix) format('embedded-opentype'), url(../fonts/helv-bold.woff) format('woff'), url(../fonts/helv-bold.ttf) format('truetype'), url(../fonts/helv-bold.svg#helv-bold) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$heading-font: 'master', Helvetica, Arial, sans-serif;
+$primary-font: 'helv-light', Helvetica, Arial, sans-serif;
+$primary-font-bold: 'helv-bold', Helvetica, Arial, sans-serif;
+$secondary-font: 'bebas', Helvetica, Arial, sans-serif;
+$lightred: #8EBDE3;
+$blue: #062d74;
+$red:#d81e05;
+$white: #ffffff;
+$black: #39393b;
+$grey: #8b8a8a;
+$pure-black: #000000;
+$gold: #bd8821;
+
+.cf{
+  clear:both;
+  display: block;
+}
+.pad5{
+  padding: 5px 0px;
+}
+.pad10{
+  padding: 10px 0px;
+}
+.pad20{
+  padding: 20px 0px;
+}
+.pad30{
+  padding: 30px 0px;
+}
+.pad50{
+  padding: 50px 15px;
+}
+.pad100{
+  padding: 100px 15px;
+}
+.padLR10{
+  padding: 0px 10px;
+}
+.padT60{
+  padding-top: 60px;
+}
+.padT30{
+  padding-top: 30px;
+}
+.padT20{
+  padding-top: 20px;
+}
+.padT15{
+  padding-top: 15px;
+}
+.max425{
+  max-width: 425px;
+  margin: auto;
+}
+.font20{
+  font-size: 20px !important;
+  line-height: normal;
+}
+.white{
+  color:$white;
+}
+.red{
+  color:$red;
+}
+.small{
+  font-size: 14px;
+  line-height: 24px;
+}
+.center{
+  text-align: center;
+}
+.padT4830{
+  padding-top: 30px;
+}
+@mixin center-vertical() {
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  position: relative;
+}
+@mixin remove-center-vertical() {
+  top: 0%;
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  position: relative;
+}
+@mixin outline($pix) {
+  text-shadow: (-$pix) (-$pix) 0 $lightergrey, $pix (-$pix) 0 $lightergrey, (-$pix) $pix 0 $lightergrey, $pix $pix 0 $lightergrey;
+}
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+@mixin transition($type, $speed, $smooth) {
+  -moz-transition: $type $speed $smooth;
+  -o-transition: $type $speed $smooth;
+  -webkit-transition: $type $speed $smooth;
+  transition: $type $speed $smooth;
+}
+@mixin transitionDelay($delay) {
+  -webkit-transition-delay: $delay;
+  -moz-transition-delay: $delay;
+  -ms-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  transition-delay: $delay;
+}
+@mixin transformorigin($hor, $ver) {
+  transform-origin: $hor $ver;
+  -webkit-transform-origin: $hor $ver;
+  -o-transform-origin: $hor $ver;
+  -moz-transform-origin: $hor $ver;
+}
+@mixin transformstyle() {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style:preserve-3d ;
+}
+@mixin animation($function, $ease, $loop) {
+  -moz-animation: $function $ease $loop;
+  -webkit-animation: $function $ease $loop;
+  -o-animation: $function $ease $loop;
+  animation: $function $ease $loop;
+}
+@mixin animationDuration($speed) {
+  -moz-animation-duration: $speed;
+  -webkit-animation-duration: $speed;
+  -o-animation-duration: $speed;
+  animation-duration: $speed;
+}
+@media (min-width: 768px){
+  .padT4830{
+    padding-top: 48px;
+  }
+}

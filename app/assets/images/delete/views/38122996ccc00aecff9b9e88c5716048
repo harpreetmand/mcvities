@@ -1,0 +1,78 @@
+<?php $__env->startSection('title'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>Home Page <?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<div class="container noPadding">
+
+  <!-- START REVOLUTION SLIDER 5.0 -->
+  <div class="rev_slider_wrapper">
+   <div id="slider1" class="rev_slider"  data-version="5.0">
+    <ul>
+      <?php foreach($sliders as $slider): ?>
+       <li data-transition="fade">
+         <!-- MAIN IMAGE -->
+         <img src="<?php echo e(asset('/img')); ?>/<?php echo e($slider->image); ?>"  alt=""  width="1920" height="1280">
+         <!-- LAYER NR. 1 -->
+
+          <div class="tp-caption sliderLineOne"
+               data-x=left data-hoffset="-50"
+               data-y="top" data-voffset="85"
+               data-whitespace="normal"
+               <?php /* data-end="6000" */ ?>
+               data-transform_out="[1%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:1000;e:Power4.easeInOut;"
+               data-transform_idle="o:1;"
+               data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+               data-start="200"><?php echo $slider->lineOne; ?>
+
+          </div>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+   </div><!-- END REVOLUTION SLIDER -->
+  </div><!-- END OF SLIDER WRAPPER -->
+</div>
+
+<div class="container topPadding extraPadding">
+  <div class="col-md-9 noLeftPadding">
+    <div class="findStore">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-6">
+        <center>
+          <p><img src="<?php echo e(asset('/img/canada.png')); ?>" alt="canada leaf"></p><h1>Find a Local Merry Maids</h1>
+          <p>Enter your Location</p>
+          <a href="#" class="btn btn-success">BEGIN HERE</a>
+        </center>
+      </div>
+      <div class="col-xs-4 hidden-xs">
+        <img src="<?php echo e(asset('/img/maidclean.png')); ?>">
+      </div>
+      <div class="clear">
+      </div>
+    </div>
+    <div class="marginTopBottom topExtra">
+    <div class="col-sm-7 noLeftPadding rightExtra">
+      <img src="<?php echo e(asset('/img/homeclean.jpg')); ?>" alt="Home cleaning made easy" class="img-responsive widthFull">
+      <h2>Home cleaning made easy</h2>
+    </div>
+    <div class="col-sm-5 noLeftPadding">
+      <p>Welcome to the home of Merry Maids of Canada. With locations all across the country and over 35 years of experience cleaning homes, we take pride in delivering the quality cleaning you need, on a budget you can afford. We encourage you to take a look around and see all that Merry Maids has to offer. </p>
+      <p>If you’re looking to book an appointment with the Merry Maids nearest you, please use our <a href="#">Merry Maids Locator.</a> We’d be more than happy to help you get started on finding the right cleaning for you</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</div>
+
+  <div class="clear visible-sm visibile-xs">
+  </div>
+<?php echo $__env->make('layout.sidebarHome', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+
+
+<?php /* <div class="extraSpace"></div> */ ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

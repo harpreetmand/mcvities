@@ -1,0 +1,173 @@
+<?php /*<div class="container mobileTopAddress hidden-lg hidden-md hidden-sm">*/ ?>
+  <?php /*<div class="mobilePhone">Call us <i class="fa fa-phone"></i><span class="orange">1 855-753-2525</span></div>*/ ?>
+
+<?php /*</div>*/ ?>
+
+<?php /*<div class="container hidden-xs">*/ ?>
+  <?php /*<div class="navTopAddress pull-right animated bounceIn">*/ ?>
+      <?php /*<div class="">Call us ￼<i class="fa fa-phone"></i> <span class="orange">1 855-753-2525</span></div>*/ ?>
+
+        <?php /*<div class="address pull-left">*/ ?>
+          <?php /*ONEnergy Inc.<br />*/ ?>
+          <?php /*155 Gordon Baker Road, Suite 301<br />*/ ?>
+          <?php /*Toronto, ON M2H 3N5<br />*/ ?>
+        <?php /*</div>*/ ?>
+        <?php /*<div class="phone pull-right">*/ ?>
+          <?php /*Phone:&nbsp&nbsp<span class="orange">+1 (416) 444-4848</span><br />*/ ?>
+          <?php /*Fax: &nbsp&nbsp&nbsp&nbsp <span class="orange">+1 (647) 253-2525</span><br />*/ ?>
+        <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+<?php /*</div>*/ ?>
+<?php /*
+<div id="nav-wrapper" class="background-white color-black">
+    <nav id="mainMenu" class="navbar navbar-fixed-top animation" role="navigation">
+      <div class="container">
+
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar background-lead"></span>
+                <span class="icon-bar background-lead"></span>
+                <span class="icon-bar background-lead"></span>
+              </button>
+              <a class="navbar-brand" href="index.html"><img class="animation animated bounceIn infinity"src="<?php echo e(asset('/images/logo.png')); ?>" alt="logo"></a>
+          </div>
+
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul class="nav navbar-nav navbar-right">
+
+
+
+                <li class="dropdown navMainLink animation">
+                    <a href="#" class="dropdown-toggle navMainLink" data-toggle="dropdown">Energy Efficiency<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Energy Efficiency Solutions</a></li>
+                        <li><a href="#">Energy Storage Solutions</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">LED Lighting</li>
+                    <li><a href="#">Advantages of LED Lighting</a></li>
+                    <li><a href="#">Retrofitting Existing Buildings</a></li>
+                    <li><a href="#">New Construction</a></li>
+                    <li><a href="#">Financing Options</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Window Insulation</a></li>
+                    </ul>
+                  </li>
+                <li class="dropdown navMainLink animation">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Electricity <span class="nowrap">& Natural Gas</span><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Custom Power & Natural Gas</a></li>
+                        <li><a href="#">Electricity</a></li>
+                        <li><a href="#">Natural Gas</a></li>
+                        <li><a href="#">Environmentally Friendly Green Energy</a></li>
+                        <li><a href="#">Commercial Solar</a></li>
+                    </ul>
+                  </li>
+                   <li class="dropdown navMainLink animation">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About ONEnergy<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Managemen Team<t/a></li>
+                        <li><a href="#">Board of Directors</a></li>
+                    <li><a href="#">ONEnergy Gas and Power</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Sign Up for E-Newsletter</a></li>
+                    </ul>
+                  </li>
+                  <li class="navMainLink animation"><a href="#">Case Studies</a></li>
+                  <li class="dropdown navMainLink animation">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Investors<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Financial Information</a></li>
+                        <li><a href="#">Events & Presentations</a></li>
+                        <li><a href="#">Stock Information </a></li>
+                        <li><a href="#">Investor Resources</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">News Updates</li>
+                        <li><a href="#">Recent News</a></li>
+                        <li><a href="#">News Archives </a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown navMainLink animation">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Us <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Our Location</a></li>
+                        <li><a href="#">Inquiries</a></li>
+                    <li><a href="#">Careers</a></li>
+                    </ul>
+                  </li>
+
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div> */ ?>
+
+
+
+
+<div id="nav-wrapper" class="background-white color-black">
+    <nav id="mainMenu" class="navbar navbar-fixed-top animation" role="navigation">
+      <div class="container">
+          <div class="navTopAddress pull-right animated bounceIn ">
+              <div class="topPhone">Call us <i class="fa fa-phone"></i> <span class="orange">1 855-753-2525</span><br/>
+                  <a href="mailto:customercare@onenergyinc.com" target="_top">customercare@onenergyinc.com</a>
+              </div>
+
+              <?php /*<div class="address pull-left">*/ ?>
+              <?php /*ONEnergy Inc.<br />*/ ?>
+              <?php /*155 Gordon Baker Road, Suite 301<br />*/ ?>
+              <?php /*Toronto, ON M2H 3N5<br />*/ ?>
+              <?php /*</div>*/ ?>
+              <?php /*<div class="phone pull-right">*/ ?>
+              <?php /*Phone:&nbsp&nbsp<span class="orange">+1 (416) 444-4848</span><br />*/ ?>
+              <?php /*Fax: &nbsp&nbsp&nbsp&nbsp <span class="orange">+1 (647) 253-2525</span><br />*/ ?>
+              <?php /*</div>*/ ?>
+          </div>
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar background-lead animation" id="line1"></span>
+                <span class="icon-bar background-lead animation" id="line2"></span>
+                <span class="icon-bar background-lead animation" id="line3"></span>
+              </button>
+              <?php /* <a class="navbar-brand" href="<?php echo e(asset('/')); ?>"><img class="animation animated bounceIn infinity"src="<?php echo e(asset('/images/logo.png')); ?>" alt="logo"></a> */ ?>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div id="openClose" class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <?php foreach($nav as $mainNav): ?>
+                  <?php if($mainNav->dropdown == 1): ?>
+                    <li class="dropdown navMainLink animation">
+                      <a href="#" class="dropdown-toggle navMainLink mainNav-<?php echo e($mainNav->url); ?>" data-toggle="dropdown" ><?php echo $mainNav->name; ?></a>
+                      <ul class="dropdown-menu">
+                        <?php foreach($subNav as $suNav): ?>
+                          <?php if($suNav->parent == $mainNav->id): ?>
+                            <li><a class="subNav-<?php echo e($suNav->url); ?>" href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($suNav->url); ?>"><?php echo $suNav->name; ?></a></li>
+                            <?php if($suNav->indent == 1): ?>
+                              <?php /* <ul class="indent"> */ ?>
+                                <?php foreach($indentNavs as $indentNav): ?>
+                                  <?php if($suNav->id == $indentNav->parent): ?>
+                                      <?php if($indentNav->hash == 1): ?>
+                                                  <li class="navIndent"><a class="subNav-<?php echo e($indentNav->url); ?>" href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($suNav->url); ?>#<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                                          <?php else: ?>
+                                    <li class="navIndent"><a class="subNav-<?php echo e($indentNav->url); ?>" href="<?php echo e(url($mainNav->url)); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                                          <?php endif; ?>
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              <?php /* </ul> */ ?>
+                            <?php endif; ?>
+                          <?php endif; ?>
+                        <?php endforeach; ?>
+                      </ul>
+                    </li>
+                  <?php elseif($mainNav->dropdown == 0): ?>
+                <li class="navMainLink animation"><a class="dropdown-toggle navMainLink nav-<?php echo e($mainNav->url); ?>" href="<?php echo e(url($mainNav->url)); ?>"><?php echo $mainNav->name; ?></a></li>
+                  <?php endif; ?>
+
+                <?php endforeach; ?>
+              </ul>
+          </div><!-- /.navbar-collapse -->
+      </div>
+  </nav>
+</div>

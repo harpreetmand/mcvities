@@ -1,0 +1,82 @@
+#promotions {
+  .modal-content {
+    background: url(../images/contest-back-mobile.jpg) no-repeat center;
+    border-radius: 0;
+    background-size: cover;
+    padding: 0;
+    .modal-body {
+      padding: 25px 15px;
+      .col-sm-6 {
+        padding: 0;
+      }
+    }
+    .heading {
+      text-align: center;
+      font-size: 60px;
+      line-height: 60px;
+      margin-top: 20px;
+      margin-bottom: 0px !important;
+    }
+    form {
+      width: 300px;
+      margin: auto;
+      input[type="text"],
+      input[type="email"] {
+        width: 300px;
+        display: block;
+        margin: auto;
+        height: 30px;
+        text-align: center;
+        color: $black;
+        font-family: $primary-font;
+        border: 0;
+        outline: none;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      input[type="checkbox"] {
+        float: left;
+      }
+      .hiddenEmail{
+        display: none !important;
+      }
+      label {
+        float: left;
+        text-align: left;
+        width: 90%;
+        margin-left: 10px;
+        font-family: $primary-font;
+      }
+      button {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+   ::-webkit-input-placeholder {
+    color: rgba($black,.5);
+  }
+   :-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba($black,.5);
+  }
+   ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba($black,.5);
+  }
+   :-ms-input-placeholder {
+    color: rgba($black,.5);
+  }
+}
+@media (min-width:768px) {
+  #promotions {
+    .modal-dialog {
+      width: 768px;
+      .modal-content {
+        background: url(../images/contest-back.jpg) no-repeat center;
+        background-size: cover;
+        padding: 20px;
+      }
+    }
+  }
+}

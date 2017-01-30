@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#dlrcontactform iframe {
+	height:208px;
+	}
+
+#requestQuotePostal {
+	margin: 40px 0 0 0;
+	background: none !important;
+	}
+
+input#initial-postal-code { 
+    border: 1px solid #A9D68A !important; 
+}
+
+#requestQuoteCustomer {
+width: 280px;
+}
+
+#requestQuoteCustomer input.text-input {
+font-size:11px;
+}
+
+#requestQuoteCustomer input.name {
+width: 90px;
+}
+
+#requestQuoteCustomer input.address {
+width: 202px;
+}
+
+#requestQuoteCustomer input.city {
+width: 95px;
+margin-right: 10px;
+}
+#requestQuoteCustomer select {
+float: right;
+margin-left: 5px;
+width: 50px;
+}
+#requestQuoteCustomer input.phone {
+width: 70px;
+}
+#requestQuoteCustomer input.postal-code {
+width: 70px;
+margin-right: 10px;
+}
+#requestQuoteCustomer input.email-input {
+width: 202px;
+}
+
+#requestQuoteCustomer span.label {
+float: right;
+line-height: 22px;
+font-size: 11px;
+}
+
+#requestQuoteCustomer fieldset {
+height: 30px;
+position: relative;
+}
+
+#requestQuoteCustomer fieldset label {
+bottom: -1px;
+color: #E55;
+font-size: 9px;
+left: 66px;
+position: absolute;
+}
+
+label[for="province"] {
+padding-left: 135px;
+}
+label[for="lastname"] {
+padding-left: 115px;
+}
+
+label[for="phone"] {
+padding-left: 135px;
+}

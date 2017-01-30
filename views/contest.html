@@ -1,0 +1,111 @@
+<div id="contest">
+  <div class="banner-container">
+    <!--<div class="banner"><img src="/app/assets/images/mcvities-get-creative.jpg" class="img-responsive"/></div>-->
+    <div class="HMContestImage">
+    <img src="/app/assets/images/{{homeContent.promotions.topImage}}" class="img-responsive"/>
+    </div>
+    <div class="anim-text">
+      <p class="white secondary-font" ng-bind-html="homeContent.promotions.titleH3"></p>
+      <h1 class="contest-title white">{{homeContent.promotions.titleH1}} </h1>
+      <h2 class="contest-title-small white" ng-bind-html="homeContent.promotions.titleH2"></h2>
+    </div>
+
+  </div>
+
+  <div class="contest-container container pad50" style="margin-bottom: -100px !important;">
+    <div class="pad10" ng-controller="contestFormCtrl">
+      <div class="col-md-4">
+        <img src="/app/assets/images/{{homeContent.promotions.sideImage}}" class="img-responsive productImg">
+        </div>
+<div class="col-md-8">
+      <p ng-bind-html="homeContent.promotions.body"></p>
+      <a href="/en/our-recipes">
+      <button class="red-btn white">
+        <svg>
+          <rect x="0" y="0" fill="none" width="180" height="55"></rect>
+        </svg>
+        <span>{{homeContent.promotions.button}}</span>
+        </button>
+        </a>
+      </div>
+     
+      <!-- <form class="pad30" ng-submit="contestFormSubmit()" ng-hide="hideForm">
+        <span class="help-block red secondary-font font20" ng-show="errorName">{{homeContent.messages.name}}</span>
+        <input type="text" name="fullName" id="fullName" placeholder="{{homeContent.promotions.fName}}" ng-model="contestForm.fullName">
+        <input type="text" name="lastName" id="lastName" ng-model="contestForm.lastName" ng-init="contestForm.lastName='dsfsd7fsd6f767867s8ft'" class="hidden">
+        <span class="help-block red secondary-font font20" ng-show="errorEmail">{{homeContent.messages.email}}</span>
+        <input type="email" name="email" id="email" placeholder="{{homeContent.promotions.fEmail}}" ng-model="contestForm.email">
+        <input type="email" name="emailAgain" id="emailAgain" placeholder="{{homeContent.promotions.fEmail}}" ng-model="contestForm.emailAgain" class="hiddenEmail">
+        <span class="help-block red secondary-font font20" ng-show="errorPhone">{{homeContent.messages.phone}}</span>
+        <input type="text" name="phone" id="phone" placeholder="{{homeContent.promotions.fPhone}}" ng-model="contestForm.phone">
+        <span class="help-block red secondary-font font20" ng-show="errorAgeCheck">{{homeContent.messages.age}}</span>
+        <input type="checkbox" ng-true-value="true" ng-false-value="false" name="ageCheck" id="ageCheck" ng-model="contestForm.ageCheck">
+        <label for="ageCheck" class="red" ng-bind-html="homeContent.promotions.consent"></label>
+        <input type="checkbox" name="receiveOffer" id="receiveOffer" ng-model="contestForm.receiveOffer">
+        <label for="receiveOffer" class="red" ng-bind-html="homeContent.promotions.receiveOffer | unsafe"></label>
+        <div class="cf padT30"></div>
+        
+          <svg>
+            <rect x="0" y="0" fill="none" width="180" height="55" />
+          </svg>
+          <span>{{homeContent.promotions.button}}</span>
+        </button>
+      </form> -->
+      <!-- <div class="showAnimation" ng-show="thankYou">
+        <p class="red secondary-font font20">{{homeContent.messages.contestThank}}</p>
+      </div>
+      <div class="showAnimation" ng-show="emailExist">
+         <p class="red secondary-font font20">{{homeContent.messages.sorry}}</p>
+      </div> -->
+    </div>
+    <!-- <div class="cf pad30">
+      <p ng-bind-html="homeContent.promotions.note | unsafe"></p>
+    </div> -->
+  </div>
+  <!-- <div class="contest-nav">
+    <div class="container">
+      <div class="contest-nav-bar pad20">
+        <ul>
+          <li ng-repeat="(key, value) in homeContent.promotions.nav"><a href="#"  data-toggle="modal" data-target="#{{value.link}}" >{{value.title}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Bottom Nav Modal (Prizes Detail, Official Rules and FAQ) -->
+  <!-- <div ng-repeat="(key, value) in homeContent.promotions.nav" id="{{value.link}}" class="modal fade" role="dialog">
+    <div class="modal-dialog"> -->
+      <!-- Modal content-->
+      <!-- <div class="modal-content">
+        <div class="modal-body">
+          <p class="red secondary-font center pad20">{{value.title}}</p>
+          <p ng-bind-html="value.content"></p>
+        </div>
+      </div>
+      <span class="btn btn-default" data-dismiss="modal">X</span>
+    </div>
+  </div>
+</div>  -->
+<!--- contest end -->
+
+
+<style>
+  .help-block.ng-hide-remove{
+
+    animation:0.5s pulse ease;
+  }
+  .showAnimation.ng-hide-remove{
+
+    animation:0.5s fadeIn ease;
+  }
+
+  .pad30.ng-hide-add  {
+    animation:0.5s fadeOut ease;
+  }
+</style>
+<div class="HMred" style="
+    background-color: red;
+    /* padding-right: 101px; */
+    height: 30px;
+    margin-top: 68px;
+"></div>

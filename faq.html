@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html ng-app="myApp">
+<head>
+<title>McVities</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="app/assets/css/style.css" type="text/css" />
+<script src="app/assets/js/jquery.js"></script>
+<script src="app/assets/js/tweenmax.min.js"></script>
+<!-- <script src="app/bower_components/angular/angular.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+<!-- <script src="../app/bower_components/angular/angular.js"></script> -->
+
+
+</head>
+<body ng-controller="mainApp" class="faqs">
+  <div class="wrapper" ng-controller="ScrollCtrl">
+  <header ng-include="'views/header.html'"></header>
+    <div id="faq" ng-controller="faqQuestions">
+      <div class="banner-container">
+        <div class="banner"></div>
+        <div class="anim-text">
+         <h1 class="banner-title white">Questions?</h1>
+      </div>
+       </div>
+       <div class="faqs-section container pad50">
+         <div class="got-question">
+           <button class="transparent-btn red">
+             <svg>
+               <rect x="0" y="0" fill="none" width="196" height="38" />
+             </svg>
+             Got a Question? Email us <i class="fa fa-envelope" aria-hidden="true"></i>
+             </button>
+           <!-- <p class="red"></p> -->
+         </div>
+      <div class="questions">
+        <ol type="1">
+          <li class="strong" ng-repeat="(key, value) in faq" ng-click="activeQuestion(key); gotoElement(key)" ng-class="{active : isActiveQuestion === key}">{{$index+1}}.&nbsp; {{value.question}}
+          </li>
+        </ol>
+      </div>
+      <div class="que-answers padT20">
+          <div id="{{key}}" class="strong padT20 que-answers-inner" ng-repeat="(key, value) in faq" ng-class="{active : isActiveQuestion === key}">
+           <div class="que"><p>{{$index+1}}. {{value.question}}</p> </div>
+           <div class="answer padT15" ng-bind-html="value.answer | unsafe"> </div>
+         </div>
+      </div>
+       </div>
+    </div>
+
+    <div id="contactus" class="section" ng-include="'views/contactus.html'"></div>
+  <footer ng-include="'views/footer.html'"></footer>
+
+
+
+    </div>
+<script src="app/assets/js/appJQ.js"></script>
+  <script src="app/assets/js/myApp.js"></script>
+  <script src="app/assets/js/myCtrl.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<div id="our-recipes-desc">
+    <div class="banner-container">
+        <div class="banner"></div>
+        <div class="anim-text">
+            <h1 class="banner-title white padT4830">{{ homeContent.recipes.ourRecipes | unsafe}}</h1>
+        </div>
+    </div>
+
+    <div class="desc-container pad50">
+        <div class="left-side col-md-4">
+            <h2 class="title secondary-font red visible-xs visible-sm" ng-bind-html="recipe.title | unsafe"></h2>
+            <div class="recipe-video" ng-show="recipe.video">
+                  <iframe ng-src="{{recipe.video | trustedurl}}" frameborder="0" class="img-responsive" allowfullscreen=""></iframe>
+           
+            </div>
+            <div class="recipe-image" ng-hide="recipe.video">
+                <img ng-src="app/assets/images/recipes/big/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+            </div>
+            <div class="share pad20">
+                <div class="share-social" ng-controller="socialCtrl">
+                    <span class="secondary-font red">{{ homeContent.recipes.share }}</span>
+                    <i ng-click="social(recipe.title, 'fb')" class="social-icon fa fa-facebook"></i>
+                    <i ng-click="social(recipe.title, 'tw')" class="social-icon fa fa-twitter"></i>
+                     <a data-pin-do="embedPin" ng-click="social(recipe.title, 'pin', recipe.image)" data-pin-custom="true" data-pin-description="{{recipe.title | unsafe}}"><i class="social-icon fa fa-pinterest-p"></i></a>
+                    <span class="pe-container">
+            <span class="hidden-xs hidden-sm" ng-click="printDiv('print-container',recipe.title,recipe.image)"><i class="pe-icon fa fa-print" aria-hidden="true"></i> <i class="icon-text">{{ homeContent.recipes.print }}</i></span>
+                    <!-- <span data-toggle="modal" data-target="#myModal"><i class="pe-icon fa fa-envelope" aria-hidden="true" ></i> <i class="icon-text">{{ homeContent.recipes.email }}</i></span> -->
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="middle-side col-md-5" id='print-container'>
+            <h2 class="title secondary-font red hidden-xs hidden-sm" ng-bind-html="recipe.title | unsafe"></h2>
+            <p ng-bind-html="recipe.description | unsafe"></p>
+            <div class="time-serving pad10">
+                <div class="time">
+                    <p>{{recipe.preperation.time}}</p>
+                </div>
+                <div class="serving">
+                    <p>{{ homeContent.recipes.serves }} {{recipe.preperation.serving}}</p>
+                </div>
+            </div>
+            <div class="cf"></div>
+            <div class="ingredients pad20 preparation">
+                <p class="secondary-font">{{ homeContent.recipes.ingredients }}</p>
+                <div class="type pad5" ng-repeat="type in recipe.preperation.ingredients">
+                    <p class="pad5" ng-if="type.name !== '' ">
+                        {{type.name}}:
+                    </p>
+                    <ul>
+                        <li ng-repeat="typeStep in type.steps" ng-bind-html="typeStep | unsafe"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="recipe-instructions pad20 preparation">
+                <p class="secondary-font">{{ homeContent.recipes.recip }}</p>
+                <ol class="pad10">
+                    <li ng-repeat="instructions in recipe.preperation.recipe" ng-bind-html="instructions | unsafe"></li>
+                </ol>
+
+            </div>
+        </div>
+        <div class="cf"></div>
+        <!--
+     Modal Window
+     -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" ng-controller="emailFormCtrl">
+                    <div class="modal-body">
+                        <h4 class="modal-title white text-center">{{ homeContent.recipes.email }} - <span ng-bind-html="recipe.title | unsafe"></span></h4>
+                        <form class="pad30" ng-submit="emailForm">
+                            <input type="text" name="name" id="name" placeholder="{{homeContent.recipes.fName}}" ng-model="emailFormName">
+                            <input type="email" name="email" id="email" placeholder="{{homeContent.recipes.fEmail}}" ng-model="emailFormEmail">
+                            <textarea name="msg" ng-model="emailFormMessage">{{homeContent.recipes.textMsg}}</textarea>
+                            <div class="cf padT30"></div>
+                            <button class="transparent-btn white">
+                                <svg>
+                                    <rect x="0" y="0" fill="none" width="180" height="55" />
+                                </svg>
+                                <span>{{homeContent.recipes.modalButton}}</span></button>
+                        </form>
+                    </div>
+                    <span class="btn btn-default" data-dismiss="modal">X</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="recipes-nav-container pad30 visible-md visible-lg">
+        <p class="secondary-font red pad20">{{ homeContent.recipes.alsoLike }}</p>
+        <div class="recipes-nav" ng-repeat="recipe in homeContent.recipes.allRecipes | shuffle | limitTo:5">
+            <a href="/{{homeContent.lang}}/recipe/{{recipe.slug}}">
+                <img ng-src="app/assets/images/recipes/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+                <div class="overlay">
+                    <p class="title" ng-bind-html="recipe.title | unsafe"></p>
+                </div>
+            </a>
+        </div>
+        <div class="cf"></div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+
+<div ng-controller="TestController">
+
+
+<script type="application/ld+json" id="json-ld-music-group"></script>
+
+  <jsonld data-json="jsonId"></jsonld>
+</div>

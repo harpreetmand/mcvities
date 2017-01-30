@@ -1,0 +1,27 @@
+<div class="recipes-main-content pad100">
+  <div class="container">
+    <p class="heading white">{{ homeContent.recipes.title}}</p>
+    <img ng-src="app/assets/images/cookie.png" class="cookie" alt="Cookie" />
+  </div>
+  <div class="cf"></div>
+  <div class="recipes-nav-container pad50">
+      <div class="recipes-nav" ng-repeat="recipe in homeContent.recipes.allRecipes | limitTo:5">
+        <a href="{{homeContent.lang}}/recipe/{{recipe.slug}}">
+          <img ng-src="app/assets/images/recipes/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+          <div class="overlay">
+            <p class="title"  ng-bind-html="recipe.title | unsafe"></p>
+          </div>
+        </a>
+      </div>
+    <div class="cf"></div>
+  </div>
+
+  <div class="container">
+    <a href="{{homeContent.lang}}/our-recipes">
+    <button class="transparent-btn white" >
+      <svg>
+        <rect x="0" y="0" fill="none" width="180" height="55" />
+      </svg>
+      {{ homeContent.recipes.seeAll}}</button></a>
+  </div>
+</div>

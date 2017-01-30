@@ -1,0 +1,401 @@
+<?php $__env->startSection('title'); ?>
+Store Locator |
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>Home Page <?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+
+<div class="container noPadding topImageText">
+  <img src="<?php echo e(asset('/img/topimage/about-us-2-maids.jpg')); ?>" alt="merry maids locator" class="img-responsive">
+  <span class="textOverImage">
+    <h1>Merry Maids Locator</h1> 
+  </span>
+</div>
+<div class="container topPadding extraPadding">
+  <div class="col-md-12 noLeftPadding">
+    <div class="breadcrums">
+      <a href="/">Home</a> > Merry Maids Locator
+    </div>
+
+
+
+
+
+
+
+
+<div class="col-md-12 mmStoreSearch">
+  <form onsubmit="event.preventDefault();">
+  Address: <input type="text" id="searchAddress" class="" placeholder="Address / Postal Code / City">
+  <button class="btn btn-success" type="submit" onClick="getUserLatLng()">Search</button>
+</form>
+</div>
+<div class="col-md-8">
+  <div id="map-canvas" class="hidden-xs hidden-sm"></div>
+</div>
+    <div class="col-md-4 STSide">
+      <h3 class="noMarginTop">List of closest franchises:</h3>
+      <div id="foundTotal"></div>
+      <div id="closeAddress">
+      </div>
+    </div>
+
+
+
+
+
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD7vHYjWwEOhEWRvtc42vwdp2MOkq85tFc"></script>
+     <script type="text/javascript">
+
+
+    function getUserLatLng(){
+
+    	        var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                    userInfo = JSON.parse(xmlhttp.responseText);
+
+                    console.log(userInfo.results[0].geometry.location.lat);
+                    console.log(userInfo.results[0].geometry.location.lng);
+
+    dataFromAjax(userInfo.results[0].geometry.location.lat, userInfo.results[0].geometry.location.lng);
+
+                }
+            };
+            str = document.getElementById("searchAddress").value;
+
+            xmlhttp.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?address="+ str +"&key=AIzaSyBezdCGx8pxRDTlipAVFnj-AxF00RnhKNc");
+            xmlhttp.send();
+
+
+
+
+
+
+
+    }
+
+
+    var LocationDataRaw;
+    dataFromAjax("","");
+    function dataFromAjax(lat,lng){
+    if(lat){
+
+
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+var JSONLocation = JSON.parse(xhttp.responseText);
+
+
+
+          if(JSONLocation.length == 0){
+            document.getElementById("foundTotal").innerHTML = "We could not find any locations close to the address provided.";
+            console.log("here");
+          }else{
+
+  // document.getElementById("foundTotal").innerHTML = "We could not find any locations close to the address provided.";
+
+    }
+    afterLocationData(JSONLocation,lat,lng);
+        }
+
+      };
+      xhttp.open("POST", "getcertainstores.php?lat="+lat+"&lng="+lng, true);
+      xhttp.send();
+
+
+
+    }else{
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+          thisData = JSON.parse(xhttp.responseText);
+      afterLocationData(thisData,"","");
+        }
+
+      };
+      xhttp.open("POST", "getstores.php", true);
+      xhttp.send();
+
+    }
+    }
+
+    function afterLocationData(locations,late,lnge){
+
+    var lat;
+    var lng;
+
+
+    var LocationData = [];
+
+    if(late){
+    lat = late;
+    lng = lnge;
+    LocationData = createRightArr(locations);
+    initialize("dropMarker");
+    }else{
+
+    lat = 43.653226;
+    lng = -79.3831843;
+    LocationData = createRightArr(locations);
+
+    }
+    function createRightArr(locationDataRaw){
+      var STText = "";
+    	for(i = 0; i <locationDataRaw.length; i++){
+        name = locationDataRaw[i].name;
+        address = locationDataRaw[i].address;
+        city = locationDataRaw[i].city;
+        province = locationDataRaw[i].province;
+        postalCode = locationDataRaw[i].postalCode;
+        phone = locationDataRaw[i].phone;
+        fax = locationDataRaw[i].fax;
+        website = locationDataRaw[i].website;
+        email = locationDataRaw[i].email;
+        distance = locationDataRaw[i].distance
+        if(!distance){
+          distance = "";
+        }else{
+          distance = m2k(distance);
+        }
+
+
+    	LocationData.push([locationDataRaw[i].lat,locationDataRaw[i].lng,"<span class=\"SLName\">"+name+"</span><br/>"+address+"<br/>"+city+","+province+","+locationDataRaw[i].country+"<br/>"+postalCode+"<br/><i class=\"fa fa-phone\"></i>"+phone+"<br/><i class=\"fa fa-fax\"></i>"+fax+"<br/><a href=\""+website+"\">"+website+"</a><br/><a href=\"mailto:"+email+"\">"+email+"</a>"]);
+
+      STText += "<div class=\"STAddress\">"+
+      "<span class=\"STName\">"+name+"</span><br/>"+
+      address+"<br/>"+city+", "+ province+", "+  postalCode+"<br/>"+
+      "<i class=\"fa fa-phone\"></i> "+phone+"<br/>"+
+      "<i class=\"fa fa-fax\"></i> "+fax+"<br/>"+
+      "<a href=\""+website+"\">Website</a><br/>"+
+      // "<a href=\"mailto:"+email+"\">"+locationDataRaw[i].distance+"</a>"+
+      "<span class=\"pull-right SLDistance\">"+distance+"<span>"+
+      "</div>";
+
+
+    }
+    document.getElementById("closeAddress").innerHTML = STText;
+    return LocationData;
+
+    }
+    function m2k(c) {
+  return (parseFloat(c) * 1.6093).toFixed(2)+" KM";  // returns a string
+}
+
+
+    var userInfo;
+
+    function initialize(thisVar)
+    {
+      if(thisVar == "dropMarker"){
+    	 var myOptions = {
+            center: new google.maps.LatLng(lat, lng),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+            panControl: true,
+            mapTypeControl: true,
+            panControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.LARGE,
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            scaleControl: false,
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            }
+        };
+
+
+
+
+
+        var map =
+            new google.maps.Map(document.getElementById('map-canvas'), myOptions);
+        var bounds = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+
+
+
+
+            var p = LocationData[i];
+            var latlng = new google.maps.LatLng(lat, lng);
+            bounds.extend(latlng);
+
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+
+                title: "You are here"
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(this.title);
+                infowindow.open(map, this);
+            });
+
+}else{
+
+  var myOptions = {
+       center: new google.maps.LatLng(lat, lng),
+       zoom: 3,
+       mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+       panControl: true,
+       mapTypeControl: true,
+       panControlOptions: {
+           position: google.maps.ControlPosition.RIGHT_CENTER
+       },
+       zoomControl: true,
+       zoomControlOptions: {
+           style: google.maps.ZoomControlStyle.LARGE,
+           position: google.maps.ControlPosition.RIGHT_CENTER
+       },
+       scaleControl: false,
+       streetViewControl: true,
+       streetViewControlOptions: {
+           position: google.maps.ControlPosition.RIGHT_CENTER
+       }
+   };
+
+
+
+
+
+   var map =
+       new google.maps.Map(document.getElementById('map-canvas'), myOptions);
+   var bounds = new google.maps.LatLngBounds();
+   var infowindow = new google.maps.InfoWindow();
+
+
+
+
+       var p = LocationData[i];
+       var latlng = new google.maps.LatLng(lat, lng);
+       bounds.extend(latlng);
+
+       // var marker = new google.maps.Marker({
+       //     position: latlng,
+       //     map: map,
+       //
+       //     title: "You are here"
+       // });
+       //
+       // google.maps.event.addListener(marker, 'click', function() {
+       //     infowindow.setContent(this.title);
+       //     infowindow.open(map, this);
+       // });
+
+}
+
+
+        for (var i in LocationData)
+        {
+            var p = LocationData[i];
+            var latlng = new google.maps.LatLng(p[0], p[1]);
+            bounds.extend(latlng);
+
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: 'logo.png',
+                title: p[2],
+                animation: google.maps.Animation.DROP
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(this.title);
+                infowindow.open(map, this);
+            });
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
+
+    }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+<div class="col-sm-4">
+  <h4 class="green">List by City</h4>
+  <ul>
+<li><a href="<?php echo e(asset('merry-maids-locator/alberta')); ?>">Alberta, AB</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/british-columbia')); ?>">British Columbia, BC</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/manitoba')); ?>">Manitoba, MB</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/new-brunswick')); ?>">New Brunswick, NB</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/newfoundland')); ?>">Newfoundland, NL</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/nova-scotia')); ?>">Nova Scotia, NS</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/ontario')); ?>">Ontario, ON</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/prince-edward-island')); ?>">Prince Edward Island, PEI</a></li>
+<li><a href="<?php echo e(asset('merry-maids-locator/saskatchewan')); ?>">Saskatchewan, SK</a></li>
+</ul>
+</div>
+<div class="col-sm-4">
+
+</div>
+
+  <div class="clear visible-sm visibile-xs">
+  </div>
+
+</div>
+
+<div class="container borderTop">
+  <div class="col-sm-12 testimonials noPadding">
+    <div class="col-md-3 col-sm-4">
+      <center>
+        <img src="<?php echo e(asset('/img/testimonials/'.$testimonials->image)); ?>" class="img-responsive">
+</center>
+    </div>
+    <div class="col-md-9 col-sm-8">
+      <i class="fa fa-quote-left"></i><p><?php echo e($testimonials->body); ?><i class="fa fa-quote-right"></i></p>
+      <span class="pull-right">-<?php echo e($testimonials->location); ?></span>
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

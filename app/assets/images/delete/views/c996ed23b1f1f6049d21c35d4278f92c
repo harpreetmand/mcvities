@@ -1,0 +1,30 @@
+
+  <div class="clear visible-sm visibile-xs">
+  </div>
+  <div class="col-md-3 noPadding">
+    <div class="addressBox">
+    <p>
+      <span>Merry Maids Canada</span><br/>
+      5462 Timberlea Boulevard<br/>
+      Mississauga, Ontario<br/>
+      CANADA<br/>
+      L4W 2T7
+    </p>
+
+    <p>
+      <span>Phone:</span> 1 (877) 782-9201<br/>
+      <span>Local:</span> (905) 670-0000<br/>
+      <span>Fax:</span> (905) 670-0077
+    </p>
+
+    <p>
+      <span>Email:</span> info@merrymaids.ca
+    </p>
+</div>
+<input type="text" class="marginTopBottom">
+
+<div id="googleMap"></div>
+<center>
+<img src="<?php echo e(asset('/img/cleanbasket.jpg')); ?>" alt="clean basket" class="marginTopBottom">
+</center>
+  </div>

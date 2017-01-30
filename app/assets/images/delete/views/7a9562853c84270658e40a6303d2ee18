@@ -1,0 +1,36 @@
+<?php $__env->startSection('title'); ?>
+	| <?php echo e($page->metaTitle); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?>
+	<?php echo e($page->metaDesc); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('includes/topImage', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="allPageUnderImage animation">
+<div class="h1Bg">
+	<div class="container no-padding">
+    	<center>
+        	<h1><?php echo $page->underImage; ?></h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+
+	<div class="legal content">
+	<?php echo $page->body; ?>
+
+
+
+
+
+    </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

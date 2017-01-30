@@ -1,0 +1,71 @@
+<div class="footerBg">
+    <div class="container">
+	    <div class="footer">
+    	    <div class="row">
+        		<div class="col-sm-3">
+          			<ul>
+            			<li><strong>LED Lighting</strong></li>
+			            <li>Advantages of LED Lighting </li>
+			            <li>Retrofitting Exisiting Buildings </li>
+			            <li>New Construction</li>
+			            <li>Financing Options</li>
+         			</ul>
+          			<ul>
+			            <li><strong>Energy Efficiency</strong></li>
+			            <li>Energy Efficiency Solutions </li>
+			            <li>Window Insulation</li>
+          			</ul>
+        		</div>
+        		<div class="col-sm-3">
+		        	<ul>
+			            <li><strong>Electricity & Natural Gas</strong></li>
+			            <li>Custom Power & Natural Gas Electricity</li>
+			            <li>Natural Gas</li>
+			            <li>Environmentally Friendly Green Energy</li>
+		        	</ul>
+		        	<ul>
+		            	<li><strong>Commercial Solar</strong></li>
+		            </ul>
+        		</div>
+        		<div class="col-sm-3">
+           			<ul>
+            			<li><strong>Case Studies </strong></li>
+          			</ul>
+          			<ul>
+			            <li><strong>Investors</strong></li>
+			            <li>Financial Information </li>
+			            <li>Events & Presentations </li>
+			            <li>Stock Information </li>
+			            <li>Investor Resources</li>
+          			</ul>
+        		</div>
+        		<div class="col-sm-3">
+          			<ul>
+            			<li><strong>Contact Us</strong></li>
+			            <li>Our Location </li>
+			            <li>Inquiries </li>
+			            <li>Careers</li>
+          			</ul>
+          			<ul>
+			            <li>Legal</li>
+			            <li>Privacy Policy </li>
+			            <li>SiteMap</li>
+          			</ul>
+        		</div>
+      		</div>
+	        <div class="social">
+        	<center>
+	            <div class="socialButtons">
+		            <i class="fa fa-facebook"></i>
+		            <i class="fa fa-twitter"></i>
+		            <i class="fa fa-google-plus"></i>
+		            <i class="fa fa-linkedin"></i>
+		            <i class="fa fa-youtube"></i>
+		            <i class="fa fa-chevron-up"></i>
+	            </div>
+	            © Copyright 2015. All Rights Reserved. ONEnergy Inc.<br/> Designed and developed by Lime Advertising Inc.
+      		</center>
+      	</div>
+    </div>
+</div>
+</div>

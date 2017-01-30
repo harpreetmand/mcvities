@@ -1,0 +1,33 @@
+.modal{
+  z-index: 9999991 !important;
+}
+.modal-backdrop{
+  &.in{
+    opacity: 0.8;
+    z-index: 999999;
+  }
+}
+.modal-dialog{
+  position: absolute;
+  top:20px;
+  left:0;
+  right:0;
+  margin: auto;
+  height: 600px;
+  .modal-content{
+    border-radius: 0px;
+    border:0px;
+    .btn-default{
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+      padding: 4px 9px;
+      border:0px;
+      color:$blue;
+    }
+    .modal-body{
+      padding: 25px 15px;
+    }
+  }
+}

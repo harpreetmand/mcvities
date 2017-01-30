@@ -1,0 +1,70 @@
+<div class="container transparent">
+  <div class="col-md-9 col-sm-12 noPadding navBarStart">
+    <div class="col-sm-6 noPadding hidden-sm hidden-xs">
+      <p>Merry Maid Corporate Website</p>
+    </div>
+
+    <div class="col-sm-6 noPadding hidden-sm hidden-xs">
+      <div class="socialButtons">
+        <a target="_blank" href="https://twitter.com/gosunwave/"><i class="fa fa-twitter"></i></a>
+        <a target="_blank" href="https://www.facebook.com/gosunwave/"><i class="fa fa-facebook"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/company/sunwave-gas-and-power-inc-?trk=biz-companies-cym"><i class="fa fa-linkedin"></i></a>
+        <a target="_blank" href="https://plus.google.com/u/0/b/112502426549453927202/112502426549453927202/about?hl=en"><i class="fa fa-google-plus"></i></a>
+        <a target="_blank" href="https://www.youtube.com/channel/UCZIOAr2akJ1iggCD4FDBOqQ"><i class="fa fa-youtube"></i></a>
+        <a target="_blank" href="https://www.youtube.com/channel/UCZIOAr2akJ1iggCD4FDBOqQ"><i class="fa fa-yelp"></i></a>
+
+      </div>
+    </div>
+    <nav class="navbar-default">
+      <div class="container-fluid noPadding">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse noPadding" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <?php foreach($nav as $mainNav): ?>
+              <?php if($mainNav->parent == 0): ?>
+                <?php if($mainNav->dropdown == 1): ?>
+                  <li role="presentation" class="dropdown TopNav">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      <?php echo e($mainNav->name); ?>  <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class=""><a href="<?php echo e(asset($mainNav->slug)); ?>/<?php echo e($mainNav->slug); ?>"><?php echo e($mainNav->name); ?></a></li>
+                      <?php foreach($nav as $subNav): ?>
+                        <?php if($subNav->parent == $mainNav->id): ?>
+                      <li class=""><a href="<?php echo e(asset($mainNav->slug)); ?>/<?php echo e($subNav->slug); ?>"><?php echo e($subNav->name); ?></a></li>
+                  <?php endif; ?>
+
+                  <?php endforeach; ?>
+
+                  </ul>
+                </li>
+
+
+              <?php else: ?>
+                <li class="TopNav"><a href="<?php echo e(asset($mainNav->slug)); ?>"><?php echo e($mainNav->name); ?> </a></li>
+              <?php endif; ?>
+              <?php endif; ?>
+            <?php endforeach; ?>
+            <li class="navDark noPadding hidden-md hidden-sm hidden-xs "><a href="<?php echo e(asset('merry-maids-locator')); ?>"><i class="fa fa-map-marker noPadding"></i></a></li>
+
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div class="col-md-3 col-xm-3 logoDiv">
+    <img class="animation animated bounceIn infinity logo" src="<?php echo e(asset('/img/merry-maids-logo.png')); ?>" alt="logo">
+  </div>
+</div>

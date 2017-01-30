@@ -1,0 +1,104 @@
+<div id="blog">
+    <div class="banner-container">
+        <div class="banner"></div>
+        <div class="anim-text">
+            <h1 class="banner-title white" ng-bind-html="homeContent.blog.title | unsafe"></h1>
+        </div>
+    </div>
+
+    <div class="desc-container pad50">
+        <div class="left-side col-md-4">
+
+            <h2 class="title secondary-font red visible-xs visible-sm" ng-bind-html="oneBlog.title | unsafe"></h2>
+            <div class="recipe-image">
+                <img ng-src="app/assets/images/blog/big/{{oneBlog.image}}" alt="{{ oneBlog.title }}" class="img-responsive" />
+            </div>
+            <div class="share pad20">
+                <div class="share-social" ng-controller="socialCtrl">
+                    <span class="secondary-font red">{{ homeContent.recipes.share }}</span>
+                    <i ng-click="social(oneBlog.title, 'fb')" class="social-icon fa fa-facebook"></i>
+                    <i ng-click="social(oneBlog.title, 'tw')" class="social-icon fa fa-twitter"></i>
+                     <a data-pin-do="embedPin" ng-click="social(oneBlog.title, 'pin', oneBlog.image)" data-pin-custom="true" data-pin-description="{{oneBlog.title | unsafe}}"><i class="social-icon fa fa-pinterest-p"></i></a>
+                    <span class="pe-container">
+            <!--<span class="hidden-xs hidden-sm" ng-click="printDiv('print-container',oneBlog.title,oneBlog.image)"><i class="pe-icon fa fa-print" aria-hidden="true"></i> <i class="icon-text">{{ homeContent.blog.emailLink }}</i></span>-->
+                     <!--<span data-toggle="modal" data-target="#myModal"><i class="pe-icon fa fa-envelope" aria-hidden="true" ></i> <i class="icon-text">{{ homeContent.recipes.email }}</i></span> -->
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="middle-side col-md-5" id='print-container'>
+            <h2 class="title secondary-font red hidden-xs hidden-sm" ng-bind-html="oneBlog.title | unsafe"></h2>
+                                    <p class="grey">
+                            {{ oneBlog.date | date:"MM/dd/yyyy"}}
+                            <p/>
+            <p ng-repeat="paragraph in oneBlog.paragraph" ng-bind-html="paragraph | unsafe"></p>
+            <br/>
+            <ul class="ulShow">
+                <li ng-repeat="li in oneBlog.li" ng-bind-html="li | unsafe"></li>
+            </ul>
+
+            <a href="/{{homeContent.lang}}/{{oneBlog.endParagraphLink}}"><p ng-bind-html="oneBlog.endParagraph | unsafe"></p></a>
+     
+            <div class="cf"></div>
+
+        </div>
+        <div class="cf"></div>
+        <!--
+     Modal Window
+     -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" ng-controller="emailFormCtrl">
+                    <div class="modal-body">
+                        <h4 class="modal-title white text-center">{{ homeContent.recipes.email }} - <span ng-bind-html="oneBlog.title | unsafe"></span></h4>
+                        <form class="pad30" ng-submit="emailForm">
+                            <input type="text" name="name" id="name" placeholder="{{homeContent.recipes.fName}}" ng-model="emailFormName">
+                            <input type="email" name="email" id="email" placeholder="{{homeContent.recipes.fEmail}}" ng-model="emailFormEmail">
+                            <textarea name="msg" ng-model="emailFormMessage">{{homeContent.recipes.textMsg}}</textarea>
+                            <div class="cf padT30"></div>
+                            <button class="transparent-btn white">
+                                <svg>
+                                    <rect x="0" y="0" fill="none" width="180" height="55" />
+                                </svg>
+                                <span>{{homeContent.recipes.modalButton}}</span></button>
+                        </form>
+                    </div>
+                    <span class="btn btn-default" data-dismiss="modal">X</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<div class="desc-container pad30 visible-md visible-lg"
+        <div class="col-md-12 pad30 visible-md visible-lg">
+        <!--<p class="secondary-font red pad20">{{ homeContent.recipes.alsoLike }}</p>-->
+        <div class="blog-navs col-md-4" ng-repeat="blogs in homeContent.blog.allBlogs | shuffle | limitTo:3">
+            <a href="/{{homeContent.lang}}/recipe/{{blogs.slug}}">
+                <img ng-src="app/assets/images/blog/big/{{blogs.image}}" alt="{{ blogs.title }}" class="img-responsive col-md-4 col-lg-3" />
+ <div class="blogList col-md-8 col-lg-9">
+                        <div class="title secondary-font red blogTitle" ng-bind-html="blogs.title | unsafe"></div>
+                        <p class="grey">
+                            {{ blogs.date | date:"MM/dd/yyyy"}}
+                            <p/>
+                    </div>
+            </a>
+        </div>
+        <div class="cf"></div>
+    </div>
+
+</div>
+</div>
+
+
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+
+<div ng-controller="TestController">
+
+
+<script type="application/ld+json" id="json-ld-music-group"></script>
+
+  <jsonld data-json="jsonId"></jsonld>
+</div>

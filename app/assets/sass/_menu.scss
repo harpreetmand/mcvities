@@ -1,0 +1,330 @@
+@-webkit-keyframes navAmin {
+  from {
+    top: -130px;
+  }
+  to {
+    top: 0;
+  }
+}
+@-moz-keyframes navAmin {
+  from {
+    top: -130px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes navAnim {
+  from {
+    top: -130px;
+  }
+  to {
+    top: 0;
+  }
+}
+@-webkit-keyframes imgLoad {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-moz-keyframes imgLoad {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@keyframes imgLoad {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+.imgLoaded{
+    opacity: 1;
+    @include animation(imgLoad, .4s, ease-in-out);
+}
+header {
+  z-index: 99999;
+  position: absolute;
+  width: 100%;
+  background-color: $white;
+  top: 0;
+  &.sticky {
+    position: fixed;
+    @include animation(navAmin, .5s, ease-in-out);
+    box-shadow: 0 2px 5px rgba($grey, 0.8);
+    .language-nav{
+      display: none;
+    }
+  }
+  .container{
+    position: relative;
+  }
+  nav {
+    ul {
+      li {
+        a {
+          color: $white;
+          font-size: 20px;
+          font-family: $primary-font;
+        }
+      }
+    }
+  }
+  .logo {
+    width: 160px;
+    img {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+  .language-nav{
+    position: absolute;
+    top:10px;
+    right:10px;
+    font-family: $secondary-font;
+    font-size: 30px;
+    color:$black;
+    line-height: normal;
+    a{
+      color:$black; 
+      &:hover, &:focus{
+        color:$red;
+        text-decoration: none;
+      }
+      &.active{
+        color:$red;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  header {
+    height: 100px;
+    top: 0;
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 15px;
+    }
+    &.sticky {
+      height: 85px;
+      .logo {
+        top: 8px;
+      }
+      .hamburger{
+        top:30px;
+      }
+    }
+    nav {
+      position: fixed;
+      height: 100%;
+      width: 80%;
+      background-color: $red;
+      padding-top: 20px;
+      left: -80%;
+      top: 0;
+      @include transition(all, .3s, ease-in-out);
+      &.open {
+        left: 0;
+      }
+      ul {
+        li {
+          a {
+            padding: 10px 20px;
+            display: inline-block;
+            width: 100%;
+            border-bottom: 1px solid $white;
+            &:hover {
+              text-decoration: none;
+              color: $red;
+              background-color: $white;
+            }
+            &:focus {
+              text-decoration: none;
+              color: $white;
+            }
+            .hover {
+              display: none;
+            }
+            &.active {
+              color: $red;
+              background-color: $white;
+            }
+          }
+        }
+      }
+    }
+    .hamburger {
+      width: 30px;
+      position: absolute;
+      height: 20px;
+      right: 1rem;
+      top: 55px;
+      cursor: pointer;
+      z-index: 999999;
+      @include transition(top, 0.2s, ease-in-out);  
+      .hamburger-inner {
+        width: 30px;
+        height: 5px;
+        background-color: $red;
+        position: relative;
+        top: 0;
+        @include transition(all, 0.5s, ease-in-out);
+        &:after,
+        &:before {
+          content: '';
+          width: 100%;
+          height: 5px;
+          background-color: $red;
+          position: absolute;
+          left: 0;
+          @include transition(all, 0.5s, ease-in-out);
+        }
+        &:before {
+          top: 16px;
+        }
+        &:after {
+          top: 8px;
+        }
+      }
+      &.open {
+        .hamburger-inner {
+          @include transform(rotate(45deg));
+          background-color: $red;
+          &:before {
+            top: 0;
+            @include transform(rotate(-89deg));
+            background-color: $red;
+          }
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  header {
+    height: 120px;
+    @include transformorigin(50%, 0%);
+    &.sticky {
+      height: 90px;
+      .container {
+        height: 90px;
+      }
+    }
+    .container {
+      width: 100%;
+      @include transition(all, .5s, ease-in-out);
+      height: 120px;
+      padding: 0 !important;
+      line-height: 80px;
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+    .logo {
+      float: left;
+      @include center-vertical();
+      margin-left: 5px;
+      width: 190px;
+    }
+    .hamburger {
+      display: none;
+    }
+    nav {
+      float: right;
+      margin: auto;
+      @include transition(all, 0s, ease-in-out);
+      @include center-vertical();
+      ul {
+        margin: 0;
+        li {
+          display: inline-block;
+          list-style: none;
+          margin: 0 10px;
+          a {
+            color: $red;
+            text-decoration: none;
+            font-size: 13px;
+            position: relative;
+            overflow: hidden;
+            -webkit-backface-visibility: hidden;
+            &.active {
+              text-decoration: none;
+              color: $red;
+              &:after{
+                opacity: 1;
+                @include transform(translateY(0px));
+              }
+            }
+            &:hover {
+              text-decoration: none;
+              color: $red;
+              &:after,
+              &:before {
+                opacity: 1;
+                @include transform(translateY(0px));
+              }
+              &:focus {
+                text-decoration: none;
+                color: $red;
+                outline: 0;
+              }
+            }
+            &:focus {
+              text-decoration: none;
+              color:$red;
+              outline: 0;
+            }
+            &:after {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: $red;
+              content: '';
+              opacity: 0;
+               bottom: -7px;
+              @include transform(translateY(5px));
+              @include transition(all, 0.3s, ease-in-out);
+            }
+          }
+        }
+      }
+    }
+    .language-nav{
+      right:25px;
+      top:15px;
+      font-size: 20px;
+    }
+  }
+}
+@media (min-width: 992px) {
+  header {
+    nav ul li {
+      padding: 0 7px;
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  header {
+    nav ul li {
+      padding: 0 15px;
+    }
+    padding: 0 70px;
+  }
+}

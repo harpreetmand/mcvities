@@ -1,0 +1,257 @@
+<?php $__env->startSection('content'); ?>
+
+        <!-- START REVOLUTION SLIDER 5.0 -->
+<div class="rev_slider_wrapper">
+    <div id="slider1" class="rev_slider"  data-version="5.0">
+        <ul>
+            <li data-transition="slideright">
+                <!-- MAIN IMAGE -->
+                <!-- MAIN IMAGE -->
+                <!-- <img src="../../assets/images/bgt.png"  alt=""  width="1920" height="1280">	 -->
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption News-Title"
+                     data-x="left" data-hoffset="80"
+                     data-y="top" data-voffset="450"
+                     data-whitespace="normal"
+                     data-end="1000"
+                     data-transform_idle="o:1;"
+                     data-transform_in="o:0"
+                     data-transform_out="o:0"
+                     data-start="500">DISCOVER THE WILD</div>
+                <div class="tp-caption News-Title"
+                     data-x="left" data-hoffset="0"
+                     data-y="top" data-voffset="0"
+                     data-whitespace="normal"
+                     data-start="1000"
+                     data-transform_idle="o:1;"
+                     data-transform_in="o:0"
+                     data-transform_out="o:0"
+                     data-start="500">
+
+                    <img src="../../assets/images/silderface.png">
+                </div>
+
+
+
+
+
+                <div class="tp-caption News-Title"
+                     data-x="left" data-hoffset="40"
+                     data-y="top" data-voffset="50"
+                     data-whitespace="normal"
+                     data-start="1000"
+                     data-transform_idle="o:1;"
+                     data-transform_in="o:0"
+                     data-transform_out="o:0"
+                     data-start="500">DISsCOVER TdfdasfsdfgsdgfwHE WILD</div>
+
+                <div class="tp-caption NotGeneric-Title   tp-resizeme rs-parallaxlevel-0"
+                     id="slide-16-layer-1"
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                     data-fontsize="['70','70','70','45']"
+                     data-lineheight="['70','70','70','50']"
+                     data-width="none"
+                     data-height="none"
+                     data-whitespace="nowrap"
+                     data-transform_idle="o:1;"
+
+                     data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                     data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                     data-start="1000"
+                     data-splitin="chars"
+                     data-splitout="none"
+                     data-responsive_offset="on"
+
+                     data-elementdelay="0.05"
+
+                     style="z-index: 5; white-space: nowrap;">I'M OLDSCHOOL
+                </div>
+
+
+            </li>
+
+            <li data-transition="slideright">
+                <!-- MAIN IMAGE -->
+                <!-- MAIN IMAGE -->
+                <img src="../../assets/images/slider2.png"  alt=""  width="1920" height="1280">
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption News-Title"
+                     data-x="left" data-hoffset="80"
+                     data-y="top" data-voffset="450"
+                     data-whitespace="normal"
+                     data-transform_idle="o:1;"
+                     data-transform_in="o:0"
+                     data-transform_out="o:0"
+                     data-start="500">sdsdsdsdsd THE WILD</div>
+            </li>
+        </ul>
+    </div><!-- END REVOLUTION SLIDER -->
+</div><!-- END OF SLIDER WRAPPER -->
+
+
+<?php /*<div class="sliderBg">*/ ?>
+    <?php /*<div class="container hidden-xs">*/ ?>
+      <?php /*<!-- Responsive slider - START -->*/ ?>
+    	<?php /*<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true" data-transitiontime="1000">*/ ?>
+	        <?php /*<div class="slides" data-group="slides">*/ ?>
+    	  		<?php /*<ul>*/ ?>
+      				<?php /*<?php foreach($sliders as $slider): ?>*/ ?>
+                        <?php /*<div class="bgshl"><img src="<?php echo e(asset('/images/')); ?>/<?php echo e($slider->image); ?>" class="img-respos"></div>*/ ?>
+  	    				<?php /*<li>*/ ?>
+            				<?php /*<div class="slide-body" data-group="slide">*/ ?>
+                				<?php /*<img src="<?php echo e(asset('/images/')); ?>/<?php echo e($slider->image); ?>">*/ ?>
+                				<?php /*<div class="caption header" data-animate="slideAppearRightToLeft" data-delay="200" data-length="300">*/ ?>
+                  				<?php /* <h2>img-responsivensive slider</h2> */ ?>
+                                <?php /*<div class="sliderQuestion">*/ ?>
+                					<?php /*<span class="sliderQuote sliderQuoteLeft orange" ><i class="fa fa-quote-left"></i></span><?php echo $slider->question; ?><span class="sliderQuote sliderQuoteRight orange" data-animate="slideAppearRightToLeft" data-delay="400" data-length="300"><i class="fa fa-quote-right"></i></span>*/ ?>
+                                <?php /*</div>*/ ?>
+                                    <?php /*<span data-animate="slideAppearRightToLeft" data-delay="2000" data-length="300" class="orange" ><?php echo $slider->answer; ?></span>*/ ?>
+                					<?php /*<div class="sliderBy">*/ ?>
+		            					<?php /*<strong class="tteesstt" data-animate="slideAppearRightToLeft" data-delay="1000" data-length="300"><?php echo e($slider->author); ?></strong><br/>*/ ?>
+										<?php /*<span data-end="1000" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><?php echo e($slider->position); ?></span>*/ ?>
+									<?php /*</div>*/ ?>
+		        	            <?php /*</div>*/ ?>
+			                <?php /*</div>*/ ?>
+  	    				<?php /*</li>*/ ?>
+  	    			<?php /*<?php endforeach; ?>*/ ?>
+	  	    	<?php /*</ul>*/ ?>
+    	    <?php /*</div>*/ ?>
+        	<?php /*<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-chevron-left"></i></a>*/ ?>
+        	<?php /*<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-chevron-right"></i></a>*/ ?>
+        	<?php /*<div class="pages">*/ ?>
+	            <?php /*<a class="page" href="#" data-jump-to="1">1</a>*/ ?>
+	            <?php /*<a class="page" href="#" data-jump-to="2">2</a>*/ ?>
+	            <?php /*<a class="page" href="#" data-jump-to="3">3</a>*/ ?>
+        	<?php /*</div>*/ ?>
+    	<?php /*</div>*/ ?>
+
+
+	<?php /*</div>*/ ?>
+
+  <?php /*<div class="container hidden-lg hidden-md hidden-sm">*/ ?>
+    <?php /*<img src="<?php echo e(asset('/images/')); ?>/<?php echo e($sliders[0]->image); ?>" class="img-responsive">*/ ?>
+    <?php /*<div class="mobileSlider">*/ ?>
+    <?php /*<span class="sliderQuote sliderQuoteLeft orange" ><i class="fa fa-quote-left"></i></span><strong><?php echo $sliders[$random]->question; ?></strong><span class="sliderQuote sliderQuoteRight orange"><i class="fa fa-quote-right"></i></span>*/ ?>
+                          <?php /*<div class="sliderBy">*/ ?>
+                          <?php /*<strong><?php echo e($sliders[$random]->author); ?></strong><br/>*/ ?>
+                    <?php /*<span><?php echo e($sliders[$random]->position); ?></span>*/ ?>
+                  <?php /*</div>*/ ?>
+  <?php /*</div>*/ ?>
+<?php /*</div>*/ ?>
+<?php /*</div>*/ ?>
+<div class="container">
+
+    	<?php /*
+
+    	<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="false">
+        <div class="slides" data-group="slides">
+      		<ul>
+  	    		<li>
+              <div class="slide-body" data-group="slide">
+                <img src="{{ asset('/img/slide-1.jpg') }}">
+                <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
+                  {{-- <h2>Responsive slider</h2> --}}
+
+                “Everyone goes into business with the same goal – success. That’s why we switched our office to ONEnergy LED lighting. It’s the most energy-efficient, long-lasting technology available on the market, which has dramatically reduced our operating costs, leaving us with more to invest in our success and the success of our employees.“
+
+                </div>
+
+              </div>
+  	    		</li>
+  	    		<li>
+              <div class="slide-body" data-group="slide">
+                <img src="{{ asset('/img/slide-2.jpg') }}">
+                <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
+                  <h2>Twitter Boostrap</h2>
+                  <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">Compatible!</div>
+                </div>
+                <div class="caption img-bootstrap" data-animate="slideAppearDownToUp" data-delay="200">
+                  <img src="{{ asset('/img/bootstrap.png') }}">
+                </div>
+                <div class="caption img-twitter" data-animate="slideAppearUpToDown">
+                  <img src="{{ asset('/img/twitter.png') }}">
+                </div>
+              </div>
+  	    		</li>
+  	    		<li>
+              <div class="slide-body" data-group="slide">
+                <img src="{{ asset('/img/slide-3.jpg') }}">
+                <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
+                  <h2>Custom animations</h2>
+                  <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">For any caption you use!</div>
+                </div>
+                <div class="caption img-jquery" data-animate="slideAppearDownToUp" data-delay="200">
+                  <img src="{{ asset('/img/jquery.png') }}">
+                </div>
+              </div>
+  	    		</li>
+  	    	</ul>
+        </div>
+        <a class="slider-control left" href="#" data-jump="prev">Prev</a>
+        <a class="slider-control right" href="#" data-jump="next">Next</a>
+        <div class="pages">
+          <a class="page" href="#" data-jump-to="1">1</a>
+          <a class="page" href="#" data-jump-to="2">2</a>
+          <a class="page" href="#" data-jump-to="3">3</a>
+        </div>
+    	</div>
+
+    	*/?>
+      <!-- Responsive slider - END -->
+</div>
+<div class="conTe">
+<div class="h1Bg">
+	<div class="container">
+    	<center>
+        	<h1>ONEnergy is dedicated to helping you minimize your energy bills and manage your energy usage to full advantage.</h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+    <div class="col-xs-12 col-sm-6 hmColSm3 col-md-6 col-lg-4">
+      <center>
+      <div class="ceoAndText">
+    <div class="col-sm-6"> 
+        <img src="images/ceo.png" class="img-responsive ceoImage pull-left">
+      </div>
+      <div class="col-sm-6">
+        <div class="ceoImageText">
+        <strong>Mark J. Lewis</strong><br/><span class="small"> Chief Executive Officer,<br/> ONEnergy Inc.,<br/> parent company of Sunwave</span>
+      </div>
+    </div>
+  </div>
+</center>
+      <h3 class="ceoBlog"><strong><i>CEO BLOG</i></strong></h3>
+        <p><strong>November, 2014:</strong> We started Sunwave to address a gap we saw in the market, which was for an energy management provider that was both truly full service and aware of real customer needs. That is precisely how we’ve evolved. Today Sunwave offers a wide variety of services which sets it apart, with emphasis on using energy wisely and minimizing costs.</p>
+        <span class="readMore"><a hred="#">Read More</a></span><br/>
+        <span class="hr"><hr></span>
+    </div>
+    <div class="col-sm-4 hmColSm3 hmColSm3Middle hidden-sm hidden-xs hidden-md">
+        <h4 class="ceoBlog"><strong><i>&nbsp </i></strong></h4>
+        <p>Our products and services range from LED lighting, building upgrades, energy auditing and solar energy, through to the supply of “green” electricity.</p>
+        <p>Sunwave customers include private homeowners, manufacturing facilities, warehouses, multi-residential developments, and smaller businesses like restaurants and convenience stores. We’re really for anyone interested in managing the cost of their energy in the most effective and environmentally friendly way possible.</p>
+        <div class="col2video">
+	        <a href="#"><i class="fa fa-youtube-play img-responsive pull-left video"></i>Meet Mark Lewis and learn more about Sunwave</a>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 colLast col-md-6 col-lg-4">
+    	<div class="orange title">
+        	<h3 class="ceoBlog"><strong><i>SEE WHAT OUR BUSINESS CUSTOMERS SAY</i></strong></h3>
+        </div>
+        <ul class="youtubeUL">
+          <li>John Young, General Manager, Copper Creek Golf & Country Club PGA of Canada, Executive Professional</li>
+          <li>Helen Beauchamp, Director of Commercial Leasing & Operations, Downing Street Property Management Inc.</li>
+          <li>Moses Cohen, Vice President, Commercial Document Printing Company</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

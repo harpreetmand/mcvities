@@ -1,0 +1,401 @@
+<?php $__env->startSection('title'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+
+
+
+
+
+    <div class="slider hidden-xs">
+        <div class="rev_slider_wrapper">
+            <div id="slider1" class="rev_slider"  data-version="5.0">
+                <ul>
+                    <?php foreach($sliders as $slider): ?>
+                        <?php
+                            if($slider->faceRight == 1){
+                                $dataX = "right";
+                                $hoffset = "0";
+                                $voffset = "0";
+                            }else{
+                                $dataX = "left";
+                                $hoffset = "0";
+                                $voffset = "0";
+                            }
+
+                        ?>
+                        <li data-transition="slideright">
+                            <!-- MAIN IMAGE -->
+                            <!-- MAIN IMAGE -->
+                            <img src="<?php echo e(asset('/images/transparent.png')); ?>" data-bgrepeat="repeat" alt=""  >
+                            <?php /*<img src="images/transparent.png" alt="">*/ ?>
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption News-Title"
+                                 data-x=<?php echo e($dataX); ?> data-hoffset=<?php echo e($hoffset); ?>
+
+                                 data-y="top" data-voffset=<?php echo e($voffset); ?>
+
+                                 data-whitespace="normal"
+                                 data-start="0"
+                                 <?php /*data-transform_out="[100%];z:500;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:000;e:Sine.easeIn;"*/ ?>
+                                 data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-transform_out="x:[-500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-transform_idle="o:100;"
+                                 data-transform_in="o:0"
+                                 <?php /*data-transform_out="o:1000"*/ ?>
+                                 data-start="200">
+                                <img src="<?php echo e(asset('/images/')); ?>/<?php echo e($slider->image); ?>">
+                            </div>
+                            <div class="tp-caption sliderQAndA sliderQuestion"
+                                 data-x=<?php echo e($dataX); ?> data-hoffset="800"
+                                 data-y="top" data-voffset="200"
+                                 data-whitespace="normal"
+                                 data-end="6000"
+                                 data-transform_out="[1%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:1000;e:Power4.easeInOut;"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                 data-start="200"><span class="sliderQuote sliderQuoteLeft lightOrange" ><i class="fa fa-quote-left"></i></span><?php echo e($slider->question); ?><span class="sliderQuote sliderQuoteRight lightOrange"><i class="fa fa-quote-right"></i></span></div>
+                            <div class="tp-caption sliderQAndA sliderAnswer"
+                                 data-x=<?php echo e($dataX); ?> data-hoffset="800"
+                                 data-y="top" data-voffset="200"
+                                 data-whitespace="normal"
+                                 <?php /*data-transform_in="x:[0%];z:0;rX:90deg;rY:0deg;rZ:0deg;sX:0;sY:1;skX:;skY:0;s:2000;e:Power4.easeInOut;"*/ ?>
+                                 data-transform_in="[1%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:1000;e:Power4.easeInOut;"
+                                 <?php /*data-end="4000"*/ ?>
+                                 data-transform_idle="o:1;"
+                                 data-lineheight="['40','200','70','50']"
+                                 data-transform_out="x:[-500%];s:2000;e:Power2.easeInOut;s:2005;e:Power2.easeInOut;"
+                                 data-start="6700"><?php echo e($slider->answer); ?>
+
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div><!-- END REVOLUTION SLIDER -->
+        </div><!-- END OF SLIDER WRAPPER -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<?php /*<div class="slider">*/ ?>
+    <?php /*<div class="rev_slider_wrapper">*/ ?>
+        <?php /*<div id="slider1" class="rev_slider"  data-version="5.0">*/ ?>
+            <?php /*<ul>*/ ?>
+                <?php /*<li data-transition="slideright">*/ ?>
+                    <?php /*<!-- MAIN IMAGE -->*/ ?>
+                    <?php /*<!-- MAIN IMAGE -->*/ ?>
+                   <?php /*<img src="<?php echo e(asset('/images/transparent.png')); ?>" data-bgrepeat="repeat" alt=""  >*/ ?>
+                    <?php /*<img src="images/transparent.png" alt="">*/ ?>
+                    <?php /*<!-- LAYER NR. 1 -->*/ ?>
+                    <?php /*<div class="tp-caption News-Title"*/ ?>
+                         <?php /*data-x="left" data-hoffset="0"*/ ?>
+                         <?php /*data-y="top" data-voffset="0"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-start="0"*/ ?>
+                         <?php /*data-transform_out="[100%];z:500;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:000;e:Sine.easeIn;"*/ ?>
+                         <?php /*data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                            <?php /*data-transform_out="x:[-500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-transform_idle="o:100;"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+                         <?php /*data-transform_out="o:1000"*/ ?>
+                         <?php /*data-start="500">*/ ?>
+
+                        <?php /*<img src="<?php echo e(asset('/images/led_lighting_quote.png')); ?>">*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<div class="tp-caption sliderQAndA sliderQuestion"*/ ?>
+                         <?php /*data-x="left" data-hoffset="600"*/ ?>
+                         <?php /*data-y="top" data-voffset="200"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-end="2000"*/ ?>
+                         <?php /*data-transform_out="[1%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:1;skX:0;skY:0;s:1000;e:Power4.easeInOut;"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+
+                         <?php /*data-start="500"><span class="sliderQuote sliderQuoteLeft orange" ><i class="fa fa-quote-left"></i></span>Unflattering fluorescent lighting in my clothing store was dissuading potential customers<span class="sliderQuote sliderQuoteRight orange"><i class="fa fa-quote-right"></i></span></div>*/ ?>
+
+<?php /*<div class="tp-caption sliderQAndA sliderAnswer"*/ ?>
+                         <?php /*data-x="left" data-hoffset="600"*/ ?>
+                         <?php /*data-y="top" data-voffset="200"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+        <?php /*data-transform_in="x:[0%];z:0;rX:90deg;rY:0deg;rZ:0deg;sX:0;sY:1;skX:;skY:0;s:2000;e:Power4.easeInOut;"*/ ?>
+
+                         <?php /*data-end="4000"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+     <?php /*data-lineheight="['40','200','70','50']"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+     <?php /*data-transform_out="x:[-500%];s:2000;e:Power2.easeInOut;s:2005;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-start="2200">ONEnergy upgraded my business to LED lighting, which now floods the space with a natural quality of light, providing a much more flattering and inviting retail environment for my*/ ?>
+    <?php /*customers. </div>*/ ?>
+
+
+
+
+
+
+
+                    <?php /*<div class="tp-caption News-Title"*/ ?>
+                         <?php /*data-x="left" data-hoffset="40"*/ ?>
+                         <?php /*data-y="top" data-voffset="50"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-start="5000"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+                         <?php /*data-transform_out="o:0"*/ ?>
+                         <?php /*>ONEnergy upgraded my business to LED lighting, which now floods the space with a natural quality of light, providing a much more flattering and inviting retail environment for my*/ ?>
+                        <?php /*customers. </div>*/ ?>
+
+                    <?php /*<div class="tp-caption NotGeneric-Title   tp-resizeme rs-parallaxlevel-0"*/ ?>
+                         <?php /*id="slide-16-layer-1"*/ ?>
+                         <?php /*data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"*/ ?>
+                         <?php /*data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"*/ ?>
+                         <?php /*data-fontsize="['70','70','70','45']"*/ ?>
+                         <?php /*data-lineheight="['70','70','70','50']"*/ ?>
+                         <?php /*data-width="none"*/ ?>
+                         <?php /*data-height="none"*/ ?>
+                         <?php /*data-whitespace="nowrap"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+
+                         <?php /*data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"*/ ?>
+                         <?php /*data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"*/ ?>
+                         <?php /*data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"*/ ?>
+                         <?php /*data-start="1000"*/ ?>
+                         <?php /*data-splitin="chars"*/ ?>
+                         <?php /*data-splitout="none"*/ ?>
+                         <?php /*data-responsive_offset="on"*/ ?>
+
+                         <?php /*data-elementdelay="0.05"*/ ?>
+
+                         <?php /*style="z-index: 5; white-space: nowrap;">I'M OLDSCHOOL*/ ?>
+                    <?php /*</div>*/ ?>
+
+
+                <?php /*</li>*/ ?>
+
+
+
+                <?php /*<li data-transition="slideright">*/ ?>
+                    <?php /*<!-- MAIN IMAGE -->*/ ?>
+                    <?php /*<!-- MAIN IMAGE -->*/ ?>
+                    <?php /*<!-- <img src="../../assets/images/bgt.png"  alt=""  width="1920" height="1280">	 -->*/ ?>
+                    <?php /*<!-- LAYER NR. 1 -->*/ ?>
+                    <?php /*<div class="tp-caption News-Title"*/ ?>
+                         <?php /*data-x="left" data-hoffset="0"*/ ?>
+                         <?php /*data-y="top" data-voffset="0"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-start="0"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-transform_out="x:[-500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-start="500">*/ ?>
+
+                        <?php /*<img src="<?php echo e(asset('/images/speciality_wines_quote.png')); ?>">*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<div class="tp-caption sliderQAndA sliderQuestion"*/ ?>
+                         <?php /*data-x="left" data-hoffset="700"*/ ?>
+                         <?php /*data-y="top" data-voffset="200"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-end="2000"*/ ?>
+                         <?php /*data-transform_out="[1%];z:0;rX:9000deg;rY:0deg;rZ:0deg;sX:50;sY:1;skX:0;skY:0;s:1000;e:Power4.easeInOut;"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-transform_out="o:0"*/ ?>
+                         <?php /*data-start="500"><span class="sliderQuote sliderQuoteLeft orange" ><i class="fa fa-quote-left"></i></span>I wanted to provide my employees with a safer work environment.<span class="sliderQuote sliderQuoteRight orange"><i class="fa fa-quote-right"></i></span></div>*/ ?>
+
+<?php /*<div class="tp-caption sliderQAndA sliderAnswer"*/ ?>
+                         <?php /*data-x="left" data-hoffset="700"*/ ?>
+                         <?php /*data-y="top" data-voffset="200"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+        <?php /*data-transform_in="x:[0%];z:0;rX:90deg;rY:0deg;rZ:0deg;sX:50;sY:1;skX:;skY:0;s:2000;e:Power4.easeInOut;"*/ ?>
+        <?php /*data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+     <?php /*data-transform_out="x:[-500%];s:2000;e:Power2.easeInOut;s:2010;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-end="4000"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+     <?php /*data-lineheight="['40','200','70','50']"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+                         <?php /*data-transform_out="o:0"*/ ?>
+                         <?php /*data-start="2200">ONEnergy evaluated our needs and provided an LED solution that increased security by providing a brighter, better quality of light in all areas, while simultaneously saving us 77% on energy costs. </div>*/ ?>
+
+
+
+
+
+
+
+                    <?php /*<div class="tp-caption News-Title"*/ ?>
+                         <?php /*data-x="left" data-hoffset="40"*/ ?>
+                         <?php /*data-y="top" data-voffset="50"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-start="5000"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+                         <?php /*data-transform_out="o:0"*/ ?>
+                         <?php /*>ONEnergy upgraded my business to LED lighting, which now floods the space with a natural quality of light, providing a much more flattering and inviting retail environment for my*/ ?>
+                        <?php /*customers. </div>*/ ?>
+
+                    <?php /*<div class="tp-caption NotGeneric-Title   tp-resizeme rs-parallaxlevel-0"*/ ?>
+                         <?php /*id="slide-16-layer-1"*/ ?>
+                         <?php /*data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"*/ ?>
+                         <?php /*data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"*/ ?>
+                         <?php /*data-fontsize="['70','70','70','45']"*/ ?>
+                         <?php /*data-lineheight="['70','70','70','50']"*/ ?>
+                         <?php /*data-width="none"*/ ?>
+                         <?php /*data-height="none"*/ ?>
+                         <?php /*data-whitespace="nowrap"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+
+                         <?php /*data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"*/ ?>
+                         <?php /*data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"*/ ?>
+                         <?php /*data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"*/ ?>
+                         <?php /*data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"*/ ?>
+                         <?php /*data-start="1000"*/ ?>
+                         <?php /*data-splitin="chars"*/ ?>
+                         <?php /*data-splitout="none"*/ ?>
+                         <?php /*data-responsive_offset="on"*/ ?>
+
+                         <?php /*data-elementdelay="0.05"*/ ?>
+
+                         <?php /*style="z-index: 5; white-space: nowrap;">I'M OLDSCHOOL*/ ?>
+                    <?php /*</div>*/ ?>
+
+
+                <?php /*</li>*/ ?>
+
+                <?php /*<li data-transition="slideright">*/ ?>
+                    <?php /*<!-- MAIN IMAGE -->*/ ?>
+                    <?php /*<!-- MAIN IMAGE -->*/ ?>
+                    <?php /*<div class="tp-caption News-Title"*/ ?>
+                         <?php /*data-x="left" data-hoffset="0"*/ ?>
+                         <?php /*data-y="top" data-voffset="0"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-start="1000"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+                         <?php /*data-transform_out="o:0"*/ ?>
+                         <?php /*data-start="500">*/ ?>
+
+                        <?php /*<img src="<?php echo e(asset('/images/led_lighting_quote.png')); ?>">*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<!-- LAYER NR. 1 -->*/ ?>
+                    <?php /*<div class="tp-caption News-Title"*/ ?>
+                         <?php /*data-x="left" data-hoffset="80"*/ ?>
+                         <?php /*data-y="top" data-voffset="450"*/ ?>
+                         <?php /*data-whitespace="normal"*/ ?>
+                         <?php /*data-transform_idle="o:1;"*/ ?>
+                         <?php /*data-transform_in="o:0"*/ ?>
+                         <?php /*data-transform_out="o:0"*/ ?>
+                         <?php /*data-start="500">sdsdsdsdsd THE WILD</div>*/ ?>
+                <?php /*</li>*/ ?>
+            <?php /*</ul>*/ ?>
+        <?php /*</div><!-- END REVOLUTION SLIDER -->*/ ?>
+    <?php /*</div><!-- END OF SLIDER WRAPPER -->*/ ?>
+<?php /*</div>*/ ?>
+
+
+<?php /*<div class="sliderBg">*/ ?>
+    <?php /*<div class="container hidden-xs">*/ ?>
+      <?php /*<!-- Responsive slider - START -->*/ ?>
+    	<?php /*<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true" data-transitiontime="1000">*/ ?>
+	        <?php /*<div class="slides" data-group="slides">*/ ?>
+    	  		<?php /*<ul>*/ ?>
+      				<?php /*<?php foreach($sliders as $slider): ?>*/ ?>
+                        <?php /*<div class="bgshl"><img src="<?php echo e(asset('/images/')); ?>/<?php echo e($slider->image); ?>" class="img-respos"></div>*/ ?>
+  	    				<?php /*<li>*/ ?>
+            				<?php /*<div class="slide-body" data-group="slide">*/ ?>
+                				<?php /*<img src="<?php echo e(asset('/images/')); ?>/<?php echo e($slider->image); ?>">*/ ?>
+                				<?php /*<div class="caption header" data-animate="slideAppearRightToLeft" data-delay="200" data-length="300">*/ ?>
+                  				<?php /* <h2>img-responsivensive slider</h2> */ ?>
+                                <?php /*<div class="sliderQuestion">*/ ?>
+                					<?php /*<span class="sliderQuote sliderQuoteLeft orange" ><i class="fa fa-quote-left"></i></span><?php echo $slider->question; ?><span class="sliderQuote sliderQuoteRight orange" data-animate="slideAppearRightToLeft" data-delay="400" data-length="300"><i class="fa fa-quote-right"></i></span>*/ ?>
+                                <?php /*</div>*/ ?>
+                                    <?php /*<span data-animate="slideAppearRightToLeft" data-delay="2000" data-length="300" class="orange" ><?php echo $slider->answer; ?></span>*/ ?>
+                					<?php /*<div class="sliderBy">*/ ?>
+		            					<?php /*<strong class="tteesstt" data-animate="slideAppearRightToLeft" data-delay="1000" data-length="300"><?php echo e($slider->author); ?></strong><br/>*/ ?>
+										<?php /*<span data-end="1000" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><?php echo e($slider->position); ?></span>*/ ?>
+									<?php /*</div>*/ ?>
+		        	            <?php /*</div>*/ ?>
+			                <?php /*</div>*/ ?>
+  	    				<?php /*</li>*/ ?>
+  	    			<?php /*<?php endforeach; ?>*/ ?>
+	  	    	<?php /*</ul>*/ ?>
+    	    <?php /*</div>*/ ?>
+        	<?php /*<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-chevron-left"></i></a>*/ ?>
+        	<?php /*<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-chevron-right"></i></a>*/ ?>
+        	<?php /*<div class="pages">*/ ?>
+	            <?php /*<a class="page" href="#" data-jump-to="1">1</a>*/ ?>
+	            <?php /*<a class="page" href="#" data-jump-to="2">2</a>*/ ?>
+	            <?php /*<a class="page" href="#" data-jump-to="3">3</a>*/ ?>
+        	<?php /*</div>*/ ?>
+    	<?php /*</div>*/ ?>
+
+
+	<?php /*</div>*/ ?>
+    <div class="container hidden-lg hidden-md hidden-sm mobileSliderBackground">
+        <img src="<?php echo e(asset('/images/')); ?>/<?php echo e($sliders[$random]->image); ?>" class="img-responsive">
+        <div class="mobileSlider">
+            <span class="sliderQuote sliderQuoteLeft lightOrange" ><i class="fa fa-quote-left"></i></span><strong><?php echo $sliders[$random]->question; ?></strong><span class="sliderQuote sliderQuoteRight lightOrange"><i class="fa fa-quote-right"></i></span>
+            <div><?php echo $sliders[$random]->answer; ?></div>
+        </div>
+    </div>
+
+<div class="container">
+
+
+      <!-- Responsive slider - END -->
+</div>
+<div class="codnTe">
+<div class="h1Bg">
+	<div class="container">
+    	<center>
+        	<h1>ONEnergy is dedicated to helping you get the most from your energy usage while minimizing your energy bills</h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+    <div class="col-xs-12 col-sm-6 hmColSm3 col-md-6 col-lg-4">
+<h4 class="ceoBlog"><strong><i>&nbsp </i></strong></h4>
+        <img src="images/pvl-ceo-1.png" class="img-responsive pull-left">
+
+
+    </div>
+    <div class="col-xs-12 col-sm-6 hmColSm3 hmColSm3Middle col-md-6 col-lg-4">
+        <h4 class="ceoBlog"><strong><i>&nbsp </i></strong></h4>
+        <p>ONEnergy is proud to exhibit at the 2015 Cargo Logistics America Expo held at the San Diego Convention Center. During the expo, ONEnergy is presenting a number of leading North American cargo, ports and logistics companies with information on how they can greatly reduce their energy consumption and save on energy costs by making the switch to LED lighting. </p>
+<p>If you’re looking for ways to brighten your business while dramatically reducing your energy costs, contact ONEnergy and speak to an energy efficiency <span class="nowrap">expert today. </span></p>
+
+        <div class="col2video">
+	        <a href="https://www.youtube.com/watch?v=fPnowvUnCFs" target="_blank"><i class="fa fa-youtube-play img-responsive pull-left video"></i>Meet <strong>Mark Lewis</strong> and learn more about ONEnergy</a>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 colLast col-md-12 col-lg-4">
+    	<div class="orange title">
+        	<h3 class="ceoBlog"><strong><i>See what our business customers say</i></strong></h3>
+        </div>
+        <ul class="youtubeUL">
+            <a href="https://www.youtube.com/watch?v=6BBpg6RtnJ0" target="_blank"><li><strong>John Young</strong>, General Manager, Copper Creek Golf & Country Club PGA of Canada, Executive Professional</li></a>
+            <a href="https://www.youtube.com/watch?v=mLlSAPhA9RY" target="_blank"><li><strong>Helen Beauchamp</strong>, Director of Commercial Leasing & Operations, Downing Street Property Management Inc.</li></a>
+            <a href="https://www.youtube.com/watch?v=KpSwf6Gv7EY" target="_blank"><li><strong>Moses Cohen</strong>, Vice President, Commercial Document Printing Company</li></a>
+        </ul>
+        <div class="home-contact-us">
+            <h3 class="ceoBlog orange"><strong><i>Contact us today</i></strong></h3>
+            <p><strong>1 855-753-2525</strong></p>
+            <a href="mailto:customercare@onenergyinc.com" target="_top">customercare@onenergyinc.com</a>
+        </div>
+    </div>
+</div>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

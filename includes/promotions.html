@@ -1,0 +1,48 @@
+<div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="col-sm-6">
+                <img src="app/assets/images/{{homeContent.promotions.image}}.png" alt="Contest Logo" class="img-responsive center-block" />
+            </div>
+            <div class="col-sm-6" ng-controller="contestFormCtrl">
+                <p class="heading white" ng-bind-html="homeContent.promotions.contestTitle"></p>
+                <form class="pad30" ng-submit="contestFormSubmit()" ng-hide="hideForm">
+                    <span class="help-block white secondary-font font20" ng-show="errorName">{{homeContent.messages.name}}</span>
+                    <input type="text" name="fullName" id="fullName" placeholder="{{homeContent.promotions.fName}}" ng-model="contestForm.fullName">
+                    <input type="text" name="lastName" id="lastName" ng-model="contestForm.lastName" ng-init="contestForm.lastName='dsfsd7fsd6f767867s8ft'" class="hidden">
+                    <span class="help-block white secondary-font font20" ng-show="errorEmail">{{homeContent.messages.email}}</span>
+                    <input type="email" name="email" id="email" placeholder="{{homeContent.promotions.fEmail}}" ng-model="contestForm.email">
+                    <input type="email" name="emailAgain" id="emailAgain" placeholder="{{homeContent.promotions.fEmail}}" ng-model="contestForm.emailAgain" class="hiddenEmail">
+                    <span class="help-block white secondary-font font20" ng-show="errorPhone">{{homeContent.messages.phone}</span>
+                    <input type="text" name="phone" id="phone" placeholder="{{homeContent.promotions.fPhone}}" ng-model="contestForm.phone">
+                    <span class="help-block white secondary-font font20" ng-show="errorAgeCheck">{{homeContent.messages.age}}</span>
+                    <input type="checkbox" ng-true-value="true" ng-false-value="false" name="ageCheck" id="ageCheck" ng-model="contestForm.ageCheck">
+                    <label for="ageCheck" class="white" ng-bind-html="homeContent.promotions.consent"></label>
+                    <input type="checkbox" name="receiveOffer" id="receiveOffer" ng-model="contestForm.receiveOffer">
+                    <label for="receiveOffer" class="white" ng-bind-html="homeContent.promotions.receiveOffer | unsafe"></label>
+                    <div class="cf padT30"></div>
+                    <div id="messages" ng-show="message">{{ message }}</div>
+                    <button class="transparent-btn white">
+                        <svg>
+                            <rect x="0" y="0" fill="none" width="180" height="55" />
+                        </svg>
+                        <span>{{homeContent.promotions.button}}</span>
+                    </button>
+                </form>
+                  <div class="showAnimation padT30" ng-show="thankYou">
+                    <p class="white secondary-font font20">{{homeContent.messages.contestThank}}</p>
+                  </div>
+                  <div class="showAnimation padT30" ng-show="emailExist">
+                     <p class="white secondary-font font20">{{homeContent.messages.sorry}}</p>
+                  </div> 
+            </div>
+            <div class="cf"></div>
+        </div>
+        <div class="cf pad30">
+            <p class="white small padLR10 center"><span ng-bind-html="homeContent.promotions.note | unsafe"></span>
+                <br/><span ng-bind-html="homeContent.promotions.noteLink | unsafe"></span></p>
+        </div>
+        <span class="btn btn-default" data-dismiss="modal">X</span>
+    </div>
+</div>

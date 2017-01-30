@@ -1,0 +1,72 @@
+<?php $__env->startSection('title'); ?>Testimonials |<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>We know you have home cleaning questions - and we've got answers. See the most frequently asked questions here or just contact us today.<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+
+<div class="container noPadding topImageText">
+  <img src="<?php echo e(asset('/img/topimage/MM_Top_Services.jpg')); ?>" alt="Testimonials" class="img-responsive">
+  <span class="textOverImage">
+    <h1>Testimonials</h1> 
+  </span>
+</div>
+<div class="container topPadding extraPadding">
+  <div class="col-md-9 noLeftPadding">
+    <div class="breadcrums">
+      <a href="/">Home</a> > <a href="/about-us">About Us</a> > Testimonials
+    </div>
+
+
+   <div class="topPadding"></div>
+   <div class="testimonial-video-container extraPadding">
+     <!-- <iframe class="testimonial-video" width="625" height="352" src="https://www.youtube.com/embed/-JLWHQy05B8" frameborder="0" allowfullscreen></iframe> -->
+     <iframe class="testimonial-video" width="300" height="169"  src="https://www.youtube.com/embed/m8dwVRtpJ1g" frameborder="0" allowfullscreen=""></iframe>
+     <iframe class="testimonial-video testi-video-2" width="300" height="169" src="https://www.youtube.com/embed/d0fgYO5IZFw" frameborder="1" allowfullscreen=""></iframe>
+     <div class="clear"></div>
+   </div>
+
+   <div class="topPadding"></div>
+    <div class="">
+        <h2></h2>
+        <p></p>
+
+        <?php foreach($allTestimonials as $testimonial): ?>
+          <p><?php echo $testimonial->body; ?></p>
+          <strong class="green"><?php echo e($testimonial->location); ?></strong>
+
+
+          <hr/>
+      <?php endforeach; ?>
+
+    </div>
+
+
+
+
+
+  </div>
+  <div class="clear visible-sm visibile-xs">
+  </div>
+  <?php echo $__env->make('layout.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+<div class="container borderTop">
+  <div class="col-sm-12 testimonials noPadding">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-3">
+
+        <img src="<?php echo e(asset('/img/testimonials/'.$testimonials->image)); ?>" class="img-responsive">
+
+    </div>
+    <div class="col-sm-7">
+      <i class="fa fa-quote-left"></i><p><?php echo e($testimonials->body); ?><i class="fa fa-quote-right"></i></p>
+      <span class="pull-right">-<?php echo e($testimonials->location); ?></span>
+    </div>
+    <div class="col-sm-1">
+    </div>
+  </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

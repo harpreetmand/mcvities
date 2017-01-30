@@ -1,0 +1,23 @@
+  <div class="brands-section">
+  	<div class="container">
+  		<!-- <div class="mcvities brand pad50" ng-include="'includes/mcvities.html'"></div> -->
+      <div class="cars brand pad50">
+      <p class="red pad30">{{homeContent.brands.title }}</p>
+  		<div class="brand-logo">
+  			<img ng-repeat="(key, value) in homeContent.brands.brandName" ng-src="app/assets/images/{{value.image}}-logo.png" alt="{{value.image}} Canada" ng-click="showMore(key, value)" class="b-logo"/>
+	        <div class="cf"></div>
+  		</div>
+      <div class="pad20"></div>
+        <div id="carrs" class="other-brands padT20" ng-include="'includes/carrs.html'" ng-class="{active : thisBrand === 'carrs'}"></div>
+        <div id="jacobs" class="other-brands padT20" ng-include="'includes/jacobs.html'" ng-class="{active : thisBrand === 'jacobs'}"></div>
+  		<div class="brand-show">
+  			<button class="red-btn white" ng-class="{show : thisBrand === 'jacobs' || thisBrand === 'carrs'}"ng-click="close()">
+  				<svg>
+  					<rect x="0" y="0" fill="none" width="180" height="55" />
+  				</svg>
+  				<span>{{ homeContent.close }}</span>
+  			</button>
+  		</div>
+  		</div>
+  	</div>
+  </div>

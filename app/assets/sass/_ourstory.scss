@@ -1,0 +1,112 @@
+#ourstory {
+  background: rgba($black,0.6);
+  .fixed-back {
+    position: fixed;
+    background: url(../images/fixed-back.jpg) no-repeat center;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .ourstory-section1 {
+    background: transparent;
+  }
+  .ourstory-section2 {
+    background: $red;
+    .container {
+      .ourstory-nav-container {
+        position: relative;
+        .ourstory-nav-inner {
+          border: 1px solid $white;
+          display: inline-block;
+          position: relative;
+          padding: 7px;
+          .ourstory-nav {
+            background-color: $white;
+            height: 100%;
+            padding-bottom: 30px;
+          }
+          .title {
+            padding: 20px 5px 5px;
+            font-family: $secondary-font;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 20px;
+            color: $red;
+          }
+          button {
+            font-size: 15px;
+            height: 45px;
+            width: 170px;
+            color: $red;
+            svg {
+              rect {
+                height: 45px;
+                width: 170px;
+                stroke: $red;
+              }
+            }
+            &:hover {
+              svg rect {
+                stroke-dashoffset: 238;
+                stroke-dasharray: 123,353;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  #ourstory {
+    .ourstory-section2 {
+      background: url(../images/ourstory-sec2-back3.jpg) no-repeat center;
+      background-size: cover;
+      .container {
+        .ourstory-nav-container {
+          &:nth-child(2) {
+            margin: 0;
+          }
+          .ourstory-nav-inner {
+            .title {
+              font-size: 14px;
+              color: $white;
+            }
+            .ourstory-nav {
+              background-color: $red;
+            }
+            button {
+              color: $white;
+              svg rect {
+                stroke: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  #ourstory {
+    .ourstory-section2 {
+      .container {
+        .ourstory-nav-container {
+          .ourstory-nav-inner {
+            .title {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<div class="brands-container" ng-repeat="data in homeContent.productsJacobs" ng-if="$index > 0" ng-init="$f = $index;">
+	<div class="each-brand-section">
+		<div ng-repeat="(key, value) in data" class="col-md-4 brands-lists {{key}}" ng-class="{active : activePro === key}" ng-click="showProduct(key, $f)">
+			<img ng-src="app/assets/images/jacobs/thumbs/{{value.image}}" alt="Jacobs {{ value.name }} sm" class="img-responsive center-block" />
+			<!-- {{ value.image }} -->
+			<div class="brand-info hidden-md hidden-lg {{key}}" ng-class="{active : activePro === key}">
+				<div class="right-side col-xs-12">
+					<p ng-bind-html="value.info | unsafe">
+						{{ value.info }}
+					</p>
+					 <a href="#" class="nutrition-btn" data-toggle="modal" data-target="#nutrition-modal-jacobs" ng-click="thisProduct(value.image,value.name)">
+                        <button class="transparent-btn white">
+                            <svg>
+                                <rect x="0" y="0" fill="none" width="180" height="55" />
+                            </svg>
+                            {{ homeContent.nutrition }}
+                        </button>
+                    </a>
+				</div>
+				<div class="cf"></div>
+			</div>
+		</div>
+		<div class="cf"></div>
+		<div class="brand-info-container brand{{$index}}" ng-class="{active : section === 'section'+$index}">
+			<div ng-repeat="(key, value) in data" class="brand-info hidden-sm hidden-xs {{key}}" ng-class="{active : activePro === key}" ng-init="$f = brandInfo">
+				<div class="left-side col-md-5">
+					<img ng-src="app/assets/images/jacobs/{{value.image}}" alt="Jacobs {{ value.name }}" class="img-responsive center-block" />
+				</div>
+				<div class="right-side col-md-7">
+					<p ng-bind-html="value.info | unsafe">
+						{{ value.info }}
+
+					</p>
+					<a class="hidden-xs hidden-sm"  href="/{{ homeContent.lang }}" ng-click="gotoElement('wheretobuy') ;closeMobileNav()">
+						<button class="transparent-btn white">
+							<svg>
+								<rect x="0" y="0" fill="none" width="180" height="55" />
+							</svg>
+							{{ homeContent.whereToBuy.title }}
+						</button>
+					</a>
+					 <a href="#" class="nutrition-btn" style="margin-left:10px;" ng-click="thisProduct(value.image,value.name)" data-toggle="modal" data-target="#nutrition-modal-jacobs">
+                        <button class="transparent-btn white">
+                            <svg>
+                                <rect x="0" y="0" fill="none" width="180" height="55" />
+                            </svg>
+                            {{ homeContent.nutrition }}  
+                        </button>
+                    </a>
+				</div>
+				<div class="cf"></div>
+			</div>
+		</div>
+		<div class="cf"></div>
+	</div>
+</div>
+<div id="nutrition-modal-jacobs" class="nutrition-modal modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+        <img src="app/assets/images/nutrition/jacobs/{{productImage}}" alt="{{productName}} Nutirition" class="img-responsive center-block">
+        </div>
+      </div>
+      <span class="btn btn-default" data-dismiss="modal">X</span>
+    </div>
+  </div>
+</div> <!--- contest end -->

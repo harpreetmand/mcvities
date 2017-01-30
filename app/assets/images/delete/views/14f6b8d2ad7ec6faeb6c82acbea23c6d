@@ -1,0 +1,23 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="allPageImg">
+	<img src="<?php echo e(asset('/images/')); ?>/<?php echo e($page->image); ?>" alt="main image" class="img-responsive">
+	<h1 class="animation"><?php echo $page->text; ?></ornage></h1>
+</div>
+<div class="allPageUnderImage animation">
+<div class="h1Bg">
+	<div class="container">
+    	<center>
+        	<h1><?php echo $page->underImage; ?></h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+	<?php echo $page->body; ?>
+
+
+</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,4 @@
+<div class="allPageImg">
+	<img src="<?php echo e(asset('/images/')); ?>/<?php echo e($page->image); ?>" alt="main image" class="img-responsive animation fadeIn animated">
+	<h1 class="animation animated fadeInRight animation-delay-10"><?php echo $page->text; ?></h1>
+</div>

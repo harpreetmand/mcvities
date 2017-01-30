@@ -1,0 +1,71 @@
+<?php $__env->startSection('title'); ?>
+    | <?php echo e($page->metaTitle); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>
+    <?php echo e($page->metaDesc); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+    <div class="allPageImg">
+        <img src="<?php echo e(asset('/images/')); ?>/<?php echo e($page->image); ?>" alt="main image" class="img-responsive">
+        <h1 class="animation"><?php echo $page->text; ?></h1>
+    </div>
+    <div class="allPageUnderImage animation">
+        <div class="h1Bg">
+            <div class="container no-padding">
+                <center>
+                    <h1><?php echo $page->underImage; ?></h1>
+                </center>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="col-xs-3 hidden-xs side-menu">
+                <?php /* <p class="big orange"><strong><?php echo $page->text; ?></strong></p> */ ?>
+                <ul class="topUl">
+                    <li class="nav-"><a href="#">Case Studies</a></li>
+                    <?php foreach($subNav as $suNav): ?>
+                        <?php if($suNav->parent == $sub): ?>
+
+                            <li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($link)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?></a></li>
+
+                            <?php if($suNav->indent == 1): ?>
+                                <?php /* <ul class="indent"> */ ?>
+                                <?php foreach($indentNavs as $indentNav): ?>
+                                    <?php if($suNav->id == $indentNav->parent): ?>
+                                        <li class="indentTop nav-<?php echo e($indentNav->url); ?>"><a href="<?php echo e(url()); ?>/<?php echo e($link); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                <?php /* </ul> */ ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-xs-12 leftBorder content">
+                <?php echo $page->body; ?>
+
+                <?php foreach($pdfs as $pdf): ?>
+                <div class="col-sm-6 col-md-4">
+                    <a href="http://gosunwave.media/case_studies/led/<?php echo e($pdf->pdf); ?>" target="_blank"><img src="http://gosunwave.media/case_studies/led/led_images/<?php echo e($pdf->image); ?>" alt="<?php echo e($pdf->pdf); ?>" class="img-responsive">
+                    <div class="pdfBottom">
+                        <strong><?php echo e($pdf->title); ?></strong><br/>
+                        <?php echo e($pdf->sub); ?></a>
+                    </div>
+
+                </div>
+                    <?php endforeach; ?>
+
+            </div>
+        </div>
+
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

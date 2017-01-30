@@ -1,0 +1,59 @@
+<div class="product-logo">
+  <img ng-src="app/assets/images/logo-big.png" alt="McVities Logo" class="img-responsive center-block"/>
+  <p class="brand-info" ng-bind-html="homeContent.productsMcvities.brandInfo | unsafe">
+  </p>
+</div>
+<div class="products-container">
+  <div class="each-product-section">
+
+    <div ng-repeat="(key, products) in homeContent.productsMcvitiesArr.products" class="col-md-4 products-lists " ng-class="" ng-click="showProduct(key)">
+      <img ng-src="app/assets/images/mcvities/thumbs/{{products.image}}" alt="McVities product {{ products.image }}" class="img-responsive center-block"/>
+
+
+      <div class="product-info hidden-md hidden-lg {{key}}" ng-class="{active : activePro === key}">
+        <div class="right-side col-xs-12">
+          <p ng-bind-html="products.info | unsafe">
+            {{ products.info }}
+          </p>
+          <button class="transparent-btn white">
+            <svg>
+              <rect x="0" y="0" fill="none" width="180" height="55" />
+            </svg>
+            Where to buy
+          </button>
+        </div>
+        <div class="cf"></div>
+      </div>
+    </div>
+    <div class="cf"></div>
+    <!-- <div class="product-info-container product{{$index}}" ng-class="{active : section === 'section'+$index}">
+      <div ng-repeat="(key, value) in data" class="product-info hidden-sm hidden-xs {{key}}" ng-class="{active : activePro === key}" ng-init="$f = productInfo">
+        <div class="left-side col-md-5">
+          <img ng-src="app/assets/images/mcvities/infoimage{{value.image}}.jpg" alt="McVities product Information Image{{ value.image}}" class="img-responsive center-block"/>
+        </div>
+        <div class="right-side col-md-7">
+          <p ng-bind-html="value.info | unsafe">
+            {{ value.info }}
+          </p>
+          <button class="transparent-btn white">
+            <svg>
+              <rect x="0" y="0" fill="none" width="180" height="55" />
+            </svg>
+            Where to buy
+          </button>
+        </div>
+        <div class="cf"></div>
+      </div>
+    </div> -->
+    <div class="cf"></div>
+  </div>
+</div>
+<div class="products-show">
+  <button class="red-btn white" ng-class="{active : activeProduct === true}" ng-click="showMore()">
+    <svg>
+      <rect x="0" y="0" fill="none" width="180" height="55" />
+    </svg>
+    <span ng-if="activeProduct === true">Show less</span>
+    <span ng-if="activeProduct === false">Show More</span>
+  </button>
+</div>

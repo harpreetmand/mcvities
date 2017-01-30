@@ -1,0 +1,207 @@
+#wheretobuy {
+  background-color: $white;
+  overflow: hidden;
+  position: relative;
+  .wtb-main-content {
+    position: relative;
+    p {
+      margin: 0;
+    }
+    form {
+      input {
+        width: 250px;
+        height: 35px;
+        text-align: center;
+        color: $red;
+        font-family: $primary-font;
+        border: 1px solid $red;
+        outline: none;
+        font-size: 16px;
+      }
+      .select-container {
+        padding: 0;
+        border: 1px solid $red;
+        width: 250px;
+        height: 35px;
+        border-radius: 0;
+        overflow: hidden;
+        background-color: $white;
+        background: url(../images/select-arrow.png) no-repeat 96% 50%;
+        margin: auto;
+        display: inline-block;
+        select {
+          height: 34px;
+          width: 250px;
+          text-align-last: center;
+          padding:0px 30px 0px 20px;
+          border: none;
+          box-shadow: none;
+          background-color: transparent;
+          background-image: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          font-family: $primary-font;
+          font-size: 16px;
+          color:$red;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .animback-overlay {
+    background: rgba($white,.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .animated-back {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1400px;
+    .wtb-backs {
+      position: absolute;
+      &:nth-child(2) {
+        bottom: -45%;
+        left: 60%;
+      }
+      &:nth-child(3) {
+        left: 10px;
+        top: 5%;
+      }
+      &:nth-child(4) {
+        left: 60%;
+        top: -12%;
+      }
+      &:nth-child(7) {
+        left: 2%;
+        top: -23%;
+      }
+      &:nth-child(8) {
+        left: 31%;
+        top: 30%;
+      }
+      &:nth-child(9) {
+        left: 24%;
+        top: 55%;
+      }
+      &:nth-child(10) {
+        top: -44%;
+        left: 53%;
+      }
+      &:nth-child(11) {
+        left: 3%;
+        bottom: -54%;
+      }
+      &:nth-child(13) {
+        top: 90%;
+        left: -8%;
+      }
+      &:nth-child(14) {
+        left: 40%;
+        top: -6%;
+      }
+      &:nth-child(15) {
+        left: 42%;
+        top: -29%;
+      }
+      &:nth-child(16) {
+        left: 17%;
+        top: 46%;
+      }
+      &:nth-child(18) {
+        left: 45%;
+        top: 108%;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  #wheretobuy {
+    .animated-back {
+      .wtb-backs {
+        &:first-child {
+          top: -29%;
+          left: 80%;
+        }
+        &:nth-child(2) {
+          bottom: -45%;
+          left: 60%;
+        }
+        &:nth-child(3) {
+          left: 10px;
+          top: 5%;
+        }
+        &:nth-child(4) {
+          left: 64%;
+          top: 16%;
+        }
+        &:nth-child(5) {
+          right: -60px;
+          top: 95%;
+        }
+        &:nth-child(6) {
+          left: 75%;
+          top: 75%;
+        }
+        &:nth-child(7) {
+          left: 10%;
+          top: -13%;
+        }
+        &:nth-child(8) {
+          left: 31%;
+          top: 30%;
+        }
+        &:nth-child(9) {
+          left: 24%;
+          top: 55%;
+        }
+        &:nth-child(10) {
+          top: -25%;
+          left: 62%;
+        }
+        &:nth-child(11) {
+          left: 12%;
+          bottom: -42%;
+        }
+        &:nth-child(12) {
+          left: 75%;
+          bottom: -37%;
+        }
+        &:nth-child(13) {
+          top: 75%;
+          left: 2%;
+        }
+        &:nth-child(14) {
+          left: 40%;
+          top: -2%;
+        }
+        &:nth-child(15) {
+          left: 47%;
+          top: -27%;
+        }
+        &:nth-child(16) {
+          left: 20%;
+          top: 34%;
+        }
+        &:nth-child(17) {
+          left: 76%;
+          top: 11%;
+        }
+        &:nth-child(18) {
+          left: 45%;
+          top: 90%;
+        }
+        &:last-child {
+          top: 33%;
+          left: 90%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<?php $__env->startSection('title'); ?>Store Locator |<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>Search our store locator to find our location near you@endsection
+<?php $__env->startSection('content'); ?>
+
+
+  <div class="container noPadding">
+
+    <!-- START REVOLUTION SLIDER 5.0 -->
+    <div class="rev_slider_wrapper">
+     <div id="slider1" class="rev_slider"  data-version="5.0">
+      <ul>
+        <?php foreach($sliders as $slider): ?>
+         <li data-transition="fade">
+           <!-- MAIN IMAGE -->
+           <img src="<?php echo e(asset('/img')); ?>/<?php echo e($slider->image); ?>"  alt=""  width="1920" height="1280">
+           <!-- LAYER NR. 1 -->
+
+            <div class="tp-caption sliderLineOne"
+                 data-x=left data-hoffset="-50"
+                 data-y="top" data-voffset="85"
+                 data-whitespace="normal"
+                 <?php /* data-end="6000" */ ?>
+                 data-transform_out="[1%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:1000;e:Power4.easeInOut;"
+                 data-transform_idle="o:1;"
+                 data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                 data-start="200"><?php echo $slider->lineOne; ?>
+
+            </div>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+     </div><!-- END REVOLUTION SLIDER -->
+    </div><!-- END OF SLIDER WRAPPER -->
+  </div>
+<div class="container topPadding extraPadding">
+  <div class="col-md-9 noLeftPadding">
+    <div class="breadcrums">
+      <a href="/">Home</a> > <?php echo $bread; ?>
+
+    </div>
+    <?php foreach($stores as $store): ?>
+      <a href="<?php echo e(asset($store->website)); ?>"><?php echo e($store->name); ?></a><br/>
+      <?php echo e($store->address); ?><br/>
+      <?php echo e($store->city); ?><br/>
+      <?php echo e($store->province); ?><br/>
+      <?php echo e($store->postalCode); ?><br/>
+      <i class="fa fa-phone"></i> <?php echo e($store->phone); ?><br/><br/>
+    <?php endforeach; ?>
+
+
+
+  </div>
+  <div class="clear visible-sm visibile-xs">
+  </div>
+
+
+
+    <div class="clear visible-sm visibile-xs">
+    </div>
+<?php echo $__env->make('layout.sidebarHome', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+
+
+</div>
+<div class="container borderTop">
+  <div class="col-sm-12 testimonials noPadding">
+    <div class="col-sm-3">
+
+        <img src="<?php echo e(asset('/img/testimonials/'.$testimonials->image)); ?>" class="img-responsive">
+
+    </div>
+    <div class="col-sm-9">
+      <i class="fa fa-quote-left"></i><p><?php echo e($testimonials->body); ?><i class="fa fa-quote-right"></i></p>
+      <span class="pull-right">-<?php echo e($testimonials->location); ?></span>
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

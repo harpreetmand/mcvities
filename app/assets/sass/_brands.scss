@@ -1,0 +1,226 @@
+#brands {
+  max-height: 2000px;
+  height: auto;
+  overflow: hidden;
+  background-color: $white;
+  position: relative;
+  @include transition(all, 0.5s, ease-in-out);
+  &.active {
+    max-height: 5000px !important;
+    .brands-show {
+      position: relative !important;
+      bottom: 0 !important;
+    }
+  }
+  .brand-nav {
+    padding: 0;
+    background-color: $red;
+    .container {
+      padding: 0;
+    }
+    ul {
+      text-align: justify;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0;
+      li {
+        color: $white;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        margin: auto;
+        font-size: 30px;
+        padding: 8px 70px;
+        border-bottom: 1px solid $white;
+        @include transition(all, .5s, ease-in-out);
+        font-family: $secondary-font;
+        &:last-child {
+          border: none;
+        }
+        &:after {
+          content: url(../images/hover-cookie.png);
+          width: 40px;
+          height: 41px;
+          position: absolute;
+          left: 25px;
+          top: 8px;
+          opacity: 0;
+          @include transition(all, .5s, ease-in-out);
+        }
+        &:hover,
+        &.active {
+          &:after {
+            opacity: 1;
+            left: 10px;
+          }
+        }
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+  .brands-section {
+    .brand {
+      .brand-logo {
+        margin: auto;
+        max-width: 315px;
+        .b-logo{
+          margin: 0px 7px 30px;
+          cursor:pointer;
+          float:left;
+        }
+        img:first-child{
+          width: 35%;
+          max-width: 109px
+        }
+        img:nth-child(2){
+         width: 54%;
+         max-width: 178px
+       }
+     }
+     .brands-container {
+      .each-brand-section {
+        padding-bottom: 20px;
+        position: relative;
+        .brands-lists {
+          cursor: pointer;
+          margin-bottom: 100px;
+        }
+        .brand-info-container {
+          position: relative;
+          height: 0;
+          padding-bottom: 0;
+          @include transition(all, .1s, ease-in-out);
+        }
+        .brand-info {
+          position: relative;
+          background-color: $white;
+          width: 100%;
+          top: 0;
+          max-height: 0;
+          height: auto;
+          overflow: hidden;
+          &.active {
+            max-height: 1000px;
+          }
+        }
+        .right-side {
+          button {
+            color: $red;
+            svg rect {
+              stroke: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+  .brands-show {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+.brands-info.product7 img{
+  height:250px;
+}
+.other-brands{
+  display: none;
+  &.active{
+    display:block;
+  }
+}
+  .brand-show button{
+    display: none;
+    margin: auto;
+  }
+}
+@media (min-width: 768px) {
+  #brands {
+    .brand-nav {
+      padding: 20px 0;
+      .container {
+        padding: 0 15px;
+      }
+      ul {
+        padding: 0 25px;
+        li {
+          padding: 0;
+          left: 5px;
+          display: inline-block;
+          border: none;
+          &:after {
+            top: -1px;
+            left: -33px;
+          }
+          &:hover,
+          &.active {
+            &:after {
+              left: -48px;
+            }
+          }
+        }
+      }
+    }
+    .brands-section .brand .brand-logo{ 
+      max-width: 407px;
+      .b-logo{
+        margin: 0px 30px 0px
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  #brands {
+    .brand-nav ul li {
+      left: 0;
+      &:after {
+        left: -40px;
+      }
+      &:hover,
+      &.active {
+        &:after {
+          left: -55px;
+        }
+      }
+    }
+    .brands-section {
+      .brand {
+        .brand-logo {
+        }
+        .brands-container {
+          .each-brand-section {
+            padding-bottom: 120px;
+            .brands-lists {
+              margin-bottom: 0;
+            }
+            .brand-info-container {
+              &.active {
+                height: 250px;
+                top:50px;
+              }
+            }
+            .brand-info {
+              position: absolute;
+              &.active {
+                height: 250px;
+                border-bottom: 1px solid rgba($black, .1);
+              }
+              .left-side,
+              .right-side {
+                @include center-vertical();
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

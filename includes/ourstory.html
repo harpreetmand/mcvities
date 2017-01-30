@@ -1,0 +1,36 @@
+<div class="fixed-back"></div>
+  <div class="ourstory-main-content container ourstory-section1 pad100">
+    <p class="heading white">{{ homeContent.ourStories.title }}</p>
+    <img ng-src="app/assets/images/cookie.png" class="cookie" alt="Cookie"/>
+    <p class="content white" ng-bind-html="homeContent.ourStories.body | unsafe">
+    </p>
+    <a href="{{ homeContent.lang }}/timeline">
+      <button class="transparent-btn white">
+        <svg>
+          <rect x="0" y="0" fill="none" width="180" height="55" />
+        </svg>
+        {{ homeContent.ourStories.button }}
+      </button>
+    </a>
+  </div>
+  <div class="ourstory-section2 pad100" ng-controller="ourstoriesNav">
+     <div class="container">
+           <div class="col-sm-4 ourstory-nav-container" ng-repeat="ourstory in homeContent.ourStories.stories">
+             <div class="ourstory-nav-inner">
+             <div class="ourstory-nav">
+               <img ng-src="app/assets/images/{{ourstory.image}}" alt="{{ ourstory.title }}" class="img-responsive" />
+               <p class="title" ng-bind-html="ourstory.title | unsafe"></p>
+               <a href="{{ homeContent.lang }}/{{ourstory.link}}">
+                <button class="transparent-btn white">
+                  <svg>
+                    <rect x="0" y="0" fill="none" width="170" height="45" />
+                  </svg>
+                  <span ng-bind-html="ourstory.button | unsafe"></span>
+                </button>
+              </a>
+             </div>
+             </div>
+           </div>
+     </div>
+  </div>
+</div>

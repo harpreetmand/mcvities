@@ -1,0 +1,38 @@
+#privacy{
+  margin-top: 100px;
+  .privacy-section{
+    text-align: left;
+    position: relative;
+    .got-question button {
+      color: $red;
+      font-size: 14px;
+      width: 250px;
+      height: 38px;
+      line-height: 20px;
+      svg rect {
+        stroke: $red;
+        width: 250px;
+        height: 38px;
+      }
+      i {
+        margin-left: 20px;
+        font-size: 22px;
+      }
+      &:hover{
+        svg rect{
+         stroke-dasharray: 229, 316;
+       }
+     }
+   }
+  }
+}
+@media (min-width: 992px) {
+  #privacy{
+    .privacy-section{
+     .got-question{
+      position: absolute;
+      right:15px;
+      }
+    }
+  }
+}

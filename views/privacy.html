@@ -1,0 +1,22 @@
+<div id="privacy">
+  <div class="banner-container">
+    <div class="banner"></div>
+    <div class="anim-text">
+      <h1 class="banner-title white padT4830" ng-if="homeContent.lang === 'en'">{{ homeContent.privacy.title }}</h1>
+      <h1 class="banner-title white" ng-if="homeContent.lang === 'fr'">{{ homeContent.privacy.title }}</h1>
+    </div>
+  </div>
+  <div class="privacy-section container pad50">
+    <div class="got-question">
+      <a href="mailto:Canada.Sales@treeoflife.com">
+        <button class="transparent-btn red">
+          <svg>
+            <rect x="0" y="0" fill="none" width="250" height="38" />
+          </svg>
+          {{ homeContent.privacy.email }}<i class="fa fa-envelope" aria-hidden="true"></i>
+        </button>
+      </a>
+    </div>
+    <div class="privacy-policy padT60" ng-bind-html="homeContent.privacy.content | unsafe"></div>
+  </div>
+</div>

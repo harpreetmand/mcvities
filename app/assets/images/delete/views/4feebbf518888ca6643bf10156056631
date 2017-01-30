@@ -1,0 +1,59 @@
+<?php $__env->startSection('title'); ?>
+	| <?php echo e($page->metaTitle); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>
+<?php echo e($page->metaDesc); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('includes/topImage', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="allPageUnderImage animation">
+<div class="h1Bg">
+	<div class="container no-padding">
+    	<center>
+        	<h1><?php echo $page->underImage; ?></h1>
+      	</center>
+    </div>
+</div>
+<div class="container">
+<?php echo $__env->make('includes/sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php /*<div class="col-xs-3 hidden-xs side-menu">*/ ?>
+		<?php /* <p class="big orange"><strong><?php echo $page->text; ?></strong></p> */ ?>
+		<?php /*<ul class="topUl" id="addAffix">*/ ?>
+		<?php /*<?php foreach($subNav as $suNav): ?>*/ ?>
+			<?php /*<?php if($suNav->parent == $sub): ?>*/ ?>
+
+					<?php /*<li class="nav-<?php echo e($suNav->url); ?>"><a href="<?php echo e(url($link)); ?>/<?php echo e($suNav->url); ?>"><?php echo e($suNav->name); ?></a></li>*/ ?>
+
+				<?php /*<?php if($suNav->indent == 1): ?>*/ ?>
+                              <?php /* <ul class="indent"> */ ?>
+                                <?php /*<?php foreach($indentNavs as $indentNav): ?>*/ ?>
+                                  <?php /*<?php if($suNav->id == $indentNav->parent): ?>*/ ?>
+                                    <?php /*<li class="indentTop nav-<?php echo e($indentNav->url); ?>"><a href="<?php echo e(url()); ?>/<?php echo e($link); ?>/<?php echo e($indentNav->url); ?>"><?php echo e($indentNav->name); ?></a></li>*/ ?>
+                                  <?php /*<?php endif; ?>*/ ?>
+                                <?php /*<?php endforeach; ?>*/ ?>
+                              <?php /* </ul> */ ?>
+                            <?php /*<?php endif; ?>*/ ?>
+			<?php /*<?php endif; ?>*/ ?>
+
+		<?php /*<?php endforeach; ?>*/ ?>
+		<?php /*</ul>*/ ?>
+	<?php /*</div>*/ ?>
+	<div class="col-md-9 col-sm-12 col-xs-12 leftBorder content">
+	<?php echo $page->body; ?>
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

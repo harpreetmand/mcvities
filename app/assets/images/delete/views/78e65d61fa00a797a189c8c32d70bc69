@@ -1,0 +1,106 @@
+<?php $__env->startSection('title'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>Home Page <?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+
+  <div class="container noPadding">
+
+    <!-- START REVOLUTION SLIDER 5.0 -->
+    <div class="rev_slider_wrapper">
+     <div id="slider1" class="rev_slider"  data-version="5.0">
+      <ul>
+        <?php foreach($sliders as $slider): ?>
+         <li data-transition="fade">
+           <!-- MAIN IMAGE -->
+           <img src="<?php echo e(asset('/img')); ?>/<?php echo e($slider->image); ?>"  alt=""  width="1920" height="1280">
+           <!-- LAYER NR. 1 -->
+
+            <div class="tp-caption sliderLineOne"
+                 data-x=left data-hoffset="-50"
+                 data-y="top" data-voffset="85"
+                 data-whitespace="normal"
+                 <?php /* data-end="6000" */ ?>
+                 data-transform_out="[1%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0;sY:0;skX:0;skY:0;s:1000;e:Power4.easeInOut;"
+                 data-transform_idle="o:1;"
+                 data-transform_in="x:[500%];s:2000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                 data-start="200"><?php echo $slider->lineOne; ?>
+
+            </div>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+     </div><!-- END REVOLUTION SLIDER -->
+    </div><!-- END OF SLIDER WRAPPER -->
+  </div>
+<div class="container topPadding extraPadding">
+  <div class="col-md-9 noLeftPadding">
+    <div class="breadcrums">
+      <a href="/">Home</a> > <?php echo $bread; ?>
+
+    </div>
+    <?php foreach($stores as $store): ?>
+      <?php echo e($store->name); ?>
+
+    <?php endforeach; ?>
+
+      <div class="miniCoupon">
+        <div class="col-sm-6">
+
+          <div class="miniCouponGreen">
+
+            <h5>Save $100</h5>
+            <h6>$20 off your first five cleanings</h6>
+          </div>
+          <i class="fa fa-cc-mastercard"></i>
+          <i class="fa fa-cc-visa"></i>
+          <i class="fa fa-cc-amex"></i>
+          <img src="http://127.0.0.1/mm/public/img/merrymaids_dark.jpg" alt="merry maids relax its done"><br/><br/>
+          <button>Print This Coupon</button>
+      </div>
+      <div class="col-sm-6">
+        <p>New weekly and biweekly customers only. Not valid with other offers. Valid only at participating locations. <strong>Present this coupon at the time of your sales appointment.</strong></p>
+        Offer good through 12/31/2016.<br/>
+        <span>
+          Services provided by independently owned and operated franchises or corporate-owned branches. Employment hiring and screening practices may vary. Please contact your <a href="/merry-maids-locator">local Merry Maids</a> office for more details. Not valid with other offers. Cash value 1/100 of 1 cent. ©2016 Merry Maids Canada. All rights reserved.
+        </span>
+
+      </div>
+      <div class="clear">
+      </div>
+      </div>
+      <h2>With Merry Maids you can Relax. It's done.</h2>
+
+  </div>
+  <div class="clear visible-sm visibile-xs">
+  </div>
+
+
+
+    <div class="clear visible-sm visibile-xs">
+    </div>
+    <div class="col-md-3 noPadding miniAddress">
+
+    </div>
+
+
+
+
+</div>
+<div class="container borderTop">
+  <div class="col-sm-12 testimonials noPadding">
+    <div class="col-sm-3">
+
+        <img src="<?php echo e(asset('/img/testimonials/'.$testimonials->image)); ?>">
+
+    </div>
+    <div class="col-sm-9">
+      <i class="fa fa-quote-left"></i><p><?php echo e($testimonials->body); ?><i class="fa fa-quote-right"></i></p>
+      <span class="pull-right">-<?php echo e($testimonials->location); ?></span>
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,60 @@
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+<div ng-controller="storeLocatorCtrl as vm">
+  <div class="container">
+    <form>
+<input type="text" ng-model="newAddress">
+<button ng-click="newAddressBtn()">new address</button>
+</form>
+</div>
+   <ng-map default-style="true" center="{{lat}},{{lng}}" zoom="8" class="aatt">
+     <marker position="{{lat}},{{lng}}" title="Hello World!"
+      optimized="false"
+      icon="{
+        url:'/app/assets/images/logopin.png'
+      }"></marker>
+     <marker id='{{shop.id}}' position="{{shop.lat}},{{shop.lng}}"
+       ng-repeat="shop in vm.shops"
+       on-click="vm.showDetail(shop)">
+     </marker>
+
+     <info-window id="foo-iw">
+       <div ng-non-bindable="">
+
+        <strong>Store Name:</strong> {{vm.shop.storeName}}<br/>
+        <strong>Address: </strong> <a href="https://www.google.ca/maps/search/{{vm.shop.storeAddress}}" target="_blank">{{vm.shop.storeAddress}}</a><br/>
+        {{vm.shop.storeName}}
+       </div>
+     </info-window>
+   </ng-map>
+
+   <div class="" ng-repeat="shop in vm.shops">
+    <a href="https://www.google.ca/maps/search/{{shop.storeAddress}}" target="_blank">{{shop.storeName}}<br/>
+    {{shop.storeAddress}}</a><br/>
+    {{shop.distance | m2km}}<br/>
+    <hr/>
+
+   </div>
+ </div>
+<style>
+  map, div[map] {display:block; width:600px; height:1000px;}
+  .aatt{
+    height:600px !important;
+  }
+</style>

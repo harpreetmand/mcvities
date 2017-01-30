@@ -1,0 +1,49 @@
+<div class="animated-back">
+    <img ng-src="app/assets/images/wheretobuy/blender.png" class="wtb-backs wtb-back1 hidden-xs hidden-sm" alt="Blender"/>
+    <img ng-src="app/assets/images/wheretobuy/chopping-board.png" class="wtb-backs wtb-back2 hidden-xs" alt="Chopping Board"/>
+    <img ng-src="app/assets/images/wheretobuy/cup.png" class="wtb-backs wtb-back3" alt="Cup"/>
+    <img ng-src="app/assets/images/wheretobuy/cup2.png" class="wtb-backs wtb-back4 hidden-xs" alt="Cup"/>
+    <img ng-src="app/assets/images/wheretobuy/dough.png" class="wtb-backs wtb-back5 hidden-xs hidden-sm" alt="Dough"/>
+    <img ng-src="app/assets/images/wheretobuy/flat-spoon.png" class="wtb-backs wtb-back6 hidden-xs hidden-sm" alt="Flat Spoon"/>
+    <img ng-src="app/assets/images/wheretobuy/glove.png" class="wtb-backs wtb-back7" alt="Glove"/>
+    <img ng-src="app/assets/images/wheretobuy/jar.png" class="wtb-backs wtb-back8" alt="Jar"/>
+    <img ng-src="app/assets/images/wheretobuy/jug.png" class="wtb-backs wtb-back9" alt="Jug"/>
+    <img ng-src="app/assets/images/wheretobuy/juicer.png" class="wtb-backs wtb-back10 hidden-xs" alt="Juicer"/>
+    <img ng-src="app/assets/images/wheretobuy/pan.png" class="wtb-backs wtb-back11" alt="Pan"/>
+    <img ng-src="app/assets/images/wheretobuy/pizza-cutter.png" class="wtb-backs wtb-back12 hidden-xs hidden-sm" alt="Pizza Cutter"/>
+    <img ng-src="app/assets/images/wheretobuy/pot.png" class="wtb-backs wtb-back13" alt="Pot"/>
+    <img ng-src="app/assets/images/wheretobuy/rollingpin.png" class="wtb-backs wtb-back14" alt="Rollingpin"/>
+    <img ng-src="app/assets/images/wheretobuy/salt-bottle.png" class="wtb-backs wtb-back15" alt="Salt Bottle"/>
+    <img ng-src="app/assets/images/wheretobuy/saucepan.png" class="wtb-backs wtb-back16" alt="Saucepan"/>
+    <img ng-src="app/assets/images/wheretobuy/spatula.png" class="wtb-backs wtb-back17 hidden-xs hidden-sm" alt="Spatula"/>
+    <img ng-src="app/assets/images/wheretobuy/spoon-fork.png" class="wtb-backs wtb-back18" alt="Spoon and Fork"/>
+    <img ng-src="app/assets/images/wheretobuy/tea-pot.png" class="wtb-backs wtb-back19 hidden-xs hidden-sm" alt="Tea Pot"/>
+</div>
+  <div class="animback-overlay"></div>
+<div class="wtb-main-content container pad100">
+  <p class="heading red">{{ homeContent.whereToBuy.title }}</p>
+  <img ng-src="app/assets/images/cookie-red.png" class="cookie" alt="Cookie"/>
+  <p class="content red">{{ homeContent.whereToBuy.body }}</p>
+
+  <form class="pad30">
+    <!-- <div class="select-container">
+      <select class="text-center">
+           <option disabled selected value> {{homeContent.productsMcvitiesArr.select}} </option>
+           <option ng-repeat="product in homeContent.productsMcvitiesArr.products" value="{{ product.name }}">{{ product.name }}</option>
+      </select>
+    </div> -->
+      <!-- <p class="red pad10">
+        &
+      </p> -->
+
+      <input type="text" name="postal-code" id="postal-code" ng-model="initalAddress" placeholder="{{ homeContent.whereToBuy.fPostal}}">
+      <div class="cf padT30"></div>
+      <a href="/{{homeContent.lang}}/store-locator/{{initalAddress}}">
+      <button class="red-btn white">
+        <svg>
+          <rect x="0" y="0" fill="none" width="180" height="55" />
+        </svg>
+        <span>{{ homeContent.whereToBuy.button }}</span></button>
+      </a>
+  </form>
+</div>

@@ -1,0 +1,48 @@
+#store-locator{
+  margin-top: 100px;
+  	input {
+	    width: 250px;
+	    height: 35px;
+	    text-align: center;
+	    color: $red;
+	    font-family: $primary-font;
+	    border: 1px solid $red;
+	    outline: none;
+	    font-size: 16px;
+	}
+  button{
+  	width:230px;
+  	&.red-btn { 
+  		svg rect{
+  			width:230px;
+		}
+		&:hover svg rect {
+		    stroke-dasharray: 204, 338;
+		}
+  	}
+  }
+  .mobile-map-address{
+  	a{
+  		display:block;
+  		background-color:$red;
+  		color:$white;
+  		padding: 10px;
+  		font-size: 18px;
+  		font-family: $secondary-font;
+  		margin-bottom: 10px;
+  		@include transition(all, 0.6s, ease-in-out);
+  		&:hover{
+  			text-decoration: none;
+  			color:$red;
+			background-color:$white;
+  		}
+  		.store-name{
+  			font-size: 25px;
+  			display: block;
+  		}
+  		.distance{
+  			font-size: 22px;
+  		}
+  	}
+  }	
+}

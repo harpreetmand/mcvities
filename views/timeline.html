@@ -1,0 +1,39 @@
+<div id="our-story">
+    <div class="banner-container">
+      <div class="banner"></div>
+      <div class="anim-text">
+        <h1 class="banner-title white">{{ homeContent.ourStories.bannerTitle }}</h1>
+      </div>
+    </div>
+    <div ng-controller="timeline" class="pad100">
+      <div class="container-fluid container">
+        <h2 class="heading red">{{ homeContent.ourStories.title }}</h2>
+        <div class="red hTagsInDiv" ng-bind-html="homeContent.ourStories.body"></div>
+        <div class="timeline-container">
+          <timeline>
+            <!-- can also hard-code to side="left" or side="right" -->
+            <timeline-event ng-repeat="event in homeContent.events" side="{{side}}">
+              <!-- uses angular-scroll-animate to give it some pop -->
+              <timeline-badge class="timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
+                <img src="app/assets/images/cookie-red.png" alt="cokie" />
+              </timeline-badge>
+              <!-- uses angular-scroll-animate to give it some pop -->
+              <timeline-panel class="{{event.badgeClass}} timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
+                <timeline-heading>
+                  <h4 class="red">{{event.title}}</h4>
+                </timeline-heading>
+                <p class="red" ng-bind-html="event.contentHtml"></p>
+              </timeline-panel>
+              <div ng-if="event.image" class="circle-image hidden-sm hidden-xs bounce-in" when-visible="animateElementIn" when-not-visible="animateElementOut">
+                <p>
+                  <img lazy-img="app/assets/images/timeline/{{ event.image }}" alt="{{ event.title }}">
+                </p>
+              </div>
+            </timeline-event>
+            <div class="timeline-hidden last-cookie bounce-in" when-visible="animateElementIn" when-not-visible="animateElementOut">
+              <img src="app/assets/images/cookie-red.png" alt=" " />
+            </div>
+          </timeline>
+        </div>
+      </div>
+    </div>
