@@ -5,9 +5,14 @@
   </div>
   <div class="cf"></div>
   <div class="recipes-nav-container pad50">
-      <div class="recipes-nav" ng-repeat="recipe in homeContent.recipes.allRecipes | limitTo:5">
+      <div class="recipes-nav" ng-repeat="recipe in homeContent.recipes.allRecipes| videosFirst | limitTo:5 | shuffle">
         <a href="{{homeContent.lang}}/recipe/{{recipe.slug}}">
           <img ng-src="app/assets/images/recipes/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+          <div ng-show="recipe.video"class="hasVideo">
+                          <div ng-show="recipe.video"class="hasVideo">
+            <img src="app/assets/images/play.png" alt="play youtube video"/>
+          </div>
+            </div>
           <div class="overlay">
             <p class="title"  ng-bind-html="recipe.title | unsafe"></p>
           </div>

@@ -1,11 +1,22 @@
 #contest {
+
   margin-top: 100px;
+  .productImg{
+    padding-top: 20px;
+
+  }
   .banner {
     @include transition(all, .2s, ease-in-out);
     height: 250px;
-    background: url(../images/contest-banner.jpg) no-repeat center;
+    // background: url(../images/mcvities-get-creative.jpg) no-repeat center;
     background-size: cover;
     background-position: right;
+  }
+  .HMContestImage{
+    padding-top: 21px;
+    img{
+      width: 100%;
+    }
   }
   h1,
   h2 {
@@ -41,8 +52,8 @@
     width: 300px;
     margin: auto;
     input[type="text"],
-    input[type="email"] {
-      width: 300px;
+    input[type="email"] { 
+      width: 300px; 
       display: block;
       margin: auto;
       height: 35px;
@@ -60,7 +71,6 @@
     .hiddenEmail{
       display: none !important;
     }
-
     label {
       float: left;
       text-align: left;
@@ -92,6 +102,7 @@
         &:last-child {
           border: none;
         }
+
         &:after {
           background-image: url(../images/hover-cookie.png);
           background-size: cover;
@@ -164,7 +175,8 @@
           line-height: 92px;
         }
         h2 {
-          font-size: 27px;
+          font-size: 67px;
+          line-height: 56px;
         }
       }
     }
@@ -193,7 +205,8 @@
           line-height: 188px;
         }
         h2 {
-          font-size: 59px;
+          font-size: 120px;
+          line-height: 102px;
         }
       }
     }
@@ -226,6 +239,7 @@
 @media (min-width: 992px) {
   #contest {
     .contest-nav-bar {
+
       ul {
         li {
           margin: 0 30px;
@@ -247,6 +261,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   #contest {
     .banner-container {
@@ -264,9 +279,11 @@
           line-height: 233px;
         }
         h2 {
-          font-size: 70px;
+          font-size: 140px;
+          line-height: 115px;
         }
       }
     }
   }
 }
+ 
