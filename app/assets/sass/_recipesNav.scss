@@ -9,6 +9,24 @@
   width: 90%;
   max-width: 320px;
   margin: 0 12px 24px;
+  .hasVideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 95.6%;
+    height: 95.6%;
+    text-align: center;
+    padding: 0 10px;
+    background: rgba($pure-black,0.1);
+    img{
+      top: 35%;
+      position: relative;
+      opacity: .9;
+    }
+  }
   .overlay {
     background: rgba($pure-black,0.6);
     position: absolute;
