@@ -23,6 +23,9 @@
                 <!-- <div ng-repeat="recipe in recipes.allRecipes" class="newElement recipes-nav category-{{recipe.category}}"> -->
                   <a href="/{{homeContent.lang}}/recipe/{{recipe.slug}}">
                     <img ng-src="app/assets/images/recipes/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+                    <div ng-show="recipe.video" class="hasVideo">
+                      <img src="app/assets/images/play.png" alt="play youtube video"/>
+                    </div>
                     <div class="overlay">
                       <p class="title" ng-bind-html="recipe.title | unsafe"></p>
                     </div>

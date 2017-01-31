@@ -92,9 +92,12 @@
     </div>
     <div class="recipes-nav-container pad30 visible-md visible-lg">
         <p class="secondary-font red pad20">{{ homeContent.recipes.alsoLike }}</p>
-        <div class="recipes-nav" ng-repeat="recipe in homeContent.recipes.allRecipes | shuffle | limitTo:5">
+        <div class="recipes-nav" ng-repeat="recipe in homeContent.recipes.allRecipes| videosFirst | limitTo:5 | shuffle">
             <a href="/{{homeContent.lang}}/recipe/{{recipe.slug}}">
                 <img ng-src="app/assets/images/recipes/{{recipe.image}}.jpg" alt="{{ recipe.title }}" class="img-responsive" />
+                <div ng-show="recipe.video" class="hasVideo">
+                    <img src="app/assets/images/play.png" alt="play youtube video"/>
+                </div>
                 <div class="overlay">
                     <p class="title" ng-bind-html="recipe.title | unsafe"></p>
                 </div>
